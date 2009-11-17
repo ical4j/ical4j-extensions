@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>modularity-parent</artifactId>
+		<groupId>net.modularity</groupId>
+		<version>1.0.8-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.fortuna.ical4j</groupId>
+	<artifactId>ical4j-extensions</artifactId>
+	<packaging>bundle</packaging>
+	<name>iCal4j Extensions</name>
+	<version>0.9-SNAPSHOT</version>
+	<description>Support for additional non-standard iCalendar objects</description>
+	<url>http://ical4j.sourceforge.net</url>
+	<issueManagement>
+		<system>SourceForge.net</system>
+		<url>https://sourceforge.net/tracker/?group_id=107024</url>
+	</issueManagement>
+	<inceptionYear>2009</inceptionYear>
+	
+	<licenses>
+		<license>
+			<name>iCal4j - License</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+	
+	<scm>
+		<connection>scm:cvs:pserver:anonymous:@ical4j.cvs.sourceforge.net:/cvsroot/ical4j:ical4j-extensions</connection>
+		<developerConnection>scm:cvs:ext:fortuna@ical4j.cvs.sourceforge.net:/cvsroot/ical4j:ical4j-extensions</developerConnection>
+		<url>http://ical4j.cvs.sourceforge.net/ical4j/ical4j-extensions</url>
+  </scm>
+	
+	<build>
+		<plugins>
+			<plugin>   
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>net.fortuna.ical4j.vcard.*</Export-Package>
+						<Import-Package>net.fortuna.ical4j.*,org.apache.commons.lang.*,org.apache.commons.logging,*;resolution:=optional</Import-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clover-plugin</artifactId>
+				<configuration>
+					<jdk>1.5</jdk>
+				</configuration>
+				<!--
+				<executions>
+					<execution>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>instrument</goal>
+						</goals>
+					</execution>
+				</executions>
+				-->
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/bin.xml</descriptor>
+						<descriptor>src/main/assembly/src.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>site-deploy</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+	        <plugin>
+	            <groupId>org.codehaus.groovy.maven</groupId>
+	            <artifactId>gmaven-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>generateStubs</goal>
+	                        <goal>compile</goal>
+	                        <goal>generateTestStubs</goal>
+	                        <goal>testCompile</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>net.fortuna.ical4j</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>1.0-rc3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- -->
+	      <!-- -->
+	</dependencies>
+
+	<repositories>
+	</repositories>
+
+	<reporting>
+		<plugins>
+
+            <!-- Override default suppressions.. -->		
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-checkstyle-plugin</artifactId>
+	            <configuration>
+	               <configLocation>http://svn.mnode.org/tools/checkstyle/mnode_checks.xml</configLocation>
+	               <suppressionsFile>etc/checkstyle-suppressions.xml</suppressionsFile>
+	            </configuration>
+	        </plugin>
+		</plugins>
+	</reporting>
+</project>
