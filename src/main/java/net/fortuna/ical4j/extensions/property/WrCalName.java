@@ -46,7 +46,7 @@ public class WrCalName extends Property {
 
     private static final long serialVersionUID = 3529181417508181637L;
 
-    private static final String NAME = "X-WR-CALNAME";
+    public static final String PROPERTY_NAME = "X-WR-CALNAME";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -56,7 +56,7 @@ public class WrCalName extends Property {
      * @param factory
      */
     public WrCalName(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -64,7 +64,7 @@ public class WrCalName extends Property {
      * @param factory
      */
     public WrCalName(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

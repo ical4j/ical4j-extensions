@@ -44,7 +44,9 @@ import net.fortuna.ical4j.util.ParameterValidator;
  */
 public class GwAutodateKey extends Property {
 
-    private static final String NAME = "X-GWAUTODATE-KEY";
+    private static final long serialVersionUID = -4722251591472186896L;
+
+    public static final String PROPERTY_NAME = "X-GWAUTODATE-KEY";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +56,7 @@ public class GwAutodateKey extends Property {
      * @param factory
      */
     public GwAutodateKey(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class GwAutodateKey extends Property {
      * @param factory
      */
     public GwAutodateKey(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

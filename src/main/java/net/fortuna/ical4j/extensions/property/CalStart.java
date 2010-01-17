@@ -45,7 +45,9 @@ import net.fortuna.ical4j.model.property.UtcProperty;
  */
 public class CalStart extends UtcProperty {
 
-    private static final String NAME = "X-CALSTART";
+    private static final long serialVersionUID = -1823078836099613956L;
+
+    public static final String PROPERTY_NAME = "X-CALSTART";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -53,7 +55,7 @@ public class CalStart extends UtcProperty {
      * @param factory
      */
     public CalStart(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class CalStart extends UtcProperty {
      * @throws ParseException 
      */
     public CalStart(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

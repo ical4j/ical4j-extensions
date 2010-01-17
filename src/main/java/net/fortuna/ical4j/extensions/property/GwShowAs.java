@@ -42,7 +42,9 @@ import net.fortuna.ical4j.model.ValidationException;
  */
 public class GwShowAs extends Property {
 
-    private static final String NAME = "X-GWSHOW-AS";
+    private static final long serialVersionUID = 1777126874405580074L;
+
+    public static final String PROPERTY_NAME = "X-GWSHOW-AS";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +56,7 @@ public class GwShowAs extends Property {
      * @param factory
      */
     public GwShowAs(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class GwShowAs extends Property {
      * @param factory
      */
     public GwShowAs(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

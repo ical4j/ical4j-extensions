@@ -44,7 +44,7 @@ public class LotusUpdateSubject extends Property {
 
     private static final long serialVersionUID = -615091328274504900L;
 
-    private static final String NAME = "X-LOTUS-UPDATE-SUBJECT";
+    public static final String PROPERTY_NAME = "X-LOTUS-UPDATE-SUBJECT";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +54,7 @@ public class LotusUpdateSubject extends Property {
      * @param factory
      */
     public LotusUpdateSubject(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +62,7 @@ public class LotusUpdateSubject extends Property {
      * @param factory
      */
     public LotusUpdateSubject(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 
