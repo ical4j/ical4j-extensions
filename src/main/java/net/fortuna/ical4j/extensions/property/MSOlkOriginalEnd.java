@@ -45,7 +45,7 @@ import net.fortuna.ical4j.model.property.DateProperty;
  */
 public class MSOlkOriginalEnd extends DateProperty {
 
-    private static final String NAME = "X-MS-OLK-ORIGINALEND";
+    public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALEND";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -53,7 +53,7 @@ public class MSOlkOriginalEnd extends DateProperty {
      * @param factory
      */
     public MSOlkOriginalEnd(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +62,7 @@ public class MSOlkOriginalEnd extends DateProperty {
      * @throws ParseException 
      */
     public MSOlkOriginalEnd(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 
