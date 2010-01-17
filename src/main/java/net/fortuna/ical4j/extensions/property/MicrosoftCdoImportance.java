@@ -44,7 +44,9 @@ import net.fortuna.ical4j.util.ParameterValidator;
  */
 public class MicrosoftCdoImportance extends Property {
 
-    private static final String NAME = "X-MICROSOFT-CDO-IMPORTANCE";
+    private static final long serialVersionUID = 3044453382694356302L;
+
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-IMPORTANCE";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +56,7 @@ public class MicrosoftCdoImportance extends Property {
      * @param factory
      */
     public MicrosoftCdoImportance(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class MicrosoftCdoImportance extends Property {
      * @param factory
      */
     public MicrosoftCdoImportance(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

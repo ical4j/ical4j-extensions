@@ -44,7 +44,9 @@ import net.fortuna.ical4j.util.ParameterValidator;
  */
 public class GwMessageId extends Property {
 
-    private static final String NAME = "X-GWMESSAGEID";
+    private static final long serialVersionUID = -7910360817210293089L;
+
+    public static final String PROPERTY_NAME = "X-GWMESSAGEID";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +56,7 @@ public class GwMessageId extends Property {
      * @param factory
      */
     public GwMessageId(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class GwMessageId extends Property {
      * @param factory
      */
     public GwMessageId(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

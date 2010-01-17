@@ -45,6 +45,8 @@ import net.fortuna.ical4j.model.property.DateProperty;
  */
 public class MSOlkOriginalEnd extends DateProperty {
 
+    private static final long serialVersionUID = -4581216613476177094L;
+
     public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALEND";
     
     public static final PropertyFactory FACTORY = new Factory();

@@ -44,7 +44,7 @@ public class LotusCharset extends Property {
 
     private static final long serialVersionUID = -3514682572599864426L;
 
-    private static final String NAME = "X-LOTUS-CHARSET";
+    public static final String PROPERTY_NAME = "X-LOTUS-CHARSET";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -56,7 +56,7 @@ public class LotusCharset extends Property {
      * @param factory
      */
     public LotusCharset(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -64,7 +64,7 @@ public class LotusCharset extends Property {
      * @param factory
      */
     public LotusCharset(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

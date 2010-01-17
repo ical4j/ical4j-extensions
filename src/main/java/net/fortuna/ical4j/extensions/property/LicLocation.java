@@ -44,7 +44,9 @@ import net.fortuna.ical4j.util.ParameterValidator;
  */
 public class LicLocation extends Property {
 
-    private static final String NAME = "X-LIC-LOCATION";
+    private static final long serialVersionUID = -9063118211308272499L;
+
+    public static final String PROPERTY_NAME = "X-LIC-LOCATION";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -54,7 +56,7 @@ public class LicLocation extends Property {
      * @param factory
      */
     public LicLocation(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -62,7 +64,7 @@ public class LicLocation extends Property {
      * @param factory
      */
     public LicLocation(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 

@@ -44,7 +44,7 @@ public class MicrosoftCdoAllDayEvent extends Property {
 
     private static final long serialVersionUID = -3514682572599864426L;
 
-    private static final String NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
     
     public static final PropertyFactory FACTORY = new Factory();
     
@@ -56,7 +56,7 @@ public class MicrosoftCdoAllDayEvent extends Property {
      * @param factory
      */
     public MicrosoftCdoAllDayEvent(PropertyFactory factory) {
-        super(NAME, factory);
+        super(PROPERTY_NAME, factory);
     }
 
     /**
@@ -64,7 +64,7 @@ public class MicrosoftCdoAllDayEvent extends Property {
      * @param factory
      */
     public MicrosoftCdoAllDayEvent(ParameterList aList, PropertyFactory factory, String value) {
-        super(NAME, aList, factory);
+        super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
 
