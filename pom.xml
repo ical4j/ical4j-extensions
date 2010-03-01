@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>modularity-parent</artifactId>
 		<groupId>net.modularity</groupId>
-		<version>1.0.8-SNAPSHOT</version>
+		<version>1.0.9</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.fortuna.ical4j</groupId>
@@ -34,18 +34,6 @@
 	
 	<build>
 		<plugins>
-			<plugin>   
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>net.fortuna.ical4j.vcard.*</Export-Package>
-						<Import-Package>net.fortuna.ical4j.*,org.apache.commons.lang.*,org.apache.commons.logging,*;resolution:=optional</Import-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clover-plugin</artifactId>
@@ -82,21 +70,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-	        <plugin>
-	            <groupId>org.codehaus.groovy.maven</groupId>
-	            <artifactId>gmaven-plugin</artifactId>
-	            <executions>
-	                <execution>
-	                    <goals>
-	                        <goal>generateStubs</goal>
-	                        <goal>compile</goal>
-	                        <goal>generateTestStubs</goal>
-	                        <goal>testCompile</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-	        </plugin>
 		</plugins>
 	</build>
 	
@@ -104,7 +77,7 @@
 		<dependency>
 			<groupId>net.fortuna.ical4j</groupId>
 			<artifactId>ical4j</artifactId>
-			<version>1.0-rc3-SNAPSHOT</version>
+			<version>1.0-rc3</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -117,6 +90,28 @@
 	</dependencies>
 
 	<repositories>
+		<repository>
+			<id>modularity-releases</id>
+			<name>Modularity Maven Repository</name>
+			<url>http://m2.modularity.net.au/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>modularity-snapshots</id>
+			<name>Modularity Snapshot Repository</name>
+			<url>http://m2.modularity.net.au/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<reporting>
