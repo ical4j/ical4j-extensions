@@ -10,7 +10,7 @@
 	<artifactId>ical4j-extensions</artifactId>
 	<packaging>bundle</packaging>
 	<name>iCal4j Extensions</name>
-	<version>0.9</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<description>Support for additional non-standard iCalendar objects</description>
 	<url>http://ical4j.sourceforge.net</url>
 	<issueManagement>
@@ -30,7 +30,6 @@
 		<connection>scm:cvs:pserver:anonymous:@ical4j.cvs.sourceforge.net:/cvsroot/ical4j:ical4j-extensions</connection>
 		<developerConnection>scm:cvs:ext:fortuna@ical4j.cvs.sourceforge.net:/cvsroot/ical4j:ical4j-extensions</developerConnection>
 		<url>http://ical4j.cvs.sourceforge.net/ical4j/ical4j-extensions</url>
-    <tag>ical4j-extensions-0_9</tag>
   </scm>
 	
 	<build>
