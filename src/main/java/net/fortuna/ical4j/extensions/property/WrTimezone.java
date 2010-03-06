@@ -93,6 +93,14 @@ public class WrTimezone extends Property {
         return value;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isCalendarProperty() {
+        return true;
+    }
+
     private static class Factory implements PropertyFactory {
 
         private static final long serialVersionUID = 3538377735326578201L;
