@@ -93,6 +93,14 @@ public class WrRelCalId extends Property {
         return value;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isCalendarProperty() {
+        return true;
+    }
+
     private static class Factory implements PropertyFactory {
 
         private static final long serialVersionUID = -6362745894043821710L;

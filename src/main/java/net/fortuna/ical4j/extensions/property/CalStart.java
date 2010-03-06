@@ -77,6 +77,14 @@ public class CalStart extends UtcProperty {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isCalendarProperty() {
+        return true;
+    }
+
     private static class Factory implements PropertyFactory {
         
         private static final long serialVersionUID = 596282786680252116L;
