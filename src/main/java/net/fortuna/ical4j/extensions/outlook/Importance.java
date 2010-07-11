@@ -29,33 +29,33 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.outlook;
 
+import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class GwItemType extends Property {
+public class Importance extends Property {
 
-    private static final long serialVersionUID = 359692381730081304L;
+    private static final long serialVersionUID = 3044453382694356302L;
 
-    public static final String PROPERTY_NAME = "X-GWITEM-TYPE";
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-IMPORTANCE";
     
     public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final GwItemType APPOINTMENT = new GwItemType(new ParameterList(true), FACTORY, "APPOINTMENT");
     
     private String value;
     
     /**
      * @param factory
      */
-    public GwItemType(PropertyFactory factory) {
+    public Importance(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class GwItemType extends Property {
      * @param aList
      * @param factory
      */
-    public GwItemType(ParameterList aList, PropertyFactory factory, String value) {
+    public Importance(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -81,8 +81,8 @@ public class GwItemType extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        // TODO Auto-generated method stub
-
+        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
+                getParameters());
     }
 
     /**
@@ -96,17 +96,11 @@ public class GwItemType extends Property {
     private static class Factory implements PropertyFactory {
 
         public Property createProperty(String name) {
-            return new GwItemType(this);
+            return new Importance(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            GwItemType property = null;
-            if (APPOINTMENT.getValue().equals(value)) {
-                property = APPOINTMENT;
-            }
-            else {
-                property = new GwItemType(parameters, this, value);
-            }
+            Importance property = new Importance(parameters, this, value);
             return property;
         }
     }

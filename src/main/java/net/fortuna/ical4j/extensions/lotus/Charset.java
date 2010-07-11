@@ -29,33 +29,33 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.lotus;
 
-import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
-import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class GwAutodateKey extends Property {
+public class Charset extends Property {
 
-    private static final long serialVersionUID = -4722251591472186896L;
+    private static final long serialVersionUID = -3514682572599864426L;
 
-    public static final String PROPERTY_NAME = "X-GWAUTODATE-KEY";
+    public static final String PROPERTY_NAME = "X-LOTUS-CHARSET";
     
     public static final PropertyFactory FACTORY = new Factory();
+    
+    public static final Charset UTF8 = new Charset(new ParameterList(true), FACTORY, "UTF-8");
     
     private String value;
     
     /**
      * @param factory
      */
-    public GwAutodateKey(PropertyFactory factory) {
+    public Charset(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class GwAutodateKey extends Property {
      * @param aList
      * @param factory
      */
-    public GwAutodateKey(ParameterList aList, PropertyFactory factory, String value) {
+    public Charset(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -81,8 +81,8 @@ public class GwAutodateKey extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
-                getParameters());
+        // TODO Auto-generated method stub
+
     }
 
     /**
@@ -94,13 +94,21 @@ public class GwAutodateKey extends Property {
     }
 
     private static class Factory implements PropertyFactory {
+        
+        private static final long serialVersionUID = 596282786680252116L;
 
         public Property createProperty(String name) {
-            return new GwAutodateKey(this);
+            return new Charset(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            GwAutodateKey property = new GwAutodateKey(parameters, this, value);
+            Charset property = null;
+            if (UTF8.getValue().equals(value)) {
+                property = UTF8;
+            }
+            else {
+                property = new Charset(parameters, this, value);
+            }
             return property;
         }
     }

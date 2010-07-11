@@ -29,7 +29,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.groupwise;
 
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
@@ -42,7 +42,7 @@ import net.fortuna.ical4j.util.ParameterValidator;
  * @author fortuna
  *
  */
-public class GwMessageId extends Property {
+public class MessageId extends Property {
 
     private static final long serialVersionUID = -7910360817210293089L;
 
@@ -55,7 +55,7 @@ public class GwMessageId extends Property {
     /**
      * @param factory
      */
-    public GwMessageId(PropertyFactory factory) {
+    public MessageId(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class GwMessageId extends Property {
      * @param aList
      * @param factory
      */
-    public GwMessageId(ParameterList aList, PropertyFactory factory, String value) {
+    public MessageId(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -95,12 +95,14 @@ public class GwMessageId extends Property {
 
     private static class Factory implements PropertyFactory {
 
+        private static final long serialVersionUID = 1L;
+
         public Property createProperty(String name) {
-            return new GwMessageId(this);
+            return new MessageId(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            GwMessageId property = new GwMessageId(parameters, this, value);
+            MessageId property = new MessageId(parameters, this, value);
             return property;
         }
     }

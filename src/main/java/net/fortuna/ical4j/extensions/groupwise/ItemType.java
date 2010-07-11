@@ -29,7 +29,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.groupwise;
 
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
@@ -40,20 +40,22 @@ import net.fortuna.ical4j.model.ValidationException;
  * @author fortuna
  *
  */
-public class LotusUpdateSubject extends Property {
+public class ItemType extends Property {
 
-    private static final long serialVersionUID = -615091328274504900L;
+    private static final long serialVersionUID = 359692381730081304L;
 
-    public static final String PROPERTY_NAME = "X-LOTUS-UPDATE-SUBJECT";
+    public static final String PROPERTY_NAME = "X-GWITEM-TYPE";
     
     public static final PropertyFactory FACTORY = new Factory();
+    
+    public static final ItemType APPOINTMENT = new ItemType(new ParameterList(true), FACTORY, "APPOINTMENT");
     
     private String value;
     
     /**
      * @param factory
      */
-    public LotusUpdateSubject(PropertyFactory factory) {
+    public ItemType(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -61,7 +63,7 @@ public class LotusUpdateSubject extends Property {
      * @param aList
      * @param factory
      */
-    public LotusUpdateSubject(ParameterList aList, PropertyFactory factory, String value) {
+    public ItemType(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -79,6 +81,8 @@ public class LotusUpdateSubject extends Property {
      */
     @Override
     public void validate() throws ValidationException {
+        // TODO Auto-generated method stub
+
     }
 
     /**
@@ -91,14 +95,20 @@ public class LotusUpdateSubject extends Property {
 
     private static class Factory implements PropertyFactory {
 
-        private static final long serialVersionUID = 2326651749315407915L;
+        private static final long serialVersionUID = 1L;
 
         public Property createProperty(String name) {
-            return new LotusUpdateSubject(this);
+            return new ItemType(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            LotusUpdateSubject property = new LotusUpdateSubject(parameters, this, value);
+            ItemType property = null;
+            if (APPOINTMENT.getValue().equals(value)) {
+                property = APPOINTMENT;
+            }
+            else {
+                property = new ItemType(parameters, this, value);
+            }
             return property;
         }
     }

@@ -29,41 +29,39 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
-
-import java.text.ParseException;
+package net.fortuna.ical4j.extensions.lotus;
 
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
-import net.fortuna.ical4j.model.property.DateProperty;
 
 /**
  * @author fortuna
  *
  */
-public class MSOlkOriginalStart extends DateProperty {
+public class UpdateSubject extends Property {
 
-    private static final long serialVersionUID = -2369374600955575062L;
+    private static final long serialVersionUID = -615091328274504900L;
 
-    public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALSTART";
+    public static final String PROPERTY_NAME = "X-LOTUS-UPDATE-SUBJECT";
     
     public static final PropertyFactory FACTORY = new Factory();
+    
+    private String value;
     
     /**
      * @param factory
      */
-    public MSOlkOriginalStart(PropertyFactory factory) {
+    public UpdateSubject(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
     /**
      * @param aList
      * @param factory
-     * @throws ParseException 
      */
-    public MSOlkOriginalStart(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
+    public UpdateSubject(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -72,21 +70,35 @@ public class MSOlkOriginalStart extends DateProperty {
      * {@inheritDoc}
      */
     @Override
-    public void validate() throws ValidationException {
-        // TODO Auto-generated method stub
+    public void setValue(String aValue) {
+        this.value = aValue;
+    }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validate() throws ValidationException {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getValue() {
+        return value;
     }
 
     private static class Factory implements PropertyFactory {
-        
-        private static final long serialVersionUID = 596282786680252116L;
+
+        private static final long serialVersionUID = 2326651749315407915L;
 
         public Property createProperty(String name) {
-            return new MSOlkOriginalStart(this);
+            return new UpdateSubject(this);
         }
         
-        public Property createProperty(String name, ParameterList parameters, String value) throws ParseException {
-            MSOlkOriginalStart property = new MSOlkOriginalStart(parameters, this, value);
+        public Property createProperty(String name, ParameterList parameters, String value) {
+            UpdateSubject property = new UpdateSubject(parameters, this, value);
             return property;
         }
     }

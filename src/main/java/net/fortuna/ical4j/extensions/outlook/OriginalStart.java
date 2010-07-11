@@ -29,41 +29,41 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.Parameter;
+import java.text.ParseException;
+
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
-import net.fortuna.ical4j.util.ParameterValidator;
+import net.fortuna.ical4j.model.property.DateProperty;
 
 /**
  * @author fortuna
  *
  */
-public class MicrosoftCdoImportance extends Property {
+public class OriginalStart extends DateProperty {
 
-    private static final long serialVersionUID = 3044453382694356302L;
+    private static final long serialVersionUID = -2369374600955575062L;
 
-    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-IMPORTANCE";
+    public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALSTART";
     
     public static final PropertyFactory FACTORY = new Factory();
-    
-    private String value;
     
     /**
      * @param factory
      */
-    public MicrosoftCdoImportance(PropertyFactory factory) {
+    public OriginalStart(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
     /**
      * @param aList
      * @param factory
+     * @throws ParseException 
      */
-    public MicrosoftCdoImportance(ParameterList aList, PropertyFactory factory, String value) {
+    public OriginalStart(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -72,35 +72,21 @@ public class MicrosoftCdoImportance extends Property {
      * {@inheritDoc}
      */
     @Override
-    public void setValue(String aValue) {
-        this.value = aValue;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public void validate() throws ValidationException {
-        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
-                getParameters());
-    }
+        // TODO Auto-generated method stub
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getValue() {
-        return value;
     }
 
     private static class Factory implements PropertyFactory {
+        
+        private static final long serialVersionUID = 596282786680252116L;
 
         public Property createProperty(String name) {
-            return new MicrosoftCdoImportance(this);
+            return new OriginalStart(this);
         }
         
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            MicrosoftCdoImportance property = new MicrosoftCdoImportance(parameters, this, value);
+        public Property createProperty(String name, ParameterList parameters, String value) throws ParseException {
+            OriginalStart property = new OriginalStart(parameters, this, value);
             return property;
         }
     }
