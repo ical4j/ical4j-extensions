@@ -29,7 +29,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.groupwise;
 
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
@@ -40,7 +40,7 @@ import net.fortuna.ical4j.model.ValidationException;
  * @author fortuna
  *
  */
-public class GwShowAs extends Property {
+public class ShowAs extends Property {
 
     private static final long serialVersionUID = 1777126874405580074L;
 
@@ -48,14 +48,14 @@ public class GwShowAs extends Property {
     
     public static final PropertyFactory FACTORY = new Factory();
     
-    public static final GwShowAs BUSY = new GwShowAs(new ParameterList(true), FACTORY, "BUSY");
+    public static final ShowAs BUSY = new ShowAs(new ParameterList(true), FACTORY, "BUSY");
     
     private String value;
     
     /**
      * @param factory
      */
-    public GwShowAs(PropertyFactory factory) {
+    public ShowAs(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class GwShowAs extends Property {
      * @param aList
      * @param factory
      */
-    public GwShowAs(ParameterList aList, PropertyFactory factory, String value) {
+    public ShowAs(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -95,17 +95,19 @@ public class GwShowAs extends Property {
 
     private static class Factory implements PropertyFactory {
 
+        private static final long serialVersionUID = 1L;
+
         public Property createProperty(String name) {
-            return new GwShowAs(this);
+            return new ShowAs(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            GwShowAs property = null;
+            ShowAs property = null;
             if (BUSY.getValue().equals(value)) {
                 property = BUSY;
             }
             else {
-                property = new GwShowAs(parameters, this, value);
+                property = new ShowAs(parameters, this, value);
             }
             return property;
         }

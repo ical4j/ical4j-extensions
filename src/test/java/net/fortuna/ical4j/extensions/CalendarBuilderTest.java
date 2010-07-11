@@ -41,8 +41,8 @@ import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.data.CalendarParser;
 import net.fortuna.ical4j.data.CalendarParserFactory;
 import net.fortuna.ical4j.data.ParserException;
-import net.fortuna.ical4j.extensions.property.MSOlkOriginalEnd;
-import net.fortuna.ical4j.extensions.property.MSOlkOriginalStart;
+import net.fortuna.ical4j.extensions.outlook.OriginalEnd;
+import net.fortuna.ical4j.extensions.outlook.OriginalStart;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.ParameterFactoryRegistry;
 import net.fortuna.ical4j.model.PropertyFactoryRegistry;
@@ -81,8 +81,8 @@ public class CalendarBuilderTest {
         CalendarParser parser = CalendarParserFactory.getInstance().createParser();
         
         PropertyFactoryRegistry propertyFactoryRegistry = new PropertyFactoryRegistry();
-        propertyFactoryRegistry.register(MSOlkOriginalStart.PROPERTY_NAME, MSOlkOriginalStart.FACTORY);
-        propertyFactoryRegistry.register(MSOlkOriginalEnd.PROPERTY_NAME, MSOlkOriginalEnd.FACTORY);
+        propertyFactoryRegistry.register(OriginalStart.PROPERTY_NAME, OriginalStart.FACTORY);
+        propertyFactoryRegistry.register(OriginalEnd.PROPERTY_NAME, OriginalEnd.FACTORY);
         
         ParameterFactoryRegistry parameterFactoryRegistry = new ParameterFactoryRegistry();
         

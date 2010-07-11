@@ -29,33 +29,33 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.outlook;
 
+import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class MicrosoftCdoBusyStatus extends Property {
+public class InstType extends Property {
 
-    private static final long serialVersionUID = -3514682572599864426L;
+    private static final long serialVersionUID = -3495027929173808410L;
 
-    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-BUSYSTATUS";
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-INSTTYPE";
     
     public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final MicrosoftCdoBusyStatus BUSY = new MicrosoftCdoBusyStatus(new ParameterList(true), FACTORY, "BUSY");
     
     private String value;
     
     /**
      * @param factory
      */
-    public MicrosoftCdoBusyStatus(PropertyFactory factory) {
+    public InstType(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class MicrosoftCdoBusyStatus extends Property {
      * @param aList
      * @param factory
      */
-    public MicrosoftCdoBusyStatus(ParameterList aList, PropertyFactory factory, String value) {
+    public InstType(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -81,8 +81,8 @@ public class MicrosoftCdoBusyStatus extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        // TODO Auto-generated method stub
-
+        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
+                getParameters());
     }
 
     /**
@@ -94,21 +94,15 @@ public class MicrosoftCdoBusyStatus extends Property {
     }
 
     private static class Factory implements PropertyFactory {
-        
-        private static final long serialVersionUID = 596282786680252116L;
+
+        private static final long serialVersionUID = 1L;
 
         public Property createProperty(String name) {
-            return new MicrosoftCdoBusyStatus(this);
+            return new InstType(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            MicrosoftCdoBusyStatus property = null;
-            if (BUSY.getValue().equals(value)) {
-                property = BUSY;
-            }
-            else {
-                property = new MicrosoftCdoBusyStatus(parameters, this, value);
-            }
+            InstType property = new InstType(parameters, this, value);
             return property;
         }
     }

@@ -29,33 +29,33 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
-import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class GwRecordId extends Property {
+public class BusyStatus extends Property {
 
-    private static final long serialVersionUID = -3377034395408250616L;
+    private static final long serialVersionUID = -3514682572599864426L;
 
-    public static final String PROPERTY_NAME = "X-RECORDID";
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-BUSYSTATUS";
     
     public static final PropertyFactory FACTORY = new Factory();
+    
+    public static final BusyStatus BUSY = new BusyStatus(new ParameterList(true), FACTORY, "BUSY");
     
     private String value;
     
     /**
      * @param factory
      */
-    public GwRecordId(PropertyFactory factory) {
+    public BusyStatus(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class GwRecordId extends Property {
      * @param aList
      * @param factory
      */
-    public GwRecordId(ParameterList aList, PropertyFactory factory, String value) {
+    public BusyStatus(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -81,8 +81,8 @@ public class GwRecordId extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
-                getParameters());
+        // TODO Auto-generated method stub
+
     }
 
     /**
@@ -94,13 +94,21 @@ public class GwRecordId extends Property {
     }
 
     private static class Factory implements PropertyFactory {
+        
+        private static final long serialVersionUID = 596282786680252116L;
 
         public Property createProperty(String name) {
-            return new GwRecordId(this);
+            return new BusyStatus(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            GwRecordId property = new GwRecordId(parameters, this, value);
+            BusyStatus property = null;
+            if (BUSY.getValue().equals(value)) {
+                property = BUSY;
+            }
+            else {
+                property = new BusyStatus(parameters, this, value);
+            }
             return property;
         }
     }

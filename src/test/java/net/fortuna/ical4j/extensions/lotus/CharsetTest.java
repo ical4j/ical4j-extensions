@@ -29,7 +29,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.lotus;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -44,11 +44,11 @@ import org.junit.Test;
  * @author fortuna
  *
  */
-public class LotusCharsetTest {
+public class CharsetTest {
 
     @Test
     public void testFactoryUTF8() throws IOException, URISyntaxException, ParseException {
-        LotusCharset property = (LotusCharset) LotusCharset.FACTORY.createProperty(null, null, "UTF-8");
-        Assert.assertEquals(LotusCharset.UTF8, property);
+        Charset property = (Charset) Charset.FACTORY.createProperty(null, null, "UTF-8");
+        Assert.assertEquals(Charset.UTF8, property);
     }
 }

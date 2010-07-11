@@ -29,7 +29,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.outlook;
 
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
@@ -40,22 +40,22 @@ import net.fortuna.ical4j.model.ValidationException;
  * @author fortuna
  *
  */
-public class LotusCharset extends Property {
+public class AllDayEvent extends Property {
 
     private static final long serialVersionUID = -3514682572599864426L;
 
-    public static final String PROPERTY_NAME = "X-LOTUS-CHARSET";
+    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
     
     public static final PropertyFactory FACTORY = new Factory();
     
-    public static final LotusCharset UTF8 = new LotusCharset(new ParameterList(true), FACTORY, "UTF-8");
+    public static final AllDayEvent FALSE = new AllDayEvent(new ParameterList(true), FACTORY, "FALSE");
     
     private String value;
     
     /**
      * @param factory
      */
-    public LotusCharset(PropertyFactory factory) {
+    public AllDayEvent(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class LotusCharset extends Property {
      * @param aList
      * @param factory
      */
-    public LotusCharset(ParameterList aList, PropertyFactory factory, String value) {
+    public AllDayEvent(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -98,16 +98,16 @@ public class LotusCharset extends Property {
         private static final long serialVersionUID = 596282786680252116L;
 
         public Property createProperty(String name) {
-            return new LotusCharset(this);
+            return new AllDayEvent(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            LotusCharset property = null;
-            if (UTF8.getValue().equals(value)) {
-                property = UTF8;
+            AllDayEvent property = null;
+            if (FALSE.getValue().equals(value)) {
+                property = FALSE;
             }
             else {
-                property = new LotusCharset(parameters, this, value);
+                property = new AllDayEvent(parameters, this, value);
             }
             return property;
         }

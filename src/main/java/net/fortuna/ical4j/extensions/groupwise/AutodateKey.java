@@ -29,33 +29,33 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.groupwise;
 
+import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class MicrosoftCdoAllDayEvent extends Property {
+public class AutodateKey extends Property {
 
-    private static final long serialVersionUID = -3514682572599864426L;
+    private static final long serialVersionUID = -4722251591472186896L;
 
-    public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
+    public static final String PROPERTY_NAME = "X-GWAUTODATE-KEY";
     
     public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final MicrosoftCdoAllDayEvent FALSE = new MicrosoftCdoAllDayEvent(new ParameterList(true), FACTORY, "FALSE");
     
     private String value;
     
     /**
      * @param factory
      */
-    public MicrosoftCdoAllDayEvent(PropertyFactory factory) {
+    public AutodateKey(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
@@ -63,7 +63,7 @@ public class MicrosoftCdoAllDayEvent extends Property {
      * @param aList
      * @param factory
      */
-    public MicrosoftCdoAllDayEvent(ParameterList aList, PropertyFactory factory, String value) {
+    public AutodateKey(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -81,8 +81,8 @@ public class MicrosoftCdoAllDayEvent extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        // TODO Auto-generated method stub
-
+        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
+                getParameters());
     }
 
     /**
@@ -94,21 +94,15 @@ public class MicrosoftCdoAllDayEvent extends Property {
     }
 
     private static class Factory implements PropertyFactory {
-        
-        private static final long serialVersionUID = 596282786680252116L;
+
+        private static final long serialVersionUID = 1L;
 
         public Property createProperty(String name) {
-            return new MicrosoftCdoAllDayEvent(this);
+            return new AutodateKey(this);
         }
         
         public Property createProperty(String name, ParameterList parameters, String value) {
-            MicrosoftCdoAllDayEvent property = null;
-            if (FALSE.getValue().equals(value)) {
-                property = FALSE;
-            }
-            else {
-                property = new MicrosoftCdoAllDayEvent(parameters, this, value);
-            }
+            AutodateKey property = new AutodateKey(parameters, this, value);
             return property;
         }
     }

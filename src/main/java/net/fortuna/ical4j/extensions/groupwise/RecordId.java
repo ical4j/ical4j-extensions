@@ -29,41 +29,41 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.groupwise;
 
-import java.text.ParseException;
-
+import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.ValidationException;
-import net.fortuna.ical4j.model.property.DateProperty;
+import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
  *
  */
-public class MSOlkOriginalEnd extends DateProperty {
+public class RecordId extends Property {
 
-    private static final long serialVersionUID = -4581216613476177094L;
+    private static final long serialVersionUID = -3377034395408250616L;
 
-    public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALEND";
+    public static final String PROPERTY_NAME = "X-RECORDID";
     
     public static final PropertyFactory FACTORY = new Factory();
+    
+    private String value;
     
     /**
      * @param factory
      */
-    public MSOlkOriginalEnd(PropertyFactory factory) {
+    public RecordId(PropertyFactory factory) {
         super(PROPERTY_NAME, factory);
     }
 
     /**
      * @param aList
      * @param factory
-     * @throws ParseException 
      */
-    public MSOlkOriginalEnd(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
+    public RecordId(ParameterList aList, PropertyFactory factory, String value) {
         super(PROPERTY_NAME, aList, factory);
         setValue(value);
     }
@@ -72,21 +72,37 @@ public class MSOlkOriginalEnd extends DateProperty {
      * {@inheritDoc}
      */
     @Override
-    public void validate() throws ValidationException {
-        // TODO Auto-generated method stub
+    public void setValue(String aValue) {
+        this.value = aValue;
+    }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validate() throws ValidationException {
+        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
+                getParameters());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getValue() {
+        return value;
     }
 
     private static class Factory implements PropertyFactory {
-        
-        private static final long serialVersionUID = 596282786680252116L;
+
+        private static final long serialVersionUID = 1L;
 
         public Property createProperty(String name) {
-            return new MSOlkOriginalEnd(this);
+            return new RecordId(this);
         }
         
-        public Property createProperty(String name, ParameterList parameters, String value) throws ParseException {
-            MSOlkOriginalEnd property = new MSOlkOriginalEnd(parameters, this, value);
+        public Property createProperty(String name, ParameterList parameters, String value) {
+            RecordId property = new RecordId(parameters, this, value);
             return property;
         }
     }
