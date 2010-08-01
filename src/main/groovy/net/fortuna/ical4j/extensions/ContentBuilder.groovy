@@ -39,7 +39,11 @@ import net.fortuna.ical4j.extensions.property.WrCalNameFactory
  */
 public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
 
-    public ContentBuilder() {
+    public ContentBuilder(boolean init = true) {
+        super(init)
+    }
+    
+    def registerProperties() {
         // register property factories..
         registerFactory('wrcalname', new WrCalNameFactory())
     }
