@@ -43,7 +43,7 @@ public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
         super(init)
     }
     
-    def registerProperties() {
+    def registerExtendedProperties() {
         // register property factories..
         registerFactory('wrcalname', new WrCalNameFactory())
     }
