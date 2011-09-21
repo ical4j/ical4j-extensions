@@ -114,10 +114,12 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
 		</dependency>
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
+            <version>0.5-groovy-1.7</version>
             <scope>test</scope>
         </dependency>
 	</dependencies>
@@ -164,4 +166,9 @@
 	        </plugin>
 		</plugins>
 	</reporting>
+    
+    <properties>
+        <groovy.version>1.7.10</groovy.version>
+        <gmaven.version>1.3</gmaven.version>
+    </properties>
 </project>
