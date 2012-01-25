@@ -34,30 +34,6 @@
 	<build>
 		<plugins>
             <plugin>
-                <!-- Default to Java 5.. -->
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-					<compilerId>groovy-eclipse-compiler</compilerId>
-					<verbose>true</verbose>
-                </configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.codehaus.groovy</groupId>
-						<artifactId>groovy-eclipse-compiler</artifactId>
-						<version>[2.6.0-01,)</version>
-					</dependency>
-					<dependency>
-						<groupId>org.codehaus.groovy</groupId>
-						<artifactId>groovy-eclipse-batch</artifactId>
-						<version>1.7.10-06</version>
-					</dependency>
-				</dependencies>
-            </plugin>
-            
-            <plugin>
                 <groupId>com.mycila.maven-license-plugin</groupId>
                 <artifactId>maven-license-plugin</artifactId>
             </plugin>
@@ -130,8 +106,4 @@
 		</plugins>
 	</reporting>
     
-    <properties>
-        <groovy.version>1.7.10</groovy.version>
-        <spock.version>0.5-groovy-1.7</spock.version>
-    </properties>
 </project>
