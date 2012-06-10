@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>mnode-parent</artifactId>
 		<groupId>org.mnode</groupId>
-		<version>1.7</version>
+		<version>1.12</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mnode.ical4j</groupId>
@@ -49,6 +49,26 @@
 					</instructions>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-shared-resources</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<outputDirectory>${project.build.directory}/mnode-tools</outputDirectory>
+							<includeArtifacIds>mnode-tools</includeArtifacIds>
+							<includeGroupIds>${project.parent.groupId}</includeGroupIds>
+							<excludeTransitive>true</excludeTransitive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -93,6 +113,16 @@
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
             <scope>test</scope>
+        </dependency>
+		
+		<!-- Shared tool resources -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>mnode-tools</artifactId>
+            <version>${project.parent.version}</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
         </dependency>
 	</dependencies>
 
