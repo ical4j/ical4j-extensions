@@ -2,3 +2,5 @@
 /.classpath
 /.project
 /.settings
+.idea
+ical4j-extensions.iml
