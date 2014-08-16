@@ -1,3 +1,4 @@
+[![Build Status](https://drone.io/github.com/ical4j/ical4j-extensions/status.png)](https://drone.io/github.com/ical4j/ical4j-extensions/latest)
 
 Extensions
 ==========
