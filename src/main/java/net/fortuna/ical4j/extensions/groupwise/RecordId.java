@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.groupwise;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class RecordId extends Property {
 
     private static final long serialVersionUID = -3377034395408250616L;
 
     public static final String PROPERTY_NAME = "X-RECORDID";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public RecordId(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public RecordId() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public RecordId(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public RecordId(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,16 +84,16 @@ public class RecordId extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<RecordId> {
 
         private static final long serialVersionUID = 1L;
 
-        public Property createProperty(String name) {
-            return new RecordId(this);
+        public RecordId createProperty() {
+            return new RecordId();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            RecordId property = new RecordId(parameters, this, value);
+
+        public RecordId createProperty(ParameterList parameters, String value) {
+            RecordId property = new RecordId(parameters, value);
             return property;
         }
     }

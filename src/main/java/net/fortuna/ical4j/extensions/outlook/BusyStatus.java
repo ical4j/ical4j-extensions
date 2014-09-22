@@ -31,10 +31,7 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * @author fortuna
@@ -47,24 +44,22 @@ public class BusyStatus extends Property {
     public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-BUSYSTATUS";
     
     public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final BusyStatus BUSY = new BusyStatus(new ParameterList(true), FACTORY, "BUSY");
+
+    public static final BusyStatus BUSY = new BusyStatus(new ParameterList(true), "BUSY");
     
     private String value;
     
     /**
-     * @param factory
      */
-    public BusyStatus(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public BusyStatus() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public BusyStatus(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public BusyStatus(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,21 +88,21 @@ public class BusyStatus extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<BusyStatus> {
         
         private static final long serialVersionUID = 596282786680252116L;
 
-        public Property createProperty(String name) {
-            return new BusyStatus(this);
+        public BusyStatus createProperty() {
+            return new BusyStatus();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
+
+        public BusyStatus createProperty(ParameterList parameters, String value) {
             BusyStatus property = null;
             if (BUSY.getValue().equals(value)) {
                 property = BUSY;
             }
             else {
-                property = new BusyStatus(parameters, this, value);
+                property = new BusyStatus(parameters, value);
             }
             return property;
         }

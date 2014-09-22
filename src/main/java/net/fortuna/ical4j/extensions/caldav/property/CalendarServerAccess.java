@@ -31,100 +31,82 @@
  */
 package net.fortuna.ical4j.extensions.caldav.property;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.PropertyFactoryImpl;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * This property is a non-standard property for iCal Server/Calendar Server
- * 
- * @see <a href="http://svn.calendarserver.org/repository/calendarserver/CalendarServer/trunk/doc/Extensions/caldav-privateevents.txt">caldav-privateevents.txt</a>
- * 
- * @author probert
  *
+ * @author probert
+ * @see <a href="http://svn.calendarserver.org/repository/calendarserver/CalendarServer/trunk/doc/Extensions/caldav-privateevents.txt">caldav-privateevents.txt</a>
  */
 public class CalendarServerAccess extends Property {
 
-  private static final long serialVersionUID = 2182103734645261668L;
-  
-  public static final String PROPERTY_NAME = "X-CALENDARSERVER-ACCESS";
-  
-  private String value;
+    private static final long serialVersionUID = 2182103734645261668L;
 
-  public static final PropertyFactory FACTORY = new Factory();
-  
-  public static final CalendarServerAccess PUBLIC = new ImmutableCalendarServerAccess("PUBLIC", null);
-  
-  public static final CalendarServerAccess PRIVATE = new ImmutableCalendarServerAccess("PRIVATE", null);
-  
-  public static final CalendarServerAccess CONFIDENTIAL = new ImmutableCalendarServerAccess("CONFIDENTIAL", null);
+    public static final String PROPERTY_NAME = "X-CALENDARSERVER-ACCESS";
 
-  public static final CalendarServerAccess RESTRICTED = new ImmutableCalendarServerAccess("RESTRICTED", null);
-  
-  public CalendarServerAccess(PropertyFactory factory) {
-    super(PROPERTY_NAME, factory);
-  }
+    private String value;
 
-  public CalendarServerAccess(ParameterList aList, PropertyFactory factory, String value) {
-    super(PROPERTY_NAME, aList, factory);
-    setValue(value);
-  }
+    public static final CalendarServerAccess PUBLIC = new ImmutableCalendarServerAccess("PUBLIC");
 
-  public CalendarServerAccess(ParameterList aList, String aValue) {
-    super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
-    value = aValue;
-  }
+    public static final CalendarServerAccess PRIVATE = new ImmutableCalendarServerAccess("PRIVATE");
 
-  @Override
-  public void setValue(String aValue) {
-    this.value = aValue;
-  }
+    public static final CalendarServerAccess CONFIDENTIAL = new ImmutableCalendarServerAccess("CONFIDENTIAL");
 
-  @Override
-  public void validate() throws ValidationException {
-  }
+    public static final CalendarServerAccess RESTRICTED = new ImmutableCalendarServerAccess("RESTRICTED");
 
-  @Override
-  public String getValue() {
-    return value;
-  }
-  
-  private static final class ImmutableCalendarServerAccess extends CalendarServerAccess {
-    private static final long serialVersionUID = -2054338254L;
-
-    private ImmutableCalendarServerAccess(String value) {
-      super(new ParameterList(true), value);
+    public CalendarServerAccess() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
-    
+
+    public CalendarServerAccess(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        setValue(value);
+    }
+
+    @Override
     public void setValue(String aValue) {
-      throw new UnsupportedOperationException("Cannot modify constant instances");
-    }
-    
-    ImmutableCalendarServerAccess(String s, ImmutableCalendarServerAccess immutableclazz) {
-      this(s);
-    }
-  }
-
-  private static class Factory implements PropertyFactory {
-
-    private static final long serialVersionUID = 2099427445505899578L;
-
-    public Property createProperty(String name) {
-      return new CalendarServerAccess(this);
+        this.value = aValue;
     }
 
-    public Property createProperty(String name, ParameterList parameters, String value) {
-      CalendarServerAccess property = null;
-      if (PUBLIC.getValue().equals(value)) {
-        property = PUBLIC;
-      }
-      else {
-        property = new CalendarServerAccess(parameters, this, value);
-      }
-      return property;
+    @Override
+    public void validate() throws ValidationException {
     }
-  }
+
+    @Override
+    public String getValue() {
+        return value;
+    }
+
+    private static final class ImmutableCalendarServerAccess extends CalendarServerAccess {
+        private static final long serialVersionUID = -2054338254L;
+
+        private ImmutableCalendarServerAccess(String value) {
+            super(new ParameterList(true), value);
+        }
+
+        public void setValue(String aValue) {
+            throw new UnsupportedOperationException("Cannot modify constant instances");
+        }
+    }
+
+    public static class Factory extends Content.Factory implements PropertyFactory<CalendarServerAccess> {
+
+        private static final long serialVersionUID = 2099427445505899578L;
+
+        public CalendarServerAccess createProperty() {
+            return new CalendarServerAccess();
+        }
+
+        public CalendarServerAccess createProperty(ParameterList parameters, String value) {
+            CalendarServerAccess property = null;
+            if (PUBLIC.getValue().equals(value)) {
+                property = PUBLIC;
+            } else {
+                property = new CalendarServerAccess(parameters, value);
+            }
+            return property;
+        }
+    }
 
 }

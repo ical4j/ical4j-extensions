@@ -31,13 +31,10 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import java.text.ParseException;
-
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.model.property.DateProperty;
+
+import java.text.ParseException;
 
 /**
  * @author fortuna
@@ -48,23 +45,19 @@ public class OriginalEnd extends DateProperty {
     private static final long serialVersionUID = -4581216613476177094L;
 
     public static final String PROPERTY_NAME = "X-MS-OLK-ORIGINALEND";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     /**
-     * @param factory
      */
-    public OriginalEnd(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public OriginalEnd() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
-     * @throws ParseException 
+     * @throws ParseException
      */
-    public OriginalEnd(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, factory);
+    public OriginalEnd(ParameterList aList, String value) throws ParseException {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -77,16 +70,16 @@ public class OriginalEnd extends DateProperty {
 
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<OriginalEnd> {
         
         private static final long serialVersionUID = 596282786680252116L;
 
-        public Property createProperty(String name) {
-            return new OriginalEnd(this);
+        public OriginalEnd createProperty() {
+            return new OriginalEnd();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) throws ParseException {
-            OriginalEnd property = new OriginalEnd(parameters, this, value);
+
+        public OriginalEnd createProperty(ParameterList parameters, String value) throws ParseException {
+            OriginalEnd property = new OriginalEnd(parameters, value);
             return property;
         }
     }

@@ -31,40 +31,32 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * @author fortuna
- *
  */
 public class AllDayEvent extends Property {
 
     private static final long serialVersionUID = -3514682572599864426L;
 
     public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final AllDayEvent FALSE = new AllDayEvent(new ParameterList(true), FACTORY, "FALSE");
-    
+
+    public static final AllDayEvent FALSE = new AllDayEvent(new ParameterList(true), "FALSE");
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public AllDayEvent(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public AllDayEvent() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public AllDayEvent(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public AllDayEvent(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,21 +85,20 @@ public class AllDayEvent extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
-        
+    public static class Factory extends Content.Factory implements PropertyFactory<AllDayEvent> {
+
         private static final long serialVersionUID = 596282786680252116L;
 
-        public Property createProperty(String name) {
-            return new AllDayEvent(this);
+        public AllDayEvent createProperty() {
+            return new AllDayEvent();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
+
+        public AllDayEvent createProperty(ParameterList parameters, String value) {
             AllDayEvent property = null;
             if (FALSE.getValue().equals(value)) {
                 property = FALSE;
-            }
-            else {
-                property = new AllDayEvent(parameters, this, value);
+            } else {
+                property = new AllDayEvent(parameters, value);
             }
             return property;
         }

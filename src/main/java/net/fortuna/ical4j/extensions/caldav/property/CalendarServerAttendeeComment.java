@@ -33,86 +33,72 @@ package net.fortuna.ical4j.extensions.caldav.property;
 
 import net.fortuna.ical4j.extensions.caldav.parameter.CalendarServerAttendeeRef;
 import net.fortuna.ical4j.extensions.caldav.parameter.CalendarServerDtStamp;
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.PropertyFactoryImpl;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * This property is a non-standard property for iCal Server/Calendar Server
- * 
- * @see <a href="http://svn.calendarserver.org/repository/calendarserver/CalendarServer/trunk/doc/Extensions/caldav-privatecomments.txt">caldav-privatecomments.txt</a>
- * 
- * @author probert
  *
+ * @author probert
+ * @see <a href="http://svn.calendarserver.org/repository/calendarserver/CalendarServer/trunk/doc/Extensions/caldav-privatecomments.txt">caldav-privatecomments.txt</a>
  */
 public class CalendarServerAttendeeComment extends Property {
 
-  private static final long serialVersionUID = 2182103734645261668L;
-  
-  public static final String PROPERTY_NAME = "X-CALENDARSERVER-ATTENDEE-COMMENT";
-  
-  private String value;
+    private static final long serialVersionUID = 2182103734645261668L;
 
-  public static final PropertyFactory FACTORY = new Factory();
-    
-  public CalendarServerAttendeeComment(PropertyFactory factory) {
-    super(PROPERTY_NAME, factory);
-  }
+    public static final String PROPERTY_NAME = "X-CALENDARSERVER-ATTENDEE-COMMENT";
 
-  public CalendarServerAttendeeComment(ParameterList aList, PropertyFactory factory, String value) {
-    super(PROPERTY_NAME, aList, factory);
-    setValue(value);
-  }
+    private String value;
 
-  public CalendarServerAttendeeComment(ParameterList aList, String aValue) {
-    super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
-    value = aValue;
-  }
+    public CalendarServerAttendeeComment() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+    }
 
-  @Override
-  public void setValue(String aValue) {
-    this.value = aValue;
-  }
+    public CalendarServerAttendeeComment(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        setValue(value);
+    }
 
-  @Override
-  public void validate() throws ValidationException {
+    @Override
+    public void setValue(String aValue) {
+        this.value = aValue;
+    }
+
+    @Override
+    public void validate() throws ValidationException {
     /*
      * ; the following are REQUIRED,
      * ; but MUST occur only once
      */
-    ParameterValidator.getInstance().assertOne(CalendarServerDtStamp.PARAMETER_NAME,
-        getParameters());
+        ParameterValidator.getInstance().assertOne(CalendarServerDtStamp.PARAMETER_NAME,
+                getParameters());
 
     /*
      * ; the following are REQUIRED,
      * ; but MUST occur only once
      */
-    ParameterValidator.getInstance().assertOne(CalendarServerAttendeeRef.PARAMETER_NAME,
-        getParameters());
-  }
-
-  @Override
-  public String getValue() {
-    return value;
-  }
-
-  private static class Factory implements PropertyFactory {
-
-    private static final long serialVersionUID = 2099427445505899578L;
-
-    public Property createProperty(String name) {
-      return new CalendarServerAttendeeComment(this);
+        ParameterValidator.getInstance().assertOne(CalendarServerAttendeeRef.PARAMETER_NAME,
+                getParameters());
     }
 
-    public Property createProperty(String name, ParameterList parameters, String value) {
-      CalendarServerAttendeeComment property = null;
-      property = new CalendarServerAttendeeComment(parameters, this, value);
-      return property;
+    @Override
+    public String getValue() {
+        return value;
     }
-  }
+
+    public static class Factory extends Content.Factory implements PropertyFactory<CalendarServerAttendeeComment> {
+
+        private static final long serialVersionUID = 2099427445505899578L;
+
+        public CalendarServerAttendeeComment createProperty() {
+            return new CalendarServerAttendeeComment();
+        }
+
+        public CalendarServerAttendeeComment createProperty(ParameterList parameters, String value) {
+            CalendarServerAttendeeComment property = null;
+            property = new CalendarServerAttendeeComment(parameters, value);
+            return property;
+        }
+    }
 
 }

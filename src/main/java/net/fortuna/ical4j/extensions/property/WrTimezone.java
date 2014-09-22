@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class WrTimezone extends Property {
 
     private static final long serialVersionUID = 7248705823074186148L;
 
     public static final String PROPERTY_NAME = "X-WR-TIMEZONE";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public WrTimezone(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public WrTimezone() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public WrTimezone(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public WrTimezone(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -101,16 +92,16 @@ public class WrTimezone extends Property {
         return true;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<WrTimezone> {
 
         private static final long serialVersionUID = 3538377735326578201L;
 
-        public Property createProperty(String name) {
-            return new WrTimezone(this);
+        public WrTimezone createProperty() {
+            return new WrTimezone();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            WrTimezone property = new WrTimezone(parameters, this, value);
+
+        public WrTimezone createProperty(ParameterList parameters, String value) {
+            WrTimezone property = new WrTimezone(parameters, value);
             return property;
         }
     }

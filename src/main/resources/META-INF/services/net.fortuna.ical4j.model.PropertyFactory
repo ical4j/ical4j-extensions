@@ -1,0 +1,34 @@
+net.fortuna.ical4j.extensions.property.CalStart$Factory
+net.fortuna.ical4j.extensions.property.LicLocation$Factory
+net.fortuna.ical4j.extensions.property.WrAlarmId$Factory
+net.fortuna.ical4j.extensions.property.WrCalDesc$Factory
+net.fortuna.ical4j.extensions.property.WrCalName$Factory
+net.fortuna.ical4j.extensions.property.WrRelCalId$Factory
+net.fortuna.ical4j.extensions.property.WrTimezone$Factory
+
+# CalDAV
+net.fortuna.ical4j.extensions.caldav.property.AlarmAgent$Factory
+net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess$Factory
+net.fortuna.ical4j.extensions.caldav.property.CalendarServerAttendeeComment$Factory
+net.fortuna.ical4j.extensions.caldav.property.CalendarServerPrivateComment$Factory
+net.fortuna.ical4j.extensions.caldav.property.DefaultAlarm$Factory
+net.fortuna.ical4j.extensions.caldav.property.Proximity$Factory
+
+# Groupwise
+net.fortuna.ical4j.extensions.groupwise.AutodateKey$Factory
+net.fortuna.ical4j.extensions.groupwise.ItemType$Factory
+net.fortuna.ical4j.extensions.groupwise.MessageId$Factory
+net.fortuna.ical4j.extensions.groupwise.RecordId$Factory
+net.fortuna.ical4j.extensions.groupwise.ShowAs$Factory
+
+# Lotus Notes
+net.fortuna.ical4j.extensions.lotus.Charset$Factory
+net.fortuna.ical4j.extensions.lotus.UpdateSubject$Factory
+
+# MS Outlook
+net.fortuna.ical4j.extensions.outlook.AllDayEvent$Factory
+net.fortuna.ical4j.extensions.outlook.BusyStatus$Factory
+net.fortuna.ical4j.extensions.outlook.Importance$Factory
+net.fortuna.ical4j.extensions.outlook.InstType$Factory
+net.fortuna.ical4j.extensions.outlook.OriginalEnd$Factory
+net.fortuna.ical4j.extensions.outlook.OriginalStart$Factory

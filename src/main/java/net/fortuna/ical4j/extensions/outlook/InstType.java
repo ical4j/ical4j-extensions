@@ -31,11 +31,7 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
@@ -47,24 +43,20 @@ public class InstType extends Property {
     private static final long serialVersionUID = -3495027929173808410L;
 
     public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-INSTTYPE";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
     
     /**
-     * @param factory
      */
-    public InstType(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public InstType() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public InstType(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public InstType(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,16 +85,16 @@ public class InstType extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<InstType> {
 
         private static final long serialVersionUID = 1L;
 
-        public Property createProperty(String name) {
-            return new InstType(this);
+        public InstType createProperty() {
+            return new InstType();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            InstType property = new InstType(parameters, this, value);
+
+        public InstType createProperty(ParameterList parameters, String value) {
+            InstType property = new InstType(parameters, value);
             return property;
         }
     }

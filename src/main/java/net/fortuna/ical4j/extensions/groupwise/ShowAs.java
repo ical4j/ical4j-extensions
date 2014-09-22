@@ -31,40 +31,32 @@
  */
 package net.fortuna.ical4j.extensions.groupwise;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * @author fortuna
- *
  */
 public class ShowAs extends Property {
 
     private static final long serialVersionUID = 1777126874405580074L;
 
     public static final String PROPERTY_NAME = "X-GWSHOW-AS";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final ShowAs BUSY = new ShowAs(new ParameterList(true), FACTORY, "BUSY");
-    
+
+    public static final ShowAs BUSY = new ShowAs(new ParameterList(true), "BUSY");
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public ShowAs(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public ShowAs() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public ShowAs(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public ShowAs(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,21 +85,20 @@ public class ShowAs extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<ShowAs> {
 
         private static final long serialVersionUID = 1L;
 
-        public Property createProperty(String name) {
-            return new ShowAs(this);
+        public ShowAs createProperty() {
+            return new ShowAs();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
+
+        public ShowAs createProperty(ParameterList parameters, String value) {
             ShowAs property = null;
             if (BUSY.getValue().equals(value)) {
                 property = BUSY;
-            }
-            else {
-                property = new ShowAs(parameters, this, value);
+            } else {
+                property = new ShowAs(parameters, value);
             }
             return property;
         }

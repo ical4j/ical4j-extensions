@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class WrRelCalId extends Property {
 
     private static final long serialVersionUID = 1102593718257055628L;
 
     public static final String PROPERTY_NAME = "X-WR-RELCALID";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public WrRelCalId(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public WrRelCalId() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public WrRelCalId(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public WrRelCalId(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -101,16 +92,16 @@ public class WrRelCalId extends Property {
         return true;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<WrRelCalId> {
 
         private static final long serialVersionUID = -6362745894043821710L;
 
-        public Property createProperty(String name) {
-            return new WrRelCalId(this);
+        public WrRelCalId createProperty() {
+            return new WrRelCalId();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            WrRelCalId property = new WrRelCalId(parameters, this, value);
+
+        public WrRelCalId createProperty(ParameterList parameters, String value) {
+            WrRelCalId property = new WrRelCalId(parameters, value);
             return property;
         }
     }

@@ -31,40 +31,32 @@
  */
 package net.fortuna.ical4j.extensions.groupwise;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * @author fortuna
- *
  */
 public class ItemType extends Property {
 
     private static final long serialVersionUID = 359692381730081304L;
 
     public static final String PROPERTY_NAME = "X-GWITEM-TYPE";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final ItemType APPOINTMENT = new ItemType(new ParameterList(true), FACTORY, "APPOINTMENT");
-    
+
+    public static final ItemType APPOINTMENT = new ItemType(new ParameterList(true), "APPOINTMENT");
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public ItemType(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public ItemType() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public ItemType(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public ItemType(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,21 +85,20 @@ public class ItemType extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<ItemType> {
 
         private static final long serialVersionUID = 1L;
 
-        public Property createProperty(String name) {
-            return new ItemType(this);
+        public ItemType createProperty() {
+            return new ItemType();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
+
+        public ItemType createProperty(ParameterList parameters, String value) {
             ItemType property = null;
             if (APPOINTMENT.getValue().equals(value)) {
                 property = APPOINTMENT;
-            }
-            else {
-                property = new ItemType(parameters, this, value);
+            } else {
+                property = new ItemType(parameters, value);
             }
             return property;
         }

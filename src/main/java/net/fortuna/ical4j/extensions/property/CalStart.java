@@ -31,40 +31,32 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
-import java.text.ParseException;
-
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.model.property.UtcProperty;
+
+import java.text.ParseException;
 
 /**
  * @author fortuna
- *
  */
 public class CalStart extends UtcProperty {
 
     private static final long serialVersionUID = -1823078836099613956L;
 
     public static final String PROPERTY_NAME = "X-CALSTART";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     /**
-     * @param factory
      */
-    public CalStart(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public CalStart() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
-     * @throws ParseException 
+     * @throws ParseException
      */
-    public CalStart(ParameterList aList, PropertyFactory factory, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, factory);
+    public CalStart(ParameterList aList, String value) throws ParseException {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -85,16 +77,16 @@ public class CalStart extends UtcProperty {
         return true;
     }
 
-    private static class Factory implements PropertyFactory {
-        
+    public static class Factory extends Content.Factory implements PropertyFactory<CalStart> {
+
         private static final long serialVersionUID = 596282786680252116L;
 
-        public Property createProperty(String name) {
-            return new CalStart(this);
+        public CalStart createProperty() {
+            return new CalStart();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) throws ParseException {
-            CalStart property = new CalStart(parameters, this, value);
+
+        public CalStart createProperty(ParameterList parameters, String value) throws ParseException {
+            CalStart property = new CalStart(parameters, value);
             return property;
         }
     }

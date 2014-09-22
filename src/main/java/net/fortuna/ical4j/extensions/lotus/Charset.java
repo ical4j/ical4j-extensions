@@ -31,40 +31,32 @@
  */
 package net.fortuna.ical4j.extensions.lotus;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * @author fortuna
- *
  */
 public class Charset extends Property {
 
     private static final long serialVersionUID = -3514682572599864426L;
 
     public static final String PROPERTY_NAME = "X-LOTUS-CHARSET";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
-    public static final Charset UTF8 = new Charset(new ParameterList(true), FACTORY, "UTF-8");
-    
+
+    public static final Charset UTF8 = new Charset(new ParameterList(true), "UTF-8");
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public Charset(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public Charset() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public Charset(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public Charset(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,21 +85,20 @@ public class Charset extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
-        
+    public static class Factory extends Content.Factory implements PropertyFactory<Charset> {
+
         private static final long serialVersionUID = 596282786680252116L;
 
-        public Property createProperty(String name) {
-            return new Charset(this);
+        public Charset createProperty() {
+            return new Charset();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
+
+        public Charset createProperty(ParameterList parameters, String value) {
             Charset property = null;
             if (UTF8.getValue().equals(value)) {
                 property = UTF8;
-            }
-            else {
-                property = new Charset(parameters, this, value);
+            } else {
+                property = new Charset(parameters, value);
             }
             return property;
         }

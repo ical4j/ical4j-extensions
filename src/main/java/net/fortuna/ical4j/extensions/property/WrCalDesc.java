@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class WrCalDesc extends Property {
 
     private static final long serialVersionUID = 4925485073475375164L;
 
     public static final String PROPERTY_NAME = "X-WR-CALDESC";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public WrCalDesc(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public WrCalDesc() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public WrCalDesc(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public WrCalDesc(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -101,16 +92,16 @@ public class WrCalDesc extends Property {
         return true;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<WrCalDesc> {
 
         private static final long serialVersionUID = -7990613145503686965L;
 
-        public Property createProperty(String name) {
-            return new WrCalDesc(this);
+        public WrCalDesc createProperty() {
+            return new WrCalDesc();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            WrCalDesc property = new WrCalDesc(parameters, this, value);
+
+        public WrCalDesc createProperty(ParameterList parameters, String value) {
+            WrCalDesc property = new WrCalDesc(parameters, value);
             return property;
         }
     }

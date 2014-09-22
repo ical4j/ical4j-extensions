@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class WrCalName extends Property {
 
     private static final long serialVersionUID = 3529181417508181637L;
 
     public static final String PROPERTY_NAME = "X-WR-CALNAME";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public WrCalName(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public WrCalName() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public WrCalName(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public WrCalName(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -100,17 +91,17 @@ public class WrCalName extends Property {
     public boolean isCalendarProperty() {
         return true;
     }
-    
-    private static class Factory implements PropertyFactory {
+
+    public static class Factory extends Content.Factory implements PropertyFactory<WrCalName> {
 
         private static final long serialVersionUID = -202687610325706085L;
 
-        public Property createProperty(String name) {
-            return new WrCalName(this);
+        public WrCalName createProperty() {
+            return new WrCalName();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            WrCalName property = new WrCalName(parameters, this, value);
+
+        public WrCalName createProperty(ParameterList parameters, String value) {
+            WrCalName property = new WrCalName(parameters, value);
             return property;
         }
     }

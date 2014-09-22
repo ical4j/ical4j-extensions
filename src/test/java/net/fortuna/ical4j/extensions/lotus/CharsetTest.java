@@ -31,13 +31,12 @@
  */
 package net.fortuna.ical4j.extensions.lotus;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.ParseException;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
 
 
 /**
@@ -48,7 +47,7 @@ public class CharsetTest {
 
     @Test
     public void testFactoryUTF8() throws IOException, URISyntaxException, ParseException {
-        Charset property = (Charset) Charset.FACTORY.createProperty(null, null, "UTF-8");
+        Charset property = (Charset) new Charset.Factory().createProperty(null, "UTF-8");
         Assert.assertEquals(Charset.UTF8, property);
     }
 }

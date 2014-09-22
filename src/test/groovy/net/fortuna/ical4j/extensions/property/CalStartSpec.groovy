@@ -31,17 +31,17 @@
  */
 package net.fortuna.ical4j.extensions.property
 
-import net.fortuna.ical4j.model.ParameterList;
-import spock.lang.Specification;
+import net.fortuna.ical4j.model.ParameterList
+import spock.lang.Specification
 
 class CalStartSpec extends Specification {
 
-	def 'verify value'() {
-		expect:
-		new CalStart(new ParameterList(), null, value).value == expectedValue
-		
-		where:
-		value				| expectedValue
-		'20110101T120000'	| '20110101T120000'
-	}
+    def 'verify value'() {
+        expect:
+        new CalStart(new ParameterList(), value).value == expectedValue
+
+        where:
+        value             | expectedValue
+        '20110101T120000' | '20110101T120000'
+    }
 }

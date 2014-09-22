@@ -31,11 +31,7 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
@@ -47,24 +43,20 @@ public class Importance extends Property {
     private static final long serialVersionUID = 3044453382694356302L;
 
     public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-IMPORTANCE";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
     
     /**
-     * @param factory
      */
-    public Importance(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public Importance() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public Importance(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public Importance(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,14 +85,14 @@ public class Importance extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<Importance> {
 
-        public Property createProperty(String name) {
-            return new Importance(this);
+        public Importance createProperty() {
+            return new Importance();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            Importance property = new Importance(parameters, this, value);
+
+        public Importance createProperty(ParameterList parameters, String value) {
+            Importance property = new Importance(parameters, value);
             return property;
         }
     }

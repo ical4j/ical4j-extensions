@@ -31,7 +31,6 @@
  */
 package net.fortuna.ical4j.extensions.property
 
-import net.fortuna.ical4j.model.Parameter
 import net.fortuna.ical4j.model.ParameterList
 import net.fortuna.ical4j.model.property.AbstractPropertyFactory
 
@@ -49,21 +48,19 @@ public class CalStartFactory extends AbstractPropertyFactory {
         CalStart instance
         if (FactoryBuilderSupport.checkValueIsTypeNotString(value, name, CalStart.class)) {
             instance = (CalStart) value
-        }
-        else {
+        } else {
             String instanceValue = attributes.remove('value')
             if (instanceValue != null) {
                 attributes.put('value', instanceValue)
                 instance = super.newInstance(builder, name, value, attributes)
-            }
-            else {
+            } else {
                 instance = super.newInstance(builder, name, value, attributes)
             }
         }
         return instance
     }
-    
+
     protected Object newInstance(ParameterList parameters, String value) {
-        return new CalStart(parameters, null, value)
+        return new CalStart(parameters, value)
     }
 }

@@ -31,11 +31,7 @@
  */
 package net.fortuna.ical4j.extensions.caldav.property;
 
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.PropertyFactoryImpl;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 
 /**
  * New property as defined in a RFC draft
@@ -53,24 +49,17 @@ public class Proximity extends Property {
   
   private String value;
 
-  public static final PropertyFactory FACTORY = new Factory();
-  
-  public static final Proximity ARRIVE = new ImmutableProximity("ARRIVE", null);
-  
-  public static final Proximity DEPART = new ImmutableProximity("DEPART", null);
-    
-  public Proximity(PropertyFactory factory) {
-    super(PROPERTY_NAME, factory);
+    public static final Proximity ARRIVE = new ImmutableProximity("ARRIVE");
+
+    public static final Proximity DEPART = new ImmutableProximity("DEPART");
+
+    public Proximity() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
   }
 
-  public Proximity(ParameterList aList, PropertyFactory factory, String value) {
-    super(PROPERTY_NAME, aList, factory);
+    public Proximity(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
     setValue(value);
-  }
-
-  public Proximity(ParameterList aList, String aValue) {
-    super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
-    value = aValue;
   }
 
   @Override
@@ -97,27 +86,23 @@ public class Proximity extends Property {
     public void setValue(String aValue) {
       throw new UnsupportedOperationException("Cannot modify constant instances");
     }
-    
-    ImmutableProximity(String s, ImmutableProximity immutableclazz) {
-      this(s);
-    }
   }
 
-  private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<Proximity> {
 
     private static final long serialVersionUID = 2099427445505899578L;
 
-    public Property createProperty(String name) {
-      return new Proximity(this);
+        public Proximity createProperty() {
+            return new Proximity();
     }
 
-    public Property createProperty(String name, ParameterList parameters, String value) {
+        public Proximity createProperty(ParameterList parameters, String value) {
       Proximity property = null;
       if (DEPART.getValue().equals(value)) {
         property = DEPART;
       }
       else {
-        property = new Proximity(parameters, this, value);
+          property = new Proximity(parameters, value);
       }
       return property;
     }

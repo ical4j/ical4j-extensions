@@ -31,15 +31,13 @@
  */
 package net.fortuna.ical4j.extensions.property;
 
+import junit.framework.Assert;
+import net.fortuna.ical4j.model.ParameterList;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.ParseException;
-
-import net.fortuna.ical4j.model.ParameterList;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 
 /**
@@ -50,7 +48,7 @@ public class CalStartTest {
 
     @Test
     public void testFactoryCreate() throws IOException, URISyntaxException, ParseException {
-        CalStart property = (CalStart) CalStart.FACTORY.createProperty(null, new ParameterList(),
+        CalStart property = (CalStart) new CalStart.Factory().createProperty(new ParameterList(),
                 "20081030T193000Z");
         Assert.assertNotNull(property);
     }

@@ -31,40 +31,31 @@
  */
 package net.fortuna.ical4j.extensions.groupwise;
 
-import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
-import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.util.ParameterValidator;
 
 /**
  * @author fortuna
- *
  */
 public class MessageId extends Property {
 
     private static final long serialVersionUID = -7910360817210293089L;
 
     public static final String PROPERTY_NAME = "X-GWMESSAGEID";
-    
-    public static final PropertyFactory FACTORY = new Factory();
-    
+
     private String value;
-    
+
     /**
-     * @param factory
      */
-    public MessageId(PropertyFactory factory) {
-        super(PROPERTY_NAME, factory);
+    public MessageId() {
+        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
     }
 
     /**
      * @param aList
-     * @param factory
      */
-    public MessageId(ParameterList aList, PropertyFactory factory, String value) {
-        super(PROPERTY_NAME, aList, factory);
+    public MessageId(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
         setValue(value);
     }
 
@@ -93,16 +84,16 @@ public class MessageId extends Property {
         return value;
     }
 
-    private static class Factory implements PropertyFactory {
+    public static class Factory extends Content.Factory implements PropertyFactory<MessageId> {
 
         private static final long serialVersionUID = 1L;
 
-        public Property createProperty(String name) {
-            return new MessageId(this);
+        public MessageId createProperty() {
+            return new MessageId();
         }
-        
-        public Property createProperty(String name, ParameterList parameters, String value) {
-            MessageId property = new MessageId(parameters, this, value);
+
+        public MessageId createProperty(ParameterList parameters, String value) {
+            MessageId property = new MessageId(parameters, value);
             return property;
         }
     }

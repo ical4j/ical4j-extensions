@@ -31,7 +31,6 @@
  */
 package net.fortuna.ical4j.extensions.property
 
-import net.fortuna.ical4j.model.Parameter
 import net.fortuna.ical4j.model.ParameterList
 import net.fortuna.ical4j.model.property.AbstractPropertyFactory
 
@@ -49,21 +48,19 @@ public class LicLocationFactory extends AbstractPropertyFactory {
         LicLocation instance
         if (FactoryBuilderSupport.checkValueIsTypeNotString(value, name, LicLocation.class)) {
             instance = (LicLocation) value
-        }
-        else {
+        } else {
             String instanceValue = attributes.remove('value')
             if (instanceValue != null) {
                 attributes.put('value', instanceValue)
                 instance = super.newInstance(builder, name, value, attributes)
-            }
-            else {
+            } else {
                 instance = super.newInstance(builder, name, value, attributes)
             }
         }
         return instance
     }
-    
+
     protected Object newInstance(ParameterList parameters, String value) {
-        return new LicLocation(parameters, null, value)
+        return new LicLocation(parameters, value)
     }
 }
