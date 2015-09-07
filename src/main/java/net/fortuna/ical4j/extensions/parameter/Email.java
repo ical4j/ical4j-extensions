@@ -7,7 +7,6 @@ import net.fortuna.ical4j.model.ParameterFactoryImpl;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import java.net.URISyntaxException;
 
 /**
  * From specification:
@@ -48,6 +47,8 @@ import java.net.URISyntaxException;
  * </pre>
  */
 public class Email extends Parameter {
+
+    private static final long serialVersionUID = 1L;
 
     private static final String PARAMETER_NAME = "EMAIL";
 
