@@ -1,2 +1,5 @@
 # calext extensions
 net.fortuna.ical4j.extensions.parameter.Email$Factory
+net.fortuna.ical4j.extensions.parameter.Display$Factory
+net.fortuna.ical4j.extensions.parameter.Label$Factory
+net.fortuna.ical4j.extensions.parameter.Feature$Factory

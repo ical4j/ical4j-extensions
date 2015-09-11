@@ -12,7 +12,7 @@ import javax.mail.internet.InternetAddress;
  * From specification:
  *
  * <pre>
- *     Parameter Name:  EMAIL
+ *  Parameter Name:  EMAIL
  *
  *  Purpose:  To specify an email address that is used to identify or
  *  contact an organizer or attendee.
