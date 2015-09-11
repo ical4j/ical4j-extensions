@@ -11,7 +11,7 @@ class FeatureTest extends Specification {
 
     def 'assert value stored correctly'() {
         given: 'a feature value'
-        String featureValue = 'GRAPHIC,THUMBNAIL'
+        String featureValue = 'AUDIO,CHAT,FEED'
 
         when: 'a feature object is constructed'
         Feature feature = [featureValue]
@@ -29,6 +29,7 @@ PRODID:-//ABC Corporation//NONSGML My Product//EN
 BEGIN:VTODO
 CONFERENCE;VALUE=URI;FEATURE=AUDIO:rtsp://audio.example.com/
  event
+END:VTODO
 END:VCALENDAR
 '''
 

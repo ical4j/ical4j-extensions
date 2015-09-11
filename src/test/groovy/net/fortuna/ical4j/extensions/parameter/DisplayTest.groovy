@@ -29,6 +29,7 @@ PRODID:-//ABC Corporation//NONSGML My Product//EN
 BEGIN:VTODO
 IMAGE;VALUE=URI;DISPLAY=BADGE,THUMBNAIL,;FMTTYPE=image/png:http://exa
  mple.com/images/weather-cloudy.png
+END:VTODO
 END:VCALENDAR
 '''
 

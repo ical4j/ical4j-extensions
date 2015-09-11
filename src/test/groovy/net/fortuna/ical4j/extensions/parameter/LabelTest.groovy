@@ -27,9 +27,7 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//ABC Corporation//NONSGML My Product//EN
 BEGIN:VTODO
-CONFERENCE;VALUE=URI;FEATURE=VIDEO;
- LABEL="Web video chat, access code=76543";
- :http://video-chat.example.com/;group-id=1234
+CONFERENCE;VALUE=URI;FEATURE=VIDEO;LABEL="Web video chat, access code=76543":http://video-chat.example.com/;group-id=1234
 END:VTODO
 END:VCALENDAR
 '''
@@ -38,6 +36,6 @@ END:VCALENDAR
         Calendar calendar = new CalendarBuilder().build(new StringReader(calendarString))
 
         then: 'a valid calendar is realised'
-        calendar?.components[0].properties[0].getParameter('LABEL').value == 'Web video chat, access code=76543'
+        calendar?.components[0].properties[0].getParameter('LABEL').value == '"Web video chat, access code=76543"'
     }
 }
