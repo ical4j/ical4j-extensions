@@ -38,6 +38,9 @@ public class Conference extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Conference> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Conference createProperty() {
             return new Conference();

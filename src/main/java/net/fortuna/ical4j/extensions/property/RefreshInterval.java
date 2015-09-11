@@ -38,6 +38,9 @@ public class RefreshInterval extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<RefreshInterval> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public RefreshInterval createProperty() {
             return new RefreshInterval();

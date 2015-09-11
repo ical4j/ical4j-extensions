@@ -38,6 +38,9 @@ public class LastModified extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<LastModified> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public LastModified createProperty() {
             return new LastModified();

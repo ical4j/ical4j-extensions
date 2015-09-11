@@ -38,6 +38,9 @@ public class Description extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Description> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Description createProperty() {
             return new Description();

@@ -38,6 +38,9 @@ public class Color extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Color> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Color createProperty() {
             return new Color();

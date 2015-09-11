@@ -38,6 +38,9 @@ public class Source extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Source> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Source createProperty() {
             return new Source();

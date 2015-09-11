@@ -29,7 +29,8 @@ PRODID:-//ABC Corporation//NONSGML My Product//EN
 BEGIN:VTODO
 CONFERENCE;VALUE=URI;FEATURE=VIDEO;
  LABEL="Web video chat, access code=76543";
- :http://video-chat.example.com/;group-id=1234END:VTODO
+ :http://video-chat.example.com/;group-id=1234
+END:VTODO
 END:VCALENDAR
 '''
 

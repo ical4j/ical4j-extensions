@@ -38,6 +38,9 @@ public class Image extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Image> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Image createProperty() {
             return new Image();

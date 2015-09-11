@@ -38,6 +38,9 @@ public class Url extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Url> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Url createProperty() {
             return new Url();

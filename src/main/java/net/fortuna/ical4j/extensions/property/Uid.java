@@ -38,6 +38,9 @@ public class Uid extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Uid> {
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Uid createProperty() {
             return new Uid();
