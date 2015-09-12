@@ -7,6 +7,7 @@ net.fortuna.ical4j.extensions.property.WrRelCalId$Factory
 net.fortuna.ical4j.extensions.property.WrTimezone$Factory
 
 # CalDAV
+net.fortuna.ical4j.extensions.caldav.property.Acknowledged$Factory
 net.fortuna.ical4j.extensions.caldav.property.AlarmAgent$Factory
 net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess$Factory
 net.fortuna.ical4j.extensions.caldav.property.CalendarServerAttendeeComment$Factory
