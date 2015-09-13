@@ -7,17 +7,13 @@ net.fortuna.ical4j.extensions.property.WrRelCalId$Factory
 net.fortuna.ical4j.extensions.property.WrTimezone$Factory
 
 # calext extensions
-net.fortuna.ical4j.extensions.property.Categories$Factory
 net.fortuna.ical4j.extensions.property.Color$Factory
 net.fortuna.ical4j.extensions.property.Conference$Factory
-net.fortuna.ical4j.extensions.property.Description$Factory
 net.fortuna.ical4j.extensions.property.Image$Factory
-net.fortuna.ical4j.extensions.property.LastModified$Factory
 net.fortuna.ical4j.extensions.property.Name$Factory
 net.fortuna.ical4j.extensions.property.RefreshInterval$Factory
 net.fortuna.ical4j.extensions.property.Source$Factory
 net.fortuna.ical4j.extensions.property.Uid$Factory
-net.fortuna.ical4j.extensions.property.Url$Factory
 
 # CalDAV
 net.fortuna.ical4j.extensions.caldav.property.Acknowledged$Factory
