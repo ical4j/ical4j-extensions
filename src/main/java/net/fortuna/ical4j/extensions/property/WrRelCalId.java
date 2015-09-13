@@ -32,12 +32,14 @@
 package net.fortuna.ical4j.extensions.property;
 
 import net.fortuna.ical4j.model.*;
-import net.fortuna.ical4j.util.ParameterValidator;
+import net.fortuna.ical4j.model.property.CalendarProperty;
+import net.fortuna.ical4j.validate.ParameterValidator;
+import net.fortuna.ical4j.validate.ValidationException;
 
 /**
  * @author fortuna
  */
-public class WrRelCalId extends Property {
+public class WrRelCalId extends Property implements CalendarProperty {
 
     private static final long serialVersionUID = 1102593718257055628L;
 
@@ -82,14 +84,6 @@ public class WrRelCalId extends Property {
     @Override
     public String getValue() {
         return value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public boolean isCalendarProperty() {
-        return true;
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<WrRelCalId> {

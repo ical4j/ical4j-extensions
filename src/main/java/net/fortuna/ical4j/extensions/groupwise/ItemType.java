@@ -32,6 +32,7 @@
 package net.fortuna.ical4j.extensions.groupwise;
 
 import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.validate.ValidationException;
 
 /**
  * @author fortuna
