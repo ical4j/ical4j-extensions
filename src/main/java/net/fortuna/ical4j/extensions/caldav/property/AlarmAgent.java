@@ -33,7 +33,8 @@ package net.fortuna.ical4j.extensions.caldav.property;
 
 import net.fortuna.ical4j.extensions.caldav.parameter.AgentId;
 import net.fortuna.ical4j.model.*;
-import net.fortuna.ical4j.util.ParameterValidator;
+import net.fortuna.ical4j.validate.ParameterValidator;
+import net.fortuna.ical4j.validate.ValidationException;
 
 /**
  * ALARM-AGENT is a proposed (RFC draft) property for iCalendar

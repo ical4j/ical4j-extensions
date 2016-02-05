@@ -1,6 +1,7 @@
 package net.fortuna.ical4j.extensions.property;
 
 import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.validate.ValidationException;
 
 /**
  * Created by fortuna on 11/09/15.
