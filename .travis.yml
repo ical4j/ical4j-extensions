@@ -9,7 +9,7 @@ jdk:
   - oraclejdk7
   - openjdk7
 env:
-  - GRADLE_OPTS=-XX:MaxPermSize=256m ORG_GRADLE_PROJECT_systemProp.sonar.host.url=https://sonar.mnode.org
+  - GRADLE_OPTS=-XX:MaxPermSize=256m "ORG_GRADLE_PROJECT_systemProp.sonar.host.url"=https://sonar.mnode.org
 before_script:
   - sudo keytool -import -alias sonar -keystore $JAVA_HOME/jre/lib/security/cacerts -file sonar_cert.pem -storepass changeit -noprompt
 script:
