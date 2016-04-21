@@ -1,11 +1,22 @@
+# Required environment variables:
+#
+#  * ORG_GRADLE_PROJECT_systemProp.sonar.login=
+#  * ORG_GRADLE_PROJECT_systemProp.sonar.password=
+#
 language: java
 jdk:
-- oraclejdk8
-- oraclejdk7
-- openjdk7
-#- openjdk6
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+env:
+  - GRADLE_OPTS=-XX:MaxPermSize=256m
+  - ORG_GRADLE_PROJECT_systemProp.sonar.host.url=https://sonar.mnode.org
+before_script:
+  - sudo keytool -import -alias sonar -keystore $JAVA_HOME/jre/lib/security/cacerts -file sonar_cert.pem -storepass changeit -noprompt
+script:
+  - ./gradlew check sonarqube
 before_deploy: "./gradlew assembleDist"
-sudo: false
+sudo: true
 deploy:
   provider: releases
   api_key:
@@ -16,3 +27,5 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+addons:
+  hostname: travis-ci
