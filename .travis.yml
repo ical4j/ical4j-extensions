@@ -1,11 +1,22 @@
+# Required environment variables:
+#
+#  * ORG_GRADLE_PROJECT_systemProp.sonar.login=
+#  * ORG_GRADLE_PROJECT_systemProp.sonar.password=
+#
 language: java
 jdk:
-- oraclejdk8
-- oraclejdk7
-- openjdk7
-#- openjdk6
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+env:
+  global:
+    - GRADLE_OPTS="-XX:MaxPermSize=256m -Dsonar.host.url=https://sonar.mnode.org"
+before_script:
+  - sudo keytool -import -alias sonar -keystore $JAVA_HOME/jre/lib/security/cacerts -file sonar_cert.pem -storepass changeit -noprompt
+script:
+  - ./gradlew check sonarqube
 before_deploy: "./gradlew assembleDist"
-sudo: false
+sudo: true
 deploy:
   provider: releases
   api_key:
@@ -16,8 +27,9 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+addons:
+  hostname: travis-ci
 after_script:
   - sudo keytool -import -alias sonar -keystore $JAVA_HOME/jre/lib/security/cacerts -file sonar_cert.pem -storepass changeit -noprompt
   # Check if commit is not a pull request, if git repo is official, and if branch is master. If checks pass, run Sonar reports
   - "[[ $TRAVIS_PULL_REQUEST == false ]] && [[ $TRAVIS_REPO_SLUG == ical4j/ical4j-extensions ]] && [[ $TRAVIS_BRANCH == master ]] && ./gradlew sonarqube"
-
