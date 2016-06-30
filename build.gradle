@@ -55,6 +55,11 @@ scmVersion {
     tag {
         prefix = 'ical4j-extensions'
     }
+    versionCreator 'versionWithBranch'
+    nextVersion {
+        suffix = 'beta1'
+        separator = '-'
+    }
 }
 
 group = 'org.mnode.ical4j'
