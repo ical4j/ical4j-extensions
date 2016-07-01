@@ -3,6 +3,10 @@
 #  * ORG_GRADLE_PROJECT_systemProp.sonar.login=
 #  * ORG_GRADLE_PROJECT_systemProp.sonar.password=
 #
+cache:
+  directories:
+    - $HOME/.gradle
+    - $HOME/.sonar
 language: java
 jdk:
   - oraclejdk8
