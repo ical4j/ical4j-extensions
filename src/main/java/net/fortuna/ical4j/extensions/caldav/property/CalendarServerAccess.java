@@ -32,6 +32,7 @@
 package net.fortuna.ical4j.extensions.caldav.property;
 
 import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.validate.ValidationException;
 
 /**
  * This property is a non-standard property for iCal Server/Calendar Server
