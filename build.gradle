@@ -41,6 +41,14 @@ jar {
     from(project.rootDir) {
         include "LICENSE.txt"
     }
+    
+    manifest {
+        instruction 'Require-Capability', 'osgi.extender;filter:="(osgi.extender=osgi.serviceloader.registrar)"'
+        instruction 'Provide-Capability', '''osgi.serviceloader;osgi.serviceloader="net.fortuna.ical4j.model.ParameterFactory",
+            osgi.serviceloader="net.fortuna.ical4j.model.PropertyFactory",
+            osgi.serviceloader="net.fortuna.ical4j.validate.CalendarValidatorFactory"
+        '''
+    }
 }
 
 javadoc {
