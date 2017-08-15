@@ -9,7 +9,6 @@ cache:
 language: java
 jdk:
   - oraclejdk8
-  - openjdk8
   - openjdk7
 env:
   global:
