@@ -151,53 +151,53 @@ uploadArchives {
             }
         }
     }
-    
-    publishing {
-        publications {
-            mavenArtifacts(MavenPublication) {
-                from components.java
-                artifact javadocJar
-                artifact sourcesJar
-                pom.withXml {
-                    asNode().appendNode('name', project.name)
-                    asNode().appendNode('description', project.description)
-                    asNode().appendNode('url', 'http://ical4j.github.io')
+}
 
-                    def scmNode = asNode().appendNode('scm')
-                    scmNode.appendNode('url', 'https://github.com/ical4j/ical4j-extensions')
-                    scmNode.appendNode('connection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
-                    scmNode.appendNode('developerConnection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
-                }
+publishing {
+    publications {
+        mavenArtifacts(MavenPublication) {
+            from components.java
+            artifact javadocJar
+            artifact sourcesJar
+            pom.withXml {
+                asNode().appendNode('name', project.name)
+                asNode().appendNode('description', project.description)
+                asNode().appendNode('url', 'http://ical4j.github.io')
+
+                def scmNode = asNode().appendNode('scm')
+                scmNode.appendNode('url', 'https://github.com/ical4j/ical4j-extensions')
+                scmNode.appendNode('connection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
+                scmNode.appendNode('developerConnection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
             }
         }
     }
+}
 
-    bintray {
-        user = bintray_user
-        key = bintray_key
-        pkg {
-            repo = 'maven'
-            name = 'ical4j-extensions'
-            userOrg = 'ical4j'
-            licenses = ['BSD']
-            vcsUrl = 'https://github.com/ical4j/ical4j-extensions.git'
-            version {
-                name = scmVersion.version
-                desc = "iCal4j Extensions $scmVersion.version"
-                released  = new Date()
-                vcsTag = "ical4j-extensions-$scmVersion.version"
-                gpg {
-                    sign = isReleaseVersion
-                }
-                mavenCentralSync {
-                    sync = isReleaseVersion
-                    user = sonatype_username //OSS user token: mandatory
-                    password = sonatype_password //OSS user password: mandatory
-                    close = '0' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
-                }
+bintray {
+    user = bintray_user
+    key = bintray_key
+    pkg {
+        repo = 'maven'
+        name = 'ical4j-extensions'
+        userOrg = 'ical4j'
+        licenses = ['BSD']
+        vcsUrl = 'https://github.com/ical4j/ical4j-extensions.git'
+        version {
+            name = scmVersion.version
+            desc = "iCal4j Extensions $scmVersion.version"
+            released  = new Date()
+            vcsTag = "ical4j-extensions-$scmVersion.version"
+            gpg {
+                sign = isReleaseVersion
+            }
+            mavenCentralSync {
+                sync = isReleaseVersion
+                user = sonatype_username //OSS user token: mandatory
+                password = sonatype_password //OSS user password: mandatory
+                close = '0' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
             }
         }
+    }
 //    configurations = ['archives']
-        publications = ['mavenArtifacts']
-    }
+    publications = ['mavenArtifacts']
 }
