@@ -6,7 +6,7 @@ cache:
     #- $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     #- $HOME/.sonar
-sudo: true
+sudo: false
 dist: trusty
 language: java
 jdk:
