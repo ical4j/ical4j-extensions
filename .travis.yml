@@ -20,3 +20,4 @@ deploy:
   script: ./gradlew release bintrayUpload
   on:
     branch: master
+    jdk: oraclejdk8
