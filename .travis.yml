@@ -17,7 +17,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: script
-  script: ./gradlew release bintrayUpload
+  script: ./gradlew -Prelease.disableChecks -Prelease.pushTagsOnly release bintrayUpload
   on:
     branch: master
     jdk: oraclejdk8
