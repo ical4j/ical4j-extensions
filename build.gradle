@@ -101,7 +101,7 @@ scmVersion {
     }
     versionCreator 'versionWithBranch'
     branchVersionCreator = [
-        'release/.*': 'simple'
+        'master': 'simple'
     ]
 }
 
@@ -169,6 +169,15 @@ publishing {
                 scmNode.appendNode('url', 'https://github.com/ical4j/ical4j-extensions')
                 scmNode.appendNode('connection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
                 scmNode.appendNode('developerConnection', 'scm:git@github.com:ical4j/ical4j-extensions.git')
+
+                def licenseNode = asNode().appendNode('licenses').appendNode('license')
+                licenseNode.appendNode('name', 'iCal4j - License')
+                licenseNode.appendNode('url', 'https://raw.githubusercontent.com/ical4j/ical4j-extensions/master/LICENSE.txt')
+                licenseNode.appendNode('distribution', 'repo')
+
+                def developerNode = asNode().appendNode('developers').appendNode('developer')
+                developerNode.appendNode('id', 'fortuna')
+                developerNode.appendNode('name', 'Ben Fortuna')
             }
         }
     }
