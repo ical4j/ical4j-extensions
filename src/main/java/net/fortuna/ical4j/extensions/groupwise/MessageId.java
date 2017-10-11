@@ -49,14 +49,14 @@ public class MessageId extends Property {
     /**
      */
     public MessageId() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public MessageId(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -88,6 +88,10 @@ public class MessageId extends Property {
     public static class Factory extends Content.Factory implements PropertyFactory<MessageId> {
 
         private static final long serialVersionUID = 1L;
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public MessageId createProperty() {
             return new MessageId();

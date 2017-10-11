@@ -50,14 +50,14 @@ public class Importance extends Property {
     /**
      */
     public Importance() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public Importance(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -87,6 +87,10 @@ public class Importance extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Importance> {
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public Importance createProperty() {
             return new Importance();

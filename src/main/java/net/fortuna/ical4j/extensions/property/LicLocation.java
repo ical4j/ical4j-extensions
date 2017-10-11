@@ -49,14 +49,14 @@ public class LicLocation extends Property {
     /**
      */
     public LicLocation() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public LicLocation(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -86,6 +86,10 @@ public class LicLocation extends Property {
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<LicLocation> {
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public LicLocation createProperty() {
             return new LicLocation();

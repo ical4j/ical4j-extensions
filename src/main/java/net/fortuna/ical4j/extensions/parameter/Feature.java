@@ -3,7 +3,6 @@ package net.fortuna.ical4j.extensions.parameter;
 import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterFactory;
-import net.fortuna.ical4j.model.ParameterFactoryImpl;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -56,7 +55,7 @@ public class Feature extends Parameter {
     private final String[] values;
 
     public Feature(String value) {
-        super(PARAMETER_NAME, ParameterFactoryImpl.getInstance());
+        super(PARAMETER_NAME, new Factory());
         String[] valueStrings = value.split(",");
         for (String valueString : valueStrings) {
             try {

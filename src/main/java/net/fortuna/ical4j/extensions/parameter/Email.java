@@ -3,7 +3,6 @@ package net.fortuna.ical4j.extensions.parameter;
 import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterFactory;
-import net.fortuna.ical4j.model.ParameterFactoryImpl;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -55,7 +54,7 @@ public class Email extends Parameter {
     private final InternetAddress address;
 
     public Email(String address) throws AddressException {
-        super(PARAMETER_NAME, ParameterFactoryImpl.getInstance());
+        super(PARAMETER_NAME, new Factory());
         this.address = InternetAddress.parse(address)[0];
     }
 
