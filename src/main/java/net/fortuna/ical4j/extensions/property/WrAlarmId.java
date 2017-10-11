@@ -89,6 +89,10 @@ public class WrAlarmId extends Property {
 
         private static final long serialVersionUID = 2099427445505899578L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public WrAlarmId createProperty() {
             return new WrAlarmId();
         }

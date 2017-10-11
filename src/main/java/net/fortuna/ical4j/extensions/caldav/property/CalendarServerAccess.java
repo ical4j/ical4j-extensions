@@ -98,6 +98,10 @@ public class CalendarServerAccess extends Property {
 
         private static final long serialVersionUID = 2099427445505899578L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public CalendarServerAccess createProperty() {
             return new CalendarServerAccess();
         }

@@ -88,6 +88,10 @@ public class Importance extends Property {
 
     public static class Factory extends Content.Factory implements PropertyFactory<Importance> {
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public Importance createProperty() {
             return new Importance();
         }

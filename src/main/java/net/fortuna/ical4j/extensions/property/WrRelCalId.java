@@ -89,6 +89,10 @@ public class WrRelCalId extends Property {
 
         private static final long serialVersionUID = -6362745894043821710L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public WrRelCalId createProperty() {
             return new WrRelCalId();
         }

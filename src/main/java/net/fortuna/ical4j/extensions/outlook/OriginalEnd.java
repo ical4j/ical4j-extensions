@@ -77,6 +77,10 @@ public class OriginalEnd extends DateProperty {
         
         private static final long serialVersionUID = 596282786680252116L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public OriginalEnd createProperty() {
             return new OriginalEnd();
         }

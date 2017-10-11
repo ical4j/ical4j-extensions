@@ -89,6 +89,10 @@ public class WrTimezone extends Property {
 
         private static final long serialVersionUID = 3538377735326578201L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public WrTimezone createProperty() {
             return new WrTimezone();
         }

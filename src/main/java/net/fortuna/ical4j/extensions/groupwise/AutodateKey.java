@@ -89,6 +89,10 @@ public class AutodateKey extends Property {
 
         private static final long serialVersionUID = 1L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public AutodateKey createProperty() {
             return new AutodateKey();
         }

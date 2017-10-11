@@ -93,6 +93,10 @@ public class AllDayEvent extends Property {
 
         private static final long serialVersionUID = 596282786680252116L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public AllDayEvent createProperty() {
             return new AllDayEvent();
         }

@@ -89,6 +89,10 @@ public class WrCalDesc extends Property {
 
         private static final long serialVersionUID = -7990613145503686965L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public WrCalDesc createProperty() {
             return new WrCalDesc();
         }

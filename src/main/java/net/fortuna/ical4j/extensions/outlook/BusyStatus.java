@@ -96,6 +96,10 @@ public class BusyStatus extends Property {
         
         private static final long serialVersionUID = 596282786680252116L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public BusyStatus createProperty() {
             return new BusyStatus();
         }

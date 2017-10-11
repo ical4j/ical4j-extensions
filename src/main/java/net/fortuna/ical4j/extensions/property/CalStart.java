@@ -76,6 +76,10 @@ public class CalStart extends UtcProperty {
 
         private static final long serialVersionUID = 596282786680252116L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public CalStart createProperty() {
             return new CalStart();
         }

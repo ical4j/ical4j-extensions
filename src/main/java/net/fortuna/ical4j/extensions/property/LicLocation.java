@@ -87,6 +87,10 @@ public class LicLocation extends Property {
 
     public static class Factory extends Content.Factory implements PropertyFactory<LicLocation> {
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public LicLocation createProperty() {
             return new LicLocation();
         }

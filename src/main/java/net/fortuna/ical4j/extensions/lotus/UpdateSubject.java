@@ -89,6 +89,10 @@ public class UpdateSubject extends Property {
 
         private static final long serialVersionUID = 2326651749315407915L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public UpdateSubject createProperty() {
             return new UpdateSubject();
         }

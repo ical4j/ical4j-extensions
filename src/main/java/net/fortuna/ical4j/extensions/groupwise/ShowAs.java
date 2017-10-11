@@ -93,6 +93,10 @@ public class ShowAs extends Property {
 
         private static final long serialVersionUID = 1L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public ShowAs createProperty() {
             return new ShowAs();
         }

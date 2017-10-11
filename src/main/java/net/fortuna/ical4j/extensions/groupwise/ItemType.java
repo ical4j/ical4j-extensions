@@ -93,6 +93,10 @@ public class ItemType extends Property {
 
         private static final long serialVersionUID = 1L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public ItemType createProperty() {
             return new ItemType();
         }

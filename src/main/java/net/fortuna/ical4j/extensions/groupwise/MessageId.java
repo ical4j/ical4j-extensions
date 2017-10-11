@@ -89,6 +89,10 @@ public class MessageId extends Property {
 
         private static final long serialVersionUID = 1L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public MessageId createProperty() {
             return new MessageId();
         }

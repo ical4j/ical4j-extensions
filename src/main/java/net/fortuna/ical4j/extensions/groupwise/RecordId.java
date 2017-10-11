@@ -89,6 +89,10 @@ public class RecordId extends Property {
 
         private static final long serialVersionUID = 1L;
 
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
+
         public RecordId createProperty() {
             return new RecordId();
         }
