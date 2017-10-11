@@ -49,14 +49,14 @@ public class WrCalDesc extends Property {
     /**
      */
     public WrCalDesc() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public WrCalDesc(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 

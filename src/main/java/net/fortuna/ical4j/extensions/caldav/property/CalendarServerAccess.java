@@ -31,7 +31,10 @@
  */
 package net.fortuna.ical4j.extensions.caldav.property;
 
-import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.model.Content;
+import net.fortuna.ical4j.model.ParameterList;
+import net.fortuna.ical4j.model.Property;
+import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
 
 /**
@@ -57,11 +60,11 @@ public class CalendarServerAccess extends Property {
     public static final CalendarServerAccess RESTRICTED = new ImmutableCalendarServerAccess("RESTRICTED");
 
     public CalendarServerAccess() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     public CalendarServerAccess(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 

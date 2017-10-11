@@ -3,7 +3,6 @@ package net.fortuna.ical4j.extensions.parameter;
 import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterFactory;
-import net.fortuna.ical4j.model.ParameterFactoryImpl;
 
 /**
  * <pre>
@@ -42,7 +41,7 @@ public class Label extends Parameter {
     private final String value;
 
     public Label(String value) {
-        super(PARAMETER_NAME, ParameterFactoryImpl.getInstance());
+        super(PARAMETER_NAME, new Factory());
         this.value = value;
     }
 

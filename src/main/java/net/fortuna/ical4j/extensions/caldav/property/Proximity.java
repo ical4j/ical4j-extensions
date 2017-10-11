@@ -31,7 +31,10 @@
  */
 package net.fortuna.ical4j.extensions.caldav.property;
 
-import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.model.Content;
+import net.fortuna.ical4j.model.ParameterList;
+import net.fortuna.ical4j.model.Property;
+import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
 
 /**
@@ -55,11 +58,11 @@ public class Proximity extends Property {
     public static final Proximity DEPART = new ImmutableProximity("DEPART");
 
     public Proximity() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
   }
 
     public Proximity(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
     setValue(value);
   }
 

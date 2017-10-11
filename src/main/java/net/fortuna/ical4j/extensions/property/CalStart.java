@@ -34,7 +34,6 @@ package net.fortuna.ical4j.extensions.property;
 import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.PropertyFactoryImpl;
 import net.fortuna.ical4j.model.property.UtcProperty;
 import net.fortuna.ical4j.validate.ValidationException;
 
@@ -52,7 +51,7 @@ public class CalStart extends UtcProperty {
     /**
      */
     public CalStart() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
@@ -60,7 +59,7 @@ public class CalStart extends UtcProperty {
      * @throws ParseException
      */
     public CalStart(ParameterList aList, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 

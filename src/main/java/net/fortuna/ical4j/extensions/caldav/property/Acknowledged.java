@@ -31,7 +31,10 @@
  */
 package net.fortuna.ical4j.extensions.caldav.property;
 
-import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.model.Content;
+import net.fortuna.ical4j.model.DateTime;
+import net.fortuna.ical4j.model.ParameterList;
+import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.property.UtcProperty;
 
 import java.text.ParseException;
@@ -54,7 +57,7 @@ public class Acknowledged extends UtcProperty {
      * Default constructor. Initialises the dateTime value to the time of instantiation.
      */
     public Acknowledged() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
@@ -72,7 +75,7 @@ public class Acknowledged extends UtcProperty {
      */
     public Acknowledged(final ParameterList aList, final String aValue)
             throws ParseException {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(aValue);
     }
 
@@ -80,7 +83,7 @@ public class Acknowledged extends UtcProperty {
      * @param aDate a date representing a date-time
      */
     public Acknowledged(final DateTime aDate) {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
         // time must be in UTC..
         aDate.setUtc(true);
         setDate(aDate);
@@ -91,7 +94,7 @@ public class Acknowledged extends UtcProperty {
      * @param aDate a date representing a date-time
      */
     public Acknowledged(final ParameterList aList, final DateTime aDate) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         // time must be in UTC..
         aDate.setUtc(true);
         setDate(aDate);

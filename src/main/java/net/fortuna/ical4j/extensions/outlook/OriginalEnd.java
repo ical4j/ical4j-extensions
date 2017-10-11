@@ -31,7 +31,9 @@
  */
 package net.fortuna.ical4j.extensions.outlook;
 
-import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.model.Content;
+import net.fortuna.ical4j.model.ParameterList;
+import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.property.DateProperty;
 import net.fortuna.ical4j.validate.ValidationException;
 
@@ -50,7 +52,7 @@ public class OriginalEnd extends DateProperty {
     /**
      */
     public OriginalEnd() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
@@ -58,7 +60,7 @@ public class OriginalEnd extends DateProperty {
      * @throws ParseException
      */
     public OriginalEnd(ParameterList aList, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
