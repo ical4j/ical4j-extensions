@@ -49,14 +49,14 @@ public class AutodateKey extends Property {
     /**
      */
     public AutodateKey() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public AutodateKey(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -88,6 +88,10 @@ public class AutodateKey extends Property {
     public static class Factory extends Content.Factory implements PropertyFactory<AutodateKey> {
 
         private static final long serialVersionUID = 1L;
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public AutodateKey createProperty() {
             return new AutodateKey();

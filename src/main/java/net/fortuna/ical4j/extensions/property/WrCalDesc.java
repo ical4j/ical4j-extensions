@@ -49,14 +49,14 @@ public class WrCalDesc extends Property {
     /**
      */
     public WrCalDesc() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public WrCalDesc(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -88,6 +88,10 @@ public class WrCalDesc extends Property {
     public static class Factory extends Content.Factory implements PropertyFactory<WrCalDesc> {
 
         private static final long serialVersionUID = -7990613145503686965L;
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public WrCalDesc createProperty() {
             return new WrCalDesc();

@@ -31,8 +31,9 @@
  */
 package net.fortuna.ical4j.extensions.caldav.parameter;
 
+import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterFactoryImpl;
+import net.fortuna.ical4j.model.ParameterFactory;
 import net.fortuna.ical4j.util.Strings;
 
 /**
@@ -54,7 +55,7 @@ public class CalendarServerDtStamp extends Parameter {
      * @param aValue a string representation of a participation role
      */
     public CalendarServerDtStamp(final String aValue) {
-        super(PARAMETER_NAME, ParameterFactoryImpl.getInstance());
+        super(PARAMETER_NAME, new Factory());
         this.value = Strings.unquote(aValue);
     }
 
@@ -63,5 +64,17 @@ public class CalendarServerDtStamp extends Parameter {
      */
     public final String getValue() {
         return value;
+    }
+
+    public static class Factory extends Content.Factory implements ParameterFactory {
+        private static final long serialVersionUID = 1L;
+
+        public Factory() {
+            super(PARAMETER_NAME);
+        }
+
+        public Parameter createParameter(final String value) {
+            return new CalendarServerDtStamp(value);
+        }
     }
 }

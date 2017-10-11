@@ -31,7 +31,10 @@
  */
 package net.fortuna.ical4j.extensions.groupwise;
 
-import net.fortuna.ical4j.model.*;
+import net.fortuna.ical4j.model.Content;
+import net.fortuna.ical4j.model.ParameterList;
+import net.fortuna.ical4j.model.Property;
+import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
 
 /**
@@ -50,14 +53,14 @@ public class ShowAs extends Property {
     /**
      */
     public ShowAs() {
-        super(PROPERTY_NAME, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, new Factory());
     }
 
     /**
      * @param aList
      */
     public ShowAs(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, PropertyFactoryImpl.getInstance());
+        super(PROPERTY_NAME, aList, new Factory());
         setValue(value);
     }
 
@@ -89,6 +92,10 @@ public class ShowAs extends Property {
     public static class Factory extends Content.Factory implements PropertyFactory<ShowAs> {
 
         private static final long serialVersionUID = 1L;
+
+        public Factory() {
+            super(PROPERTY_NAME);
+        }
 
         public ShowAs createProperty() {
             return new ShowAs();
