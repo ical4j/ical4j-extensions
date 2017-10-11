@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.mnode.ical4j:ical4j:2.1.0-develop-SNAPSHOT',
+    compile 'org.mnode.ical4j:ical4j:2.1.0',
             'org.codehaus.groovy:groovy-all:2.3.6',
             'javax.mail:javax.mail-api:1.5.4'
 
