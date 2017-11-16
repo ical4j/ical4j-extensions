@@ -28,6 +28,6 @@ iCal4j Extensions requires a minimum of Java 5 due to the use of features introd
 
 ## References:
 
-* [draft-ietf-calext-extensions-01]
+* [RFC 7986] - New Properties for iCalendar
 
-[draft-ietf-calext-extensions-01]: https://tools.ietf.org/html/draft-ietf-calext-extensions-01
+[RFC 7986]: https://tools.ietf.org/html/rfc7986
