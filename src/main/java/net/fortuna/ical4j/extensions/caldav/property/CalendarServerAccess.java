@@ -65,7 +65,7 @@ public class CalendarServerAccess extends Property {
 
     public CalendarServerAccess(ParameterList aList, String value) {
         super(PROPERTY_NAME, aList, new Factory());
-        setValue(value);
+        this.value = value;
     }
 
     @Override
