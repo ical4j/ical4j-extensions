@@ -81,7 +81,7 @@ public class AlarmAgent extends Property {
      * ; the following is OPTIONAL,
      * ; but MUST NOT occur more than once
      */
-        ParameterValidator.getInstance().assertOneOrLess(AgentId.PARAMETER_NAME,
+        ParameterValidator.assertOneOrLess(AgentId.PARAMETER_NAME,
                 getParameters());
     }
 
