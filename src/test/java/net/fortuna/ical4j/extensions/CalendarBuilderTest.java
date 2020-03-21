@@ -31,9 +31,9 @@
  */
 package net.fortuna.ical4j.extensions;
 
-import net.fortuna.ical4j.data.CalendarBuilder;
-import net.fortuna.ical4j.data.ParserException;
+import net.fortuna.ical4j.data.*;
 import net.fortuna.ical4j.model.Calendar;
+import net.fortuna.ical4j.model.TimeZoneRegistryFactory;
 import net.fortuna.ical4j.validate.ValidationException;
 import org.junit.Assert;
 import org.junit.Before;
@@ -69,7 +69,9 @@ public class CalendarBuilderTest {
     
     @Before
     public void setUp() {
-        builder = new CalendarBuilder();
+        builder = new CalendarBuilder(CalendarParserFactory.getInstance().get(),
+                new ServiceLoaderParameterFactorySupplier(), new ServiceLoaderPropertyFactorySupplier(),
+                new ServiceLoaderComponentFactorySupplier(), TimeZoneRegistryFactory.getInstance().createRegistry());
     }
     
     @Test

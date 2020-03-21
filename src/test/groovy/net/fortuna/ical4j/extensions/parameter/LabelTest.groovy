@@ -1,13 +1,13 @@
 package net.fortuna.ical4j.extensions.parameter
 
-import net.fortuna.ical4j.data.CalendarBuilder
+
+import net.fortuna.ical4j.extensions.AbstractExtensionSpec
 import net.fortuna.ical4j.model.Calendar
-import spock.lang.Specification
 
 /**
  * Created by fortuna on 6/09/15.
  */
-class LabelTest extends Specification {
+class LabelTest extends AbstractExtensionSpec {
 
     def 'assert value stored correctly'() {
         given: 'a label value'
@@ -33,7 +33,7 @@ END:VCALENDAR
 '''
 
         when: 'the input is parsed'
-        Calendar calendar = new CalendarBuilder().build(new StringReader(calendarString))
+        Calendar calendar = builder.build(new StringReader(calendarString))
 
         then: 'a valid calendar is realised'
         calendar?.components[0].properties[0].getParameter('LABEL').value == '"Web video chat, access code=76543"'
