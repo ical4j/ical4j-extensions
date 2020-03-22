@@ -1,13 +1,20 @@
 package net.fortuna.ical4j.extensions.parameter
 
-import net.fortuna.ical4j.data.CalendarBuilder
+import net.fortuna.ical4j.data.*
+import net.fortuna.ical4j.extensions.AbstractExtensionSpec
 import net.fortuna.ical4j.model.Calendar
-import spock.lang.Specification
+import net.fortuna.ical4j.model.TimeZoneRegistryFactory
 
 /**
  * Created by fortuna on 6/09/15.
  */
-class FeatureTest extends Specification {
+class FeatureTest extends AbstractExtensionSpec {
+
+    def setup() {
+        builder = new CalendarBuilder(CalendarParserFactory.getInstance().get(),
+                new ServiceLoaderParameterFactorySupplier(), new ServiceLoaderPropertyFactorySupplier(),
+                new ServiceLoaderComponentFactorySupplier(), TimeZoneRegistryFactory.getInstance().createRegistry());
+    }
 
     def 'assert value stored correctly'() {
         given: 'a feature value'
@@ -34,7 +41,7 @@ END:VCALENDAR
 '''
 
         when: 'the input is parsed'
-        Calendar calendar = new CalendarBuilder().build(new StringReader(calendarString))
+        Calendar calendar = builder.build(new StringReader(calendarString))
 
         then: 'a valid calendar is realised'
         calendar?.components[0].properties[0].getParameter('FEATURE').value == 'AUDIO'

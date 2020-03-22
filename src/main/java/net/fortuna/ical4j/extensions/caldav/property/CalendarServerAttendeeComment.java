@@ -74,14 +74,14 @@ public class CalendarServerAttendeeComment extends Property {
      * ; the following are REQUIRED,
      * ; but MUST occur only once
      */
-        ParameterValidator.getInstance().assertOne(CalendarServerDtStamp.PARAMETER_NAME,
+        ParameterValidator.assertOne(CalendarServerDtStamp.PARAMETER_NAME,
                 getParameters());
 
     /*
      * ; the following are REQUIRED,
      * ; but MUST occur only once
      */
-        ParameterValidator.getInstance().assertOne(CalendarServerAttendeeRef.PARAMETER_NAME,
+        ParameterValidator.assertOne(CalendarServerAttendeeRef.PARAMETER_NAME,
                 getParameters());
     }
 

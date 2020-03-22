@@ -1,11 +1,11 @@
 package net.fortuna.ical4j.extensions.validate
 
-import net.fortuna.ical4j.data.CalendarBuilder
+
+import net.fortuna.ical4j.extensions.AbstractExtensionSpec
 import net.fortuna.ical4j.model.Calendar
 import net.fortuna.ical4j.validate.ValidationException
-import spock.lang.Specification
 
-class ExtensionsCalendarValidatorTest extends Specification {
+class ExtensionsCalendarValidatorTest extends AbstractExtensionSpec {
 
     def 'verify extensions validators loaded correctly'() {
         given: 'a calendar with an extension property'
@@ -29,7 +29,7 @@ END:VCALENDAR
 '''
 
         when: 'the calendar is validated'
-        Calendar calendar = new CalendarBuilder().build(new StringReader(calendarString))
+        Calendar calendar = builder.build(new StringReader(calendarString))
         calendar.validate()
 
         then: 'the extension property is correctly verified'

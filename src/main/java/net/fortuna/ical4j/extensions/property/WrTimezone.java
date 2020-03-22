@@ -73,7 +73,7 @@ public class WrTimezone extends Property {
      */
     @Override
     public void validate() throws ValidationException {
-        ParameterValidator.getInstance().assertOneOrLess(Parameter.VALUE,
+        ParameterValidator.assertOneOrLess(Parameter.VALUE,
                 getParameters());
     }
 
