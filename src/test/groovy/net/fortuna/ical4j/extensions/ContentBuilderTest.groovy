@@ -30,18 +30,23 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package net.fortuna.ical4j.extensions
-/**
+
+import spock.lang.Specification
+
+/**
  * $Id$
  *
  * Created on: 03/08/2009
  *
- * @author fortuna
- *
+ * @author fortuna*
  */
-public class ContentBuilderTest extends GroovyTestCase {
+public class ContentBuilderTest extends Specification {
 
-    void testBuildCalendar() {
+    def 'testBuildCalendar'() {
+        given: 'a calendar builder'
         def builder = new ContentBuilder()
+
+        when: 'a calendar is built'
         def calendar = builder.calendar() {
             prodid('-//Ben Fortuna//iCal4j 1.0//EN')
             version('2.0')
@@ -50,17 +55,20 @@ public class ContentBuilderTest extends GroovyTestCase {
                 uid('1')
                 dtstamp()
                 dtstart('20090810', parameters: parameters() {
-                    value('DATE')})
+                    value('DATE')
+                })
                 action('DISPLAY')
                 attach('http://example.com/attachment', parameters: parameters() {
-                    value('URI')})
+                    value('URI')
+                })
             }
         }
         calendar.validate()
-        
-        assert calendar.properties.size() == 3
-        assert calendar.components.size() == 1
-        
+
+        then: 'result is as expected'
+        calendar.properties.size() == 3
+        calendar.components.size() == 1
+
         println calendar
     }
 }
