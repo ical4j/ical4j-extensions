@@ -42,11 +42,11 @@ import java.text.ParseException;
 /**
  * This class supports the new ACKNOWLEDGED property, as defined in draft-daboo-valarm-extensions
  *
- * @see <a href="http://tools.ietf.org/html/draft-daboo-valarm-extensions-04">draft-daboo-valarm-extensions-04</a>
- *
  * @author probert
- *
+ * @see <a href="http://tools.ietf.org/html/draft-daboo-valarm-extensions-04">draft-daboo-valarm-extensions-04</a>
+ * @deprecated Use {@link net.fortuna.ical4j.model.property.Acknowledged} instead.
  */
+@Deprecated
 public class Acknowledged extends UtcProperty {
 
     private static final long serialVersionUID = 2182103734645261668L;
