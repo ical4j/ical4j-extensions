@@ -36,6 +36,7 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.model.property.DateProperty;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 import java.text.ParseException;
 
@@ -68,9 +69,10 @@ public class OriginalStart extends DateProperty {
      * {@inheritDoc}
      */
     @Override
-    public void validate() throws ValidationException {
+    public ValidationResult validate() throws ValidationException {
         // TODO Auto-generated method stub
 
+        return ValidationResult.EMPTY;
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<OriginalStart> {

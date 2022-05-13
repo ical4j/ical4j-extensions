@@ -36,6 +36,7 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * This property is a non-standard property for iCal Server/Calendar Server
@@ -74,7 +75,8 @@ public class CalendarServerAccess extends Property {
     }
 
     @Override
-    public void validate() throws ValidationException {
+    public ValidationResult validate() throws ValidationException {
+        return ValidationResult.EMPTY;
     }
 
     @Override

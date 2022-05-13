@@ -38,6 +38,7 @@ import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ParameterValidator;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * ALARM-AGENT is a proposed (RFC draft) property for iCalendar
@@ -76,13 +77,14 @@ public class AlarmAgent extends Property {
     }
 
     @Override
-    public void validate() throws ValidationException {
-    /*
-     * ; the following is OPTIONAL,
-     * ; but MUST NOT occur more than once
-     */
+    public ValidationResult validate() throws ValidationException {
+        /*
+         * ; the following is OPTIONAL,
+         * ; but MUST NOT occur more than once
+         */
         ParameterValidator.assertOneOrLess(AgentId.PARAMETER_NAME,
                 getParameters());
+        return ValidationResult.EMPTY;
     }
 
     @Override
