@@ -1,12 +1,14 @@
 plugins {
     id 'java'
-    id 'groovy'
-    id "biz.aQute.bnd.builder" version "5.1.2"
     id 'java-library'
+    id 'groovy'
     id 'maven-publish'
+    id 'jacoco'
     id 'signing'
-    id 'pl.allegro.tech.build.axion-release' version '1.13.1'
-    id "nebula.optional-base" version "3.0.3"
+    id 'pl.allegro.tech.build.axion-release' version '1.13.6'
+    id "nebula.optional-base" version "7.0.0"
+    id "com.palantir.revapi" version "1.7.0"
+    id "biz.aQute.bnd.builder" version "$bndVersion"
 }
 
 sourceCompatibility = 1.8
@@ -35,14 +37,25 @@ dependencies {
     // spock
     testImplementation platform("org.spockframework:spock-bom:2.0-M4-groovy-3.0"),
             "org.spockframework:spock-core",
-            "org.slf4j:slf4j-log4j12:$slf4jVersion"
+            "org.slf4j:slf4j-log4j12:$slf4jVersion",
+            "org.apache.logging.log4j:log4j:$log4jVersion"
 }
 
 test {
     useJUnitPlatform()
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled 'true' == jacoco_htmlReport
+    }
+}
+
 javadoc {
+    if (JavaVersion.current().isJava8Compatible()) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
     options {
         links 'https://docs.oracle.com/en/java/javase/11/docs/api/',
                 'http://ical4j.github.io/docs/ical4j/api/4.0.0-alpha6/'
@@ -75,6 +88,10 @@ scmVersion {
 group = 'org.mnode.ical4j'
 description = 'Support for additional non-standard iCalendar objects'
 version = scmVersion.version
+
+revapi {
+    oldVersion = revApiOldVersion
+}
 
 ext {
     isReleaseVersion = !version.endsWith("SNAPSHOT")
