@@ -36,15 +36,16 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * New property as defined in a RFC draft
  *
- * @see <a href="http://tools.ietf.org/html/draft-daboo-valarm-extensions-04">draft-daboo-valarm-extensions-04</a>
- *
  * @author probert
- *
+ * @see <a href="http://tools.ietf.org/html/draft-daboo-valarm-extensions-04">draft-daboo-valarm-extensions-04</a>
+ * @deprecated Use {@link net.fortuna.ical4j.model.property.Proximity} instead.
  */
+@Deprecated
 public class Proximity extends Property {
 
     private static final long serialVersionUID = 2182103734645261668L;
@@ -72,7 +73,8 @@ public class Proximity extends Property {
     }
 
     @Override
-    public void validate() throws ValidationException {
+    public ValidationResult validate() throws ValidationException {
+        return ValidationResult.EMPTY;
     }
 
     @Override

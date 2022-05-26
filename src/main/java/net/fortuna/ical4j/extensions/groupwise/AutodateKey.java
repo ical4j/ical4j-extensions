@@ -34,6 +34,7 @@ package net.fortuna.ical4j.extensions.groupwise;
 import net.fortuna.ical4j.model.*;
 import net.fortuna.ical4j.validate.ParameterValidator;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * @author fortuna
@@ -72,9 +73,10 @@ public class AutodateKey extends Property {
      * {@inheritDoc}
      */
     @Override
-    public void validate() throws ValidationException {
+    public ValidationResult validate() throws ValidationException {
         ParameterValidator.assertOneOrLess(Parameter.VALUE,
                 getParameters());
+        return ValidationResult.EMPTY;
     }
 
     /**

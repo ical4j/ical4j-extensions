@@ -28,6 +28,25 @@ iCal4j Extensions requires a minimum of Java 5 due to the use of features introd
 
 ## References:
 
-* [RFC 7986] - New Properties for iCalendar
+* [draft-ietf-calext-eventpub-extensions] - Event Publishing Extensions to iCalendar
+* [draft-ietf-calext-valarm-extensions] - VALARM Extensions for iCalendar
+* [draft-apthorp-ical-tasks] - Task Extensions to iCalendar
+* [draft-ietf-calext-ical-relations] - Support for iCalendar Relationships
+* [draft-ietf-calext-icalendar-series] - Support for Series in iCalendar
 
-[RFC 7986]: https://tools.ietf.org/html/rfc7986
+* [RFC6638] - Scheduling Extensions to CalDAV
+* [RFC8607] - Calendaring Extensions to WebDAV (CalDAV): Managed Attachments
+
+[draft-ietf-calext-eventpub-extensions]: https://datatracker.ietf.org/doc/html/draft-ietf-calext-eventpub-extensions-19
+
+[draft-ietf-calext-valarm-extensions]: https://datatracker.ietf.org/doc/html/draft-ietf-calext-valarm-extensions-07
+
+[draft-apthorp-ical-tasks]: https://datatracker.ietf.org/doc/html/draft-apthorp-ical-tasks-02
+
+[draft-ietf-calext-ical-relations]: https://datatracker.ietf.org/doc/html/draft-ietf-calext-ical-relations-06
+
+[draft-ietf-calext-icalendar-series]: https://datatracker.ietf.org/doc/html/draft-ietf-calext-icalendar-series-03
+
+[RFC6638]: https://datatracker.ietf.org/doc/html/rfc6638
+
+[RFC8607]: https://datatracker.ietf.org/doc/html/rfc8607

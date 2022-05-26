@@ -39,6 +39,7 @@ import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ParameterValidator;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * This property is a non-standard property for iCal Server/Calendar Server
@@ -69,20 +70,21 @@ public class CalendarServerAttendeeComment extends Property {
     }
 
     @Override
-    public void validate() throws ValidationException {
-    /*
-     * ; the following are REQUIRED,
-     * ; but MUST occur only once
-     */
+    public ValidationResult validate() throws ValidationException {
+        /*
+         * ; the following are REQUIRED,
+         * ; but MUST occur only once
+         */
         ParameterValidator.assertOne(CalendarServerDtStamp.PARAMETER_NAME,
                 getParameters());
 
-    /*
-     * ; the following are REQUIRED,
-     * ; but MUST occur only once
+        /*
+         * ; the following are REQUIRED,
+         * ; but MUST occur only once
      */
         ParameterValidator.assertOne(CalendarServerAttendeeRef.PARAMETER_NAME,
                 getParameters());
+        return ValidationResult.EMPTY;
     }
 
     @Override

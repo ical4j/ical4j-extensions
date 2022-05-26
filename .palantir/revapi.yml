@@ -1,0 +1,183 @@
+acceptedBreaks:
+  "1.0.4":
+    org.mnode.ical4j:ical4j-extensions:
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.parameter.Display"
+        justification: "updated_validation"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.parameter.Email"
+        justification: "updated_validation"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.parameter.Feature"
+        justification: "updated_validation"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.parameter.Label"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.AlarmAgent::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.AlarmAgent::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.CalendarServerAttendeeComment::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.CalendarServerAttendeeComment::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.CalendarServerPrivateComment::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.CalendarServerPrivateComment::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.DefaultAlarm::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.DefaultAlarm::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.Proximity::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.caldav.property.Proximity::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.groupwise.AutodateKey::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.groupwise.AutodateKey::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.groupwise.ItemType::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.groupwise.ItemType::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.groupwise.MessageId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.groupwise.MessageId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.groupwise.RecordId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.groupwise.RecordId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.groupwise.ShowAs::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.groupwise.ShowAs::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.lotus.Charset::validate() throws\
+        \ net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.lotus.Charset::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.lotus.UpdateSubject::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.lotus.UpdateSubject::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.AllDayEvent::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.AllDayEvent::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.BusyStatus::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.BusyStatus::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.Importance::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.Importance::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.InstType::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.InstType::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalEnd::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.OriginalEnd::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalStart::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.OriginalStart::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.CalStart::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.CalStart::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.LicLocation::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.LicLocation::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.WrAlarmId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrAlarmId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.WrCalDesc::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrCalDesc::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.WrCalName::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrCalName::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.WrRelCalId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrRelCalId::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.property.WrTimezone::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrTimezone::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.model.property.UtcProperty::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.validate.CalendarValidatorImpl::validate(net.fortuna.ical4j.model.Calendar)\
+        \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.validate.ExtensionsCalendarValidator"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.validate.CalendarValidatorImpl::validate(net.fortuna.ical4j.model.Calendar)\
+        \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.validate.ExtensionsCalendarValidator"
+        justification: "updated_validation"

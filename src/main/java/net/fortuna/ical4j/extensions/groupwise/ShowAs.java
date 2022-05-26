@@ -36,6 +36,7 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 import net.fortuna.ical4j.validate.ValidationException;
+import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
  * @author fortuna
@@ -76,9 +77,10 @@ public class ShowAs extends Property {
      * {@inheritDoc}
      */
     @Override
-    public void validate() throws ValidationException {
+    public ValidationResult validate() throws ValidationException {
         // TODO Auto-generated method stub
 
+        return ValidationResult.EMPTY;
     }
 
     /**
