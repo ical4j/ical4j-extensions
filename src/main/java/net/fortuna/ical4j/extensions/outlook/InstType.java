@@ -51,14 +51,14 @@ public class InstType extends Property {
     /**
      */
     public InstType() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public InstType(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -86,6 +86,11 @@ public class InstType extends Property {
     @Override
     public String getValue() {
         return value;
+    }
+
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<InstType> {

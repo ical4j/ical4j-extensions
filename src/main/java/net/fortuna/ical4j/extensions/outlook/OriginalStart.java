@@ -38,13 +38,12 @@ import net.fortuna.ical4j.model.property.DateProperty;
 import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
-import java.text.ParseException;
+import java.time.temporal.Temporal;
 
 /**
  * @author fortuna
- *
  */
-public class OriginalStart extends DateProperty {
+public class OriginalStart<T extends Temporal> extends DateProperty<T> {
 
     private static final long serialVersionUID = -2369374600955575062L;
 
@@ -53,15 +52,14 @@ public class OriginalStart extends DateProperty {
     /**
      */
     public OriginalStart() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
-     * @throws ParseException
      */
-    public OriginalStart(ParameterList aList, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, new Factory());
+    public OriginalStart(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -75,8 +73,13 @@ public class OriginalStart extends DateProperty {
         return ValidationResult.EMPTY;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<OriginalStart> {
-        
+
         private static final long serialVersionUID = 596282786680252116L;
 
         public Factory() {
@@ -87,7 +90,7 @@ public class OriginalStart extends DateProperty {
             return new OriginalStart();
         }
 
-        public OriginalStart createProperty(ParameterList parameters, String value) throws ParseException {
+        public OriginalStart createProperty(ParameterList parameters, String value) {
             OriginalStart property = new OriginalStart(parameters, value);
             return property;
         }

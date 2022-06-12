@@ -55,7 +55,7 @@ public class AgentId extends Parameter {
      * @param aValue a string representation of a participation role
      */
     public AgentId(final String aValue) {
-        super(PARAMETER_NAME, new Factory());
+        super(PARAMETER_NAME);
         this.value = Strings.unquote(aValue);
     }
 

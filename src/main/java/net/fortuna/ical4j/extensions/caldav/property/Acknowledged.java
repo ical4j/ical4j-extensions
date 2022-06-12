@@ -32,12 +32,12 @@
 package net.fortuna.ical4j.extensions.caldav.property;
 
 import net.fortuna.ical4j.model.Content;
-import net.fortuna.ical4j.model.DateTime;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.property.UtcProperty;
+import net.fortuna.ical4j.model.property.DateProperty;
 
 import java.text.ParseException;
+import java.time.Instant;
 
 /**
  * This class supports the new ACKNOWLEDGED property, as defined in draft-daboo-valarm-extensions
@@ -47,7 +47,7 @@ import java.text.ParseException;
  * @deprecated Use {@link net.fortuna.ical4j.model.property.Acknowledged} instead.
  */
 @Deprecated
-public class Acknowledged extends UtcProperty {
+public class Acknowledged extends DateProperty<Instant> {
 
     private static final long serialVersionUID = 2182103734645261668L;
 
@@ -57,7 +57,7 @@ public class Acknowledged extends UtcProperty {
      * Default constructor. Initialises the dateTime value to the time of instantiation.
      */
     public Acknowledged() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
@@ -71,21 +71,17 @@ public class Acknowledged extends UtcProperty {
     /**
      * @param aList  a list of parameters for this component
      * @param aValue a value string for this component
-     * @throws ParseException where the specified value string is not a valid date-time/date representation
      */
-    public Acknowledged(final ParameterList aList, final String aValue)
-            throws ParseException {
-        super(PROPERTY_NAME, aList, new Factory());
+    public Acknowledged(final ParameterList aList, final String aValue) {
+        super(PROPERTY_NAME, aList);
         setValue(aValue);
     }
 
     /**
      * @param aDate a date representing a date-time
      */
-    public Acknowledged(final DateTime aDate) {
-        super(PROPERTY_NAME, new Factory());
-        // time must be in UTC..
-        aDate.setUtc(true);
+    public Acknowledged(final Instant aDate) {
+        super(PROPERTY_NAME);
         setDate(aDate);
     }
 
@@ -93,11 +89,14 @@ public class Acknowledged extends UtcProperty {
      * @param aList a list of parameters for this component
      * @param aDate a date representing a date-time
      */
-    public Acknowledged(final ParameterList aList, final DateTime aDate) {
-        super(PROPERTY_NAME, aList, new Factory());
-        // time must be in UTC..
-        aDate.setUtc(true);
+    public Acknowledged(final ParameterList aList, final Instant aDate) {
+        super(PROPERTY_NAME, aList);
         setDate(aDate);
+    }
+
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Acknowledged> {
@@ -109,7 +108,7 @@ public class Acknowledged extends UtcProperty {
             return new Acknowledged();
         }
 
-        public Acknowledged createProperty(ParameterList parameters, String value) throws ParseException {
+        public Acknowledged createProperty(ParameterList parameters, String value) {
             return new Acknowledged(parameters, value);
         }
     }

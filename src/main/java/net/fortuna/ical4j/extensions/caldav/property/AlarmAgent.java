@@ -54,20 +54,12 @@ public class AlarmAgent extends Property {
 
     private String value;
 
-    public static final AlarmAgent SERVER = new ImmutableAlarmAgent("SERVER");
-
-    public static final AlarmAgent CLIENT = new ImmutableAlarmAgent("CLIENT");
-
-    public static final AlarmAgent BOTH = new ImmutableAlarmAgent("BOTH");
-
-    public static final AlarmAgent NONE = new ImmutableAlarmAgent("NONE");
-
     public AlarmAgent() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     public AlarmAgent(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -92,16 +84,9 @@ public class AlarmAgent extends Property {
         return value;
     }
 
-    private static final class ImmutableAlarmAgent extends AlarmAgent {
-        private static final long serialVersionUID = -2054338254L;
-
-        private ImmutableAlarmAgent(String value) {
-            super(new ParameterList(true), value);
-        }
-
-        public void setValue(String aValue) {
-            throw new UnsupportedOperationException("Cannot modify constant instances");
-        }
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<AlarmAgent> {
@@ -118,8 +103,8 @@ public class AlarmAgent extends Property {
 
         public AlarmAgent createProperty(ParameterList parameters, String value) {
             AlarmAgent property = null;
-            if (CLIENT.getValue().equals(value)) {
-                property = CLIENT;
+            if (ImmutableAlarmAgent.CLIENT.getValue().equals(value)) {
+                property = ImmutableAlarmAgent.CLIENT;
             } else {
                 property = new AlarmAgent(parameters, value);
             }

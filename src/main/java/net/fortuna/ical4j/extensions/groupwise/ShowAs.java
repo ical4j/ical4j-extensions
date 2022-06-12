@@ -47,21 +47,19 @@ public class ShowAs extends Property {
 
     public static final String PROPERTY_NAME = "X-GWSHOW-AS";
 
-    public static final ShowAs BUSY = new ShowAs(new ParameterList(true), "BUSY");
-
     private String value;
 
     /**
      */
     public ShowAs() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public ShowAs(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -91,6 +89,11 @@ public class ShowAs extends Property {
         return value;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<ShowAs> {
 
         private static final long serialVersionUID = 1L;
@@ -105,8 +108,8 @@ public class ShowAs extends Property {
 
         public ShowAs createProperty(ParameterList parameters, String value) {
             ShowAs property = null;
-            if (BUSY.getValue().equals(value)) {
-                property = BUSY;
+            if (ImmutableShowAs.BUSY.getValue().equals(value)) {
+                property = ImmutableShowAs.BUSY;
             } else {
                 property = new ShowAs(parameters, value);
             }

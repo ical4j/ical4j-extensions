@@ -34,33 +34,33 @@ package net.fortuna.ical4j.extensions.property;
 import net.fortuna.ical4j.model.Content;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.PropertyFactory;
-import net.fortuna.ical4j.model.property.UtcProperty;
+import net.fortuna.ical4j.model.property.DateProperty;
 import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
-import java.text.ParseException;
+import java.time.Instant;
 
 /**
  * @author fortuna
  */
-public class CalStart extends UtcProperty {
+public class CalStart extends DateProperty<Instant> {
 
     private static final long serialVersionUID = -1823078836099613956L;
 
     public static final String PROPERTY_NAME = "X-CALSTART";
 
     /**
+     *
      */
     public CalStart() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
-     * @throws ParseException
      */
-    public CalStart(ParameterList aList, String value) throws ParseException {
-        super(PROPERTY_NAME, aList, new Factory());
+    public CalStart(ParameterList aList, String value) {
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -72,6 +72,11 @@ public class CalStart extends UtcProperty {
         // TODO Auto-generated method stub
 
         return ValidationResult.EMPTY;
+    }
+
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<CalStart> {
@@ -86,7 +91,7 @@ public class CalStart extends UtcProperty {
             return new CalStart();
         }
 
-        public CalStart createProperty(ParameterList parameters, String value) throws ParseException {
+        public CalStart createProperty(ParameterList parameters, String value) {
             CalStart property = new CalStart(parameters, value);
             return property;
         }

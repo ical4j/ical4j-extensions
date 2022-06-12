@@ -47,22 +47,20 @@ public class Charset extends Property {
 
     public static final String PROPERTY_NAME = "X-LOTUS-CHARSET";
 
-    public static final Charset UTF8 = new Charset(new ParameterList(true), "UTF-8");
-
     private String value;
 
     /**
      */
     public Charset() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public Charset(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
-        setValue(value);
+        super(PROPERTY_NAME, aList);
+        this.value = value;
     }
 
     /**
@@ -91,6 +89,11 @@ public class Charset extends Property {
         return value;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<Charset> {
 
         private static final long serialVersionUID = 596282786680252116L;
@@ -105,8 +108,8 @@ public class Charset extends Property {
 
         public Charset createProperty(ParameterList parameters, String value) {
             Charset property = null;
-            if (UTF8.getValue().equals(value)) {
-                property = UTF8;
+            if (ImmutableCharset.UTF8.getValue().equals(value)) {
+                property = ImmutableCharset.UTF8;
             } else {
                 property = new Charset(parameters, value);
             }

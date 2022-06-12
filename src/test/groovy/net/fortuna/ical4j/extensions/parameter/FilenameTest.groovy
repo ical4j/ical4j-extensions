@@ -68,6 +68,6 @@ END:VCALENDAR
         Calendar calendar = builder.build(new StringReader(calendarString))
 
         then: 'a valid calendar is realised'
-        calendar?.components[0].getProperty('ATTACH').getParameter('FILENAME').value == 'Do work xx-xx-xx.docx'
+        calendar?.components[0].getRequiredProperty('ATTACH').getRequiredParameter('FILENAME').value == 'Do work xx-xx-xx.docx'
     }
 }

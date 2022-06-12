@@ -50,21 +50,19 @@ public class BusyStatus extends Property {
     
     public static final PropertyFactory FACTORY = new Factory();
 
-    public static final BusyStatus BUSY = new BusyStatus(new ParameterList(true), "BUSY");
-    
     private String value;
     
     /**
      */
     public BusyStatus() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public BusyStatus(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -94,8 +92,13 @@ public class BusyStatus extends Property {
         return value;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<BusyStatus> {
-        
+
         private static final long serialVersionUID = 596282786680252116L;
 
         public Factory() {
@@ -108,10 +111,9 @@ public class BusyStatus extends Property {
 
         public BusyStatus createProperty(ParameterList parameters, String value) {
             BusyStatus property = null;
-            if (BUSY.getValue().equals(value)) {
-                property = BUSY;
-            }
-            else {
+            if (ImmutableBusyStatus.BUSY.getValue().equals(value)) {
+                property = ImmutableBusyStatus.BUSY;
+            } else {
                 property = new BusyStatus(parameters, value);
             }
             return property;

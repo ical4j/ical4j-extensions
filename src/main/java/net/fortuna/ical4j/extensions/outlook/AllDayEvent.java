@@ -47,21 +47,19 @@ public class AllDayEvent extends Property {
 
     public static final String PROPERTY_NAME = "X-MICROSOFT-CDO-ALLDAYEVENT";
 
-    public static final AllDayEvent FALSE = new AllDayEvent(new ParameterList(true), "FALSE");
-
     private String value;
 
     /**
      */
     public AllDayEvent() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public AllDayEvent(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -91,6 +89,11 @@ public class AllDayEvent extends Property {
         return value;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<AllDayEvent> {
 
         private static final long serialVersionUID = 596282786680252116L;
@@ -105,8 +108,8 @@ public class AllDayEvent extends Property {
 
         public AllDayEvent createProperty(ParameterList parameters, String value) {
             AllDayEvent property = null;
-            if (FALSE.getValue().equals(value)) {
-                property = FALSE;
+            if (ImmutableAllDayEvent.FALSE.getValue().equals(value)) {
+                property = ImmutableAllDayEvent.FALSE;
             } else {
                 property = new AllDayEvent(parameters, value);
             }
