@@ -44,6 +44,6 @@ END:VCALENDAR
         Calendar calendar = builder.build(new StringReader(calendarString))
 
         then: 'a valid calendar is realised'
-        calendar?.components[0].alarms[0].getProperty('ACKNOWLEDGED').value == '20090604T084500Z'
+        calendar?.components[0].alarms[0].getRequiredProperty('ACKNOWLEDGED').value == '20090604T084500Z'
     }
 }

@@ -28,7 +28,7 @@ public class Filename extends Parameter {
     private final String value;
 
     public Filename(String value) {
-        super(PARAMETER_NAME, new Factory());
+        super(PARAMETER_NAME);
         this.value = value;
     }
 

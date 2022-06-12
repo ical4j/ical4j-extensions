@@ -54,16 +54,12 @@ public class Proximity extends Property {
 
     private String value;
 
-    public static final Proximity ARRIVE = new ImmutableProximity("ARRIVE");
-
-    public static final Proximity DEPART = new ImmutableProximity("DEPART");
-
     public Proximity() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     public Proximity(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -82,16 +78,9 @@ public class Proximity extends Property {
         return value;
     }
 
-    private static final class ImmutableProximity extends Proximity {
-        private static final long serialVersionUID = -2054338254L;
-
-        private ImmutableProximity(String value) {
-            super(new ParameterList(true), value);
-        }
-
-        public void setValue(String aValue) {
-            throw new UnsupportedOperationException("Cannot modify constant instances");
-        }
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<Proximity> {
@@ -108,8 +97,8 @@ public class Proximity extends Property {
 
         public Proximity createProperty(ParameterList parameters, String value) {
             Proximity property = null;
-            if (DEPART.getValue().equals(value)) {
-                property = DEPART;
+            if (ImmutableProximity.DEPART.getValue().equals(value)) {
+                property = ImmutableProximity.DEPART;
             } else {
                 property = new Proximity(parameters, value);
             }

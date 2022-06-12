@@ -55,7 +55,7 @@ public class CalendarServerDtStamp extends Parameter {
      * @param aValue a string representation of a participation role
      */
     public CalendarServerDtStamp(final String aValue) {
-        super(PARAMETER_NAME, new Factory());
+        super(PARAMETER_NAME);
         this.value = Strings.unquote(aValue);
     }
 

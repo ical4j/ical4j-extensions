@@ -52,20 +52,12 @@ public class CalendarServerAccess extends Property {
 
     private String value;
 
-    public static final CalendarServerAccess PUBLIC = new ImmutableCalendarServerAccess("PUBLIC");
-
-    public static final CalendarServerAccess PRIVATE = new ImmutableCalendarServerAccess("PRIVATE");
-
-    public static final CalendarServerAccess CONFIDENTIAL = new ImmutableCalendarServerAccess("CONFIDENTIAL");
-
-    public static final CalendarServerAccess RESTRICTED = new ImmutableCalendarServerAccess("RESTRICTED");
-
     public CalendarServerAccess() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     public CalendarServerAccess(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         this.value = value;
     }
 
@@ -84,16 +76,9 @@ public class CalendarServerAccess extends Property {
         return value;
     }
 
-    private static final class ImmutableCalendarServerAccess extends CalendarServerAccess {
-        private static final long serialVersionUID = -2054338254L;
-
-        private ImmutableCalendarServerAccess(String value) {
-            super(new ParameterList(true), value);
-        }
-
-        public void setValue(String aValue) {
-            throw new UnsupportedOperationException("Cannot modify constant instances");
-        }
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<CalendarServerAccess> {
@@ -110,8 +95,8 @@ public class CalendarServerAccess extends Property {
 
         public CalendarServerAccess createProperty(ParameterList parameters, String value) {
             CalendarServerAccess property = null;
-            if (PUBLIC.getValue().equals(value)) {
-                property = PUBLIC;
+            if (ImmutableCalendarServerAccess.PUBLIC.getValue().equals(value)) {
+                property = ImmutableCalendarServerAccess.PUBLIC;
             } else {
                 property = new CalendarServerAccess(parameters, value);
             }

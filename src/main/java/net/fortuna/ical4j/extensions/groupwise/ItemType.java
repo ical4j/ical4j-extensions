@@ -47,21 +47,19 @@ public class ItemType extends Property {
 
     public static final String PROPERTY_NAME = "X-GWITEM-TYPE";
 
-    public static final ItemType APPOINTMENT = new ItemType(new ParameterList(true), "APPOINTMENT");
-
     private String value;
 
     /**
      */
     public ItemType() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     /**
      * @param aList
      */
     public ItemType(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -91,6 +89,11 @@ public class ItemType extends Property {
         return value;
     }
 
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
+    }
+
     public static class Factory extends Content.Factory implements PropertyFactory<ItemType> {
 
         private static final long serialVersionUID = 1L;
@@ -105,8 +108,8 @@ public class ItemType extends Property {
 
         public ItemType createProperty(ParameterList parameters, String value) {
             ItemType property = null;
-            if (APPOINTMENT.getValue().equals(value)) {
-                property = APPOINTMENT;
+            if (ImmutableItemType.APPOINTMENT.getValue().equals(value)) {
+                property = ImmutableItemType.APPOINTMENT;
             } else {
                 property = new ItemType(parameters, value);
             }

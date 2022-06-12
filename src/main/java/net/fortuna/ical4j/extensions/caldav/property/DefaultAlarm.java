@@ -52,16 +52,12 @@ public class DefaultAlarm extends Property {
 
     private String value;
 
-    public static final DefaultAlarm TRUE = new ImmutableDefaultAlarm("TRUE");
-
-    public static final DefaultAlarm FALSE = new ImmutableDefaultAlarm("FALSE");
-
     public DefaultAlarm() {
-        super(PROPERTY_NAME, new Factory());
+        super(PROPERTY_NAME);
     }
 
     public DefaultAlarm(ParameterList aList, String value) {
-        super(PROPERTY_NAME, aList, new Factory());
+        super(PROPERTY_NAME, aList);
         setValue(value);
     }
 
@@ -80,16 +76,9 @@ public class DefaultAlarm extends Property {
         return value;
     }
 
-    private static final class ImmutableDefaultAlarm extends DefaultAlarm {
-        private static final long serialVersionUID = -2054338254L;
-
-        private ImmutableDefaultAlarm(String value) {
-            super(new ParameterList(true), value);
-        }
-
-        public void setValue(String aValue) {
-            throw new UnsupportedOperationException("Cannot modify constant instances");
-        }
+    @Override
+    protected PropertyFactory<?> newFactory() {
+        return new Factory();
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<DefaultAlarm> {
@@ -106,8 +95,8 @@ public class DefaultAlarm extends Property {
 
         public DefaultAlarm createProperty(ParameterList parameters, String value) {
             DefaultAlarm property = null;
-            if (FALSE.getValue().equals(value)) {
-                property = FALSE;
+            if (ImmutableDefaultAlarm.FALSE.getValue().equals(value)) {
+                property = ImmutableDefaultAlarm.FALSE;
             } else {
                 property = new DefaultAlarm(parameters, value);
             }

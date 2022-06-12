@@ -31,12 +31,8 @@
  */
 package net.fortuna.ical4j.extensions
 
-import net.fortuna.ical4j.extensions.property.CalStartFactory;
-import net.fortuna.ical4j.extensions.property.LicLocationFactory;
-import net.fortuna.ical4j.extensions.property.WrAlarmIdFactory;
-import net.fortuna.ical4j.extensions.property.WrCalDescFactory;
-import net.fortuna.ical4j.extensions.property.WrCalNameFactory
-import net.fortuna.ical4j.extensions.property.WrTimezoneFactory;
+import net.fortuna.ical4j.extensions.property.*
+import net.fortuna.ical4j.model.PropertyFactoryWrapper
 
 /**
  * @author fortuna
@@ -50,12 +46,11 @@ public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
     
     def registerExtendedProperties() {
         // register property factories..
-        registerFactory 'calstart', new CalStartFactory()
-        registerFactory 'liclocation', new LicLocationFactory()
-        registerFactory 'wralarmid', new WrAlarmIdFactory()
-        registerFactory 'wrcaldesc', new WrCalDescFactory()
-        registerFactory 'wrcalname', new WrCalNameFactory()
-        registerFactory 'wrtimezone', new WrTimezoneFactory()
+        registerFactory 'calstart', new PropertyFactoryWrapper(CalStart, new CalStart.Factory())
+        registerFactory 'liclocation', new PropertyFactoryWrapper(LicLocation, new LicLocation.Factory())
+        registerFactory 'wralarmid', new PropertyFactoryWrapper(WrAlarmId, new WrAlarmId.Factory())
+        registerFactory 'wrcaldesc', new PropertyFactoryWrapper(WrCalDesc, new WrCalDesc.Factory())
+        registerFactory 'wrcalname', new PropertyFactoryWrapper(WrCalName, new WrCalName.Factory())
+        registerFactory 'wrtimezone', new PropertyFactoryWrapper(WrTimezone, new WrTimezone.Factory())
     }
-    
 }
