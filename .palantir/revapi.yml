@@ -1,6 +1,22 @@
 acceptedBreaks:
   "1.0.4":
     org.mnode.ical4j:ical4j-extensions:
+      - code: "java.class.noLongerInheritsFromClass"
+        old: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.class.noLongerInheritsFromClass"
+        old: "class net.fortuna.ical4j.extensions.property.CalStart"
+        new: "class net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.class.nonFinalClassInheritsFromNewClass"
+        old: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.class.nonFinalClassInheritsFromNewClass"
+        old: "class net.fortuna.ical4j.extensions.property.CalStart"
+        new: "class net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
       - code: "java.class.removed"
         old: "class net.fortuna.ical4j.extensions.parameter.Display"
         justification: "updated_validation"
@@ -13,6 +29,409 @@ acceptedBreaks:
       - code: "java.class.removed"
         old: "class net.fortuna.ical4j.extensions.parameter.Label"
         justification: "updated_validation"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.CalStartFactory"
+        justification: "major_version_update"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.LicLocationFactory"
+        justification: "major_version_update"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.WrAlarmIdFactory"
+        justification: "major_version_update"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.WrCalDescFactory"
+        justification: "major_version_update"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.WrCalNameFactory"
+        justification: "major_version_update"
+      - code: "java.class.removed"
+        old: "class net.fortuna.ical4j.extensions.property.WrTimezoneFactory"
+        justification: "major_version_update"
+      - code: "java.class.superTypeTypeParametersChanged"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.class.superTypeTypeParametersChanged"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.element.nowDeprecated"
+        old: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "class net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.AlarmAgent.BOTH"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.AlarmAgent.CLIENT"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.AlarmAgent.NONE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.AlarmAgent.SERVER"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess.CONFIDENTIAL"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess.PRIVATE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess.PUBLIC"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.CalendarServerAccess.RESTRICTED"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.DefaultAlarm.FALSE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.DefaultAlarm.TRUE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.Proximity.ARRIVE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.caldav.property.Proximity.DEPART"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.groupwise.ItemType.APPOINTMENT"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.groupwise.ShowAs.BUSY"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.lotus.Charset.UTF8"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.outlook.AllDayEvent.FALSE"
+        justification: "major_version_update"
+      - code: "java.field.removed"
+        old: "field net.fortuna.ical4j.extensions.outlook.BusyStatus.BUSY"
+        justification: "major_version_update"
+      - code: "java.generics.elementNowParameterized"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.generics.elementNowParameterized"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.generics.formalTypeParameterAdded"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.generics.formalTypeParameterAdded"
+        old: "class net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "class net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.caldav.property.Acknowledged net.fortuna.ical4j.extensions.caldav.property.Acknowledged.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method net.fortuna.ical4j.extensions.caldav.property.Acknowledged net.fortuna.ical4j.extensions.caldav.property.Acknowledged.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.property.CalStart net.fortuna.ical4j.extensions.property.CalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method net.fortuna.ical4j.extensions.property.CalStart net.fortuna.ical4j.extensions.property.CalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalEnd::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method void net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends\
+        \ java.time.temporal.Temporal>::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalStart::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method void net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends\
+        \ java.time.temporal.Temporal>::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.extensions.property.CalStart::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method void net.fortuna.ical4j.extensions.property.CalStart::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String)"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.exception.runtimeAdded"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.exception.runtimeAdded"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.runtimeAdded"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.exception.runtimeAdded"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setValue(java.lang.String)\
+        \ throws java.text.ParseException @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method void net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::setValue(java.lang.String)\
+        \ throws java.time.format.DateTimeParseException @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.noLongerFinal"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.noLongerFinal"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.noLongerFinal"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.noLongerFinal"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(===net.fortuna.ical4j.model.DateTime===)"
+        new: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(===java.time.Instant===)"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ ===net.fortuna.ical4j.model.DateTime===)"
+        new: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(net.fortuna.ical4j.model.ParameterList,\
+        \ ===java.time.Instant===)"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.model.property.DateProperty::setDate(===net.fortuna.ical4j.model.Date===)\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "parameter void net.fortuna.ical4j.model.property.DateProperty<T extends\
+        \ java.time.temporal.Temporal>::setDate(===T===) @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.model.property.DateProperty::setDate(===net.fortuna.ical4j.model.Date===)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "parameter void net.fortuna.ical4j.model.property.DateProperty<T extends\
+        \ java.time.temporal.Temporal>::setDate(===T===) @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.model.property.DateProperty::setDate(===net.fortuna.ical4j.model.Date===)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "parameter void net.fortuna.ical4j.model.property.DateProperty<T extends\
+        \ java.time.temporal.Temporal>::setDate(===T===) @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T\
+        \ extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.parameterTypeChanged"
+        old: "parameter void net.fortuna.ical4j.model.property.DateProperty::setDate(===net.fortuna.ical4j.model.Date===)\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "parameter void net.fortuna.ical4j.model.property.DateProperty<T extends\
+        \ java.time.temporal.Temporal>::setDate(===T===) @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.DateTime net.fortuna.ical4j.model.property.UtcProperty::getDateTime()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.DateTime net.fortuna.ical4j.model.property.UtcProperty::getDateTime()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.TimeZone net.fortuna.ical4j.model.property.DateProperty::getTimeZone()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.TimeZone net.fortuna.ical4j.model.property.DateProperty::getTimeZone()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.TimeZone net.fortuna.ical4j.model.property.DateProperty::getTimeZone()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method net.fortuna.ical4j.model.TimeZone net.fortuna.ical4j.model.property.DateProperty::getTimeZone()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setTimeZone(net.fortuna.ical4j.model.TimeZone)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setTimeZone(net.fortuna.ical4j.model.TimeZone)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setUtc(boolean)\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setUtc(boolean)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setUtc(boolean)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.DateProperty::setUtc(boolean)\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::setDateTime(net.fortuna.ical4j.model.DateTime)\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::setDateTime(net.fortuna.ical4j.model.DateTime)\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::setTimeZone(net.fortuna.ical4j.model.TimeZone)\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.removed"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::setTimeZone(net.fortuna.ical4j.model.TimeZone)\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
+      - code: "java.method.returnTypeChanged"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
+      - code: "java.method.returnTypeChanged"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.returnTypeChanged"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "major_version_update"
+      - code: "java.method.returnTypeChanged"
+        old: "method net.fortuna.ical4j.model.Date net.fortuna.ical4j.model.property.DateProperty::getDate()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        new: "method T net.fortuna.ical4j.model.property.DateProperty<T extends java.time.temporal.Temporal>::getDate()\
+        \ @ net.fortuna.ical4j.extensions.property.CalStart"
+        justification: "major_version_update"
       - code: "java.method.returnTypeChanged"
         old: "method void net.fortuna.ical4j.extensions.caldav.property.AlarmAgent::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException"
@@ -122,11 +541,23 @@ acceptedBreaks:
         \ throws net.fortuna.ical4j.validate.ValidationException"
         justification: "updated_validation"
       - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalEnd::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.OriginalEnd<T\
+        \ extends java.time.temporal.Temporal>::validate() throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "major_version_update"
+      - code: "java.method.returnTypeChanged"
         old: "method void net.fortuna.ical4j.extensions.outlook.OriginalStart::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException"
         new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.OriginalStart::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException"
         justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.extensions.outlook.OriginalStart::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.outlook.OriginalStart<T\
+        \ extends java.time.temporal.Temporal>::validate() throws net.fortuna.ical4j.validate.ValidationException"
+        justification: "major_version_update"
       - code: "java.method.returnTypeChanged"
         old: "method void net.fortuna.ical4j.extensions.property.CalStart::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException"
@@ -169,6 +600,13 @@ acceptedBreaks:
         new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.extensions.property.WrTimezone::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException"
         justification: "updated_validation"
+      - code: "java.method.returnTypeChanged"
+        old: "method void net.fortuna.ical4j.model.property.UtcProperty::validate()\
+        \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.model.property.DateProperty<T\
+        \ extends java.time.temporal.Temporal>::validate() throws net.fortuna.ical4j.validate.ValidationException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "major_version_update"
       - code: "java.method.returnTypeChanged"
         old: "method void net.fortuna.ical4j.model.property.UtcProperty::validate()\
         \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
