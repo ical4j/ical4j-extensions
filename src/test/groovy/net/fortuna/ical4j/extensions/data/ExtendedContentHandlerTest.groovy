@@ -13,6 +13,10 @@ class ExtendedContentHandlerTest extends Specification {
         CompatibilityHints.setHintEnabled(CompatibilityHints.KEY_RELAXED_PARSING, true)
     }
 
+    def cleanup() {
+        CompatibilityHints.clearHintEnabled(CompatibilityHints.KEY_RELAXED_PARSING)
+    }
+
     def 'test loading calendar with X-WR-TIMEZONE property'() {
         given: 'an extended content handler'
         Calendar cal
@@ -22,7 +26,7 @@ class ExtendedContentHandlerTest extends Specification {
         ]
 
         when: 'a calendar is parser'
-        CalendarParserFactory.instance.get().parse(System.getResourceAsStream('/samples/Australian32Holidays.ics'),
+        CalendarParserFactory.instance.get().parse(ExtendedContentHandlerTest.getResourceAsStream('/samples/Australian32Holidays.ics'),
                 contentHandler)
 
         then: 'resulting calendar has a default timezone applied'
