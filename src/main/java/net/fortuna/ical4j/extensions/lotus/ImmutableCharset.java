@@ -3,7 +3,7 @@ package net.fortuna.ical4j.extensions.lotus;
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.property.immutable.ImmutableProperty;
+import net.fortuna.ical4j.model.property.ImmutableProperty;
 
 public class ImmutableCharset extends Charset implements ImmutableProperty {
 
