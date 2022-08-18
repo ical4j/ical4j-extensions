@@ -36,6 +36,8 @@ import net.fortuna.ical4j.validate.ParameterValidator;
 import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
+import java.time.ZoneId;
+
 /**
  * @author fortuna
  */
@@ -90,6 +92,29 @@ public class WrTimezone extends Property {
     @Override
     protected PropertyFactory<?> newFactory() {
         return new Factory();
+    }
+
+
+    /**
+     * Provides a {@link ZoneId} representation of this instance. If created with a local timezone registry the
+     * returned value will provide the corresponding globally unique value.
+     *
+     * @return a zone id represented by this instance
+     */
+    public ZoneId toZoneId() {
+        return toZoneId(null);
+    }
+
+    /**
+     * @param timeZoneRegistry
+     * @return
+     */
+    public ZoneId toZoneId(TimeZoneRegistry timeZoneRegistry) {
+        if (timeZoneRegistry != null && !timeZoneRegistry.getZoneRules().isEmpty()) {
+            return timeZoneRegistry.getZoneId(getValue());
+        } else {
+            return TimeZoneRegistry.getGlobalZoneId(getValue());
+        }
     }
 
     public static class Factory extends Content.Factory implements PropertyFactory<WrTimezone> {
