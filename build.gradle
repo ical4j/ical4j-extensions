@@ -16,10 +16,16 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
     // sonatype snapshots
     maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 dependencies {
@@ -62,21 +68,6 @@ javadoc {
     }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    archiveClassifier.set('javadoc')
-    from 'build/docs/javadoc'
-}
-
-task sourcesJar(type: Jar) {
-    from sourceSets.main.allSource
-    archiveClassifier.set('sources')
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
 scmVersion {
     tag {
         prefix = 'ical4j-extensions-'
@@ -88,6 +79,21 @@ scmVersion {
 group = 'org.mnode.ical4j'
 description = 'Support for additional non-standard iCalendar objects'
 version = scmVersion.version
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': 'iCal4j Extensions',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Ben Fortuna'
+        )
+    }
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
 
 revapi {
     oldVersion = revApiOldVersion
@@ -101,8 +107,6 @@ publishing {
     publications {
         ical4j_extensions(MavenPublication) {
             from components.java
-            artifact javadocJar
-            artifact sourcesJar
             pom.withXml {
                 asNode().appendNode('name', project.name)
                 asNode().appendNode('description', project.description)

@@ -1,23 +1,25 @@
-package net.fortuna.ical4j.extensions.caldav.property;
+package net.fortuna.ical4j.extensions.property;
 
 import net.fortuna.ical4j.model.Parameter;
-import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
+import net.fortuna.ical4j.model.property.Concept;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
-/**
- * @deprecated Use {@link net.fortuna.ical4j.model.property.immutable.ImmutableProximity} instead.
- */
-@Deprecated
-final class ImmutableProximity extends Proximity implements ImmutableProperty {
-    public static final Proximity ARRIVE = new ImmutableProximity("ARRIVE");
-    public static final Proximity DEPART = new ImmutableProximity("DEPART");
-    private static final long serialVersionUID = -2054338254L;
+import java.net.URI;
 
-    ImmutableProximity(String value) {
-        super(new ParameterList(), value);
+/**
+ * Base class for immutable definition of calendar component types.
+ */
+public abstract class AbstractType extends Concept implements ImmutableProperty {
+
+    public AbstractType(URI uri) {
+        super(uri);
     }
 
+    @Override
+    public void setValue(String aValue) {
+        ImmutableProperty.super.setValue(aValue);
+    }
 
     @Override
     public <T extends Property> T add(Parameter parameter) {
@@ -37,10 +39,5 @@ final class ImmutableProximity extends Proximity implements ImmutableProperty {
     @Override
     public <T extends Property> T replace(Parameter parameter) {
         return ImmutableProperty.super.replace(parameter);
-    }
-
-    @Override
-    public void setValue(final String aValue) {
-        ImmutableProperty.super.setValue(aValue);
     }
 }
