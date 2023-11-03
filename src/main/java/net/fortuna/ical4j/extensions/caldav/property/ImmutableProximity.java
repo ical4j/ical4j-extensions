@@ -5,6 +5,10 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * @deprecated Use {@link net.fortuna.ical4j.model.property.immutable.ImmutableProximity} instead.
+ */
+@Deprecated
 final class ImmutableProximity extends Proximity implements ImmutableProperty {
     public static final Proximity ARRIVE = new ImmutableProximity("ARRIVE");
     public static final Proximity DEPART = new ImmutableProximity("DEPART");
