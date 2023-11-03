@@ -3,6 +3,8 @@ package net.fortuna.ical4j.extensions.property
 import org.threeten.extra.Minutes
 import spock.lang.Specification
 
+import static net.fortuna.ical4j.extensions.property.Notify.Relative.BeforeStart
+
 class NotifyTest extends Specification {
 
     def 'test notify creation'() {
