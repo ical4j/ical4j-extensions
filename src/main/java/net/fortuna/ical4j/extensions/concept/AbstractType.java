@@ -1,4 +1,4 @@
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.concept;
 
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.Property;
