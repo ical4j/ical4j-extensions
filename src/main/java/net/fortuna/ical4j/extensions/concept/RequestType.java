@@ -14,6 +14,8 @@ public class RequestType extends AbstractType {
 
     public static final RequestType DECOMMISSION = new RequestType("https://ical4j.org/request-types/DECOMMISSION");
 
+    public static final RequestType FAULT = new RequestType("https://ical4j.org/request-types/FAULT");
+
     public RequestType(String uri) {
         super(URI.create(uri));
     }

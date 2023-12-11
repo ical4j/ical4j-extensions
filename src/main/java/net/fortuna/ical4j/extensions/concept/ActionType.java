@@ -15,12 +15,17 @@ public class ActionType extends AbstractType {
     public static final ActionType ACTION = new ActionType("https://ical4j.org/action-types/ACTION");
 
     /**
+     * A proposed agenda for events such as meetings, etc.
+     */
+    public static final ActionType AGENDA = new ActionType("https://ical4j.org/action-types/AGENDA");
+
+    /**
      * Approval action, typically used in a workflow involving orders and service requests.
      */
     public static final ActionType APPROVAL = new ActionType("https://ical4j.org/action-types/APPROVAL");
 
     /**
-     * Qualification action, used to review a service request to ensure requestor qualifies for service.
+     * Qualification action, used to review a service request to ensure requester qualifies for service.
      */
     public static final ActionType SERVICE_QUALIFICATION = new ActionType("https://ical4j.org/action-types/SERVICE_QUALIFICATION");
 

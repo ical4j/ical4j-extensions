@@ -12,7 +12,8 @@ public class EventType extends AbstractType {
 
     public static final EventType APPOINTMENT = new EventType("https://ical4j.org/event-types/APPOINTMENT");
 
-    public static final EventType REMINDER = new EventType("https://ical4j.org/event-types/REMINDER");
+    public static final EventType SEMINAR = new EventType("https://ical4j.org/event-types/SEMINAR");
+
     public static final EventType PERFORMANCE = new EventType("https://ical4j.org/event-types/PERFORMANCE");
 
     /**
