@@ -10,9 +10,9 @@ import java.net.URI;
 /**
  * Base class for immutable definition of calendar component types.
  */
-public abstract class AbstractType extends Concept implements ImmutableProperty {
+public class ImmutableConcept extends Concept implements ImmutableProperty {
 
-    public AbstractType(URI uri) {
+    public ImmutableConcept(URI uri) {
         super(uri);
     }
 
