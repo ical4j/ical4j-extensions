@@ -1,18 +1,15 @@
-package net.fortuna.ical4j.extensions.property;
+package net.fortuna.ical4j.extensions.link;
 
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.Property;
-import net.fortuna.ical4j.model.property.Concept;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
+import net.fortuna.ical4j.model.property.Link;
 
 import java.net.URI;
 
-/**
- * Base class for immutable definition of calendar component types.
- */
-public abstract class AbstractType extends Concept implements ImmutableProperty {
+public class ImmutableLink extends Link implements ImmutableProperty {
 
-    public AbstractType(URI uri) {
+    public ImmutableLink(URI uri) {
         super(uri);
     }
 
@@ -40,4 +37,5 @@ public abstract class AbstractType extends Concept implements ImmutableProperty 
     public <T extends Property> T replace(Parameter parameter) {
         return ImmutableProperty.super.replace(parameter);
     }
+
 }

@@ -19,38 +19,38 @@ import java.util.stream.Collectors;
 import static java.time.DayOfWeek.*;
 
 /**
- * A Schedule is an immutable subclass of {@link RRule} to support common use-cases.
+ * Repeats is an immutable subclass of {@link RRule} to support common use-cases.
  *
  * @param <T> the temporal type to which this rule will be applied
  */
-public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableProperty {
+public class Repeats<T extends Temporal> extends RRule<T> implements ImmutableProperty {
 
-    public static final Schedule<LocalDate> YEARLY = new Schedule<>(Years.ONE);
+    public static final Repeats<LocalDate> YEARLY = new Repeats<>(Years.ONE);
 
-    public static final Schedule<LocalDate> HALF_YEARLY = new Schedule<>(Months.of(6));
+    public static final Repeats<LocalDate> HALF_YEARLY = new Repeats<>(Months.of(6));
 
-    public static final Schedule<LocalDate> QUARTERLY = new Schedule<>(Months.of(3));
+    public static final Repeats<LocalDate> QUARTERLY = new Repeats<>(Months.of(3));
 
-    public static final Schedule<LocalDate> MONTHLY = new Schedule<>(Months.ONE);
+    public static final Repeats<LocalDate> MONTHLY = new Repeats<>(Months.ONE);
 
-    public static final Schedule<LocalDate> FORTNIGHTLY = new Schedule<>(Weeks.of(2));
+    public static final Repeats<LocalDate> FORTNIGHTLY = new Repeats<>(Weeks.of(2));
 
-    public static final Schedule<LocalDate> WEEKLY = new Schedule<>(Weeks.ONE);
+    public static final Repeats<LocalDate> WEEKLY = new Repeats<>(Weeks.ONE);
 
-    public static final Schedule<LocalDate> DAILY = new Schedule<>(Days.ONE);
+    public static final Repeats<LocalDate> DAILY = new Repeats<>(Days.ONE);
 
-    public static final Schedule<LocalDate> TWICE_DAILY = new Schedule<>(Hours.of(12));
+    public static final Repeats<LocalDate> TWICE_DAILY = new Repeats<>(Hours.of(12));
 
-    public static final Schedule<LocalDate> HOURLY = new Schedule<>(Hours.of(1));
+    public static final Repeats<LocalDate> HOURLY = new Repeats<>(Hours.of(1));
 
-    public static final Schedule<LocalDate> MINUTELY = new Schedule<>(Minutes.of(1));
+    public static final Repeats<LocalDate> MINUTELY = new Repeats<>(Minutes.of(1));
 
-    public static final Schedule<LocalDate> SECONDLY = new Schedule<>(Seconds.of(1));
+    public static final Repeats<LocalDate> SECONDLY = new Repeats<>(Seconds.of(1));
 
-    public static final Schedule<LocalDate> WEEKDAYS = new Schedule<LocalDate>(Weeks.ONE)
+    public static final Repeats<LocalDate> WEEKDAYS = new Repeats<LocalDate>(Weeks.ONE)
             .on(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY);
 
-    public static final Schedule<LocalDate> WEEKENDS = new Schedule<LocalDate>(Weeks.ONE)
+    public static final Repeats<LocalDate> WEEKENDS = new Repeats<LocalDate>(Weeks.ONE)
             .on(SATURDAY, SUNDAY);
 
     /**
@@ -58,7 +58,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Years interval) {
+    public Repeats(Years interval) {
         this(new Recur.Builder<>().frequency(Frequency.YEARLY)
                 .interval(interval.getAmount()).build());
     }
@@ -68,7 +68,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Months interval) {
+    public Repeats(Months interval) {
         this(new Recur.Builder<>().frequency(Frequency.MONTHLY)
                 .interval(interval.getAmount()).build());
     }
@@ -78,7 +78,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Weeks interval) {
+    public Repeats(Weeks interval) {
         this(new Recur.Builder<>().frequency(Frequency.WEEKLY)
                 .interval(interval.getAmount()).build());
     }
@@ -88,7 +88,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Days interval) {
+    public Repeats(Days interval) {
         this(new Recur.Builder<>().frequency(Frequency.DAILY)
                 .interval(interval.getAmount()).build());
     }
@@ -98,7 +98,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Hours interval) {
+    public Repeats(Hours interval) {
         this(new Recur.Builder<>().frequency(Frequency.HOURLY)
                 .interval(interval.getAmount()).build());
     }
@@ -108,7 +108,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Minutes interval) {
+    public Repeats(Minutes interval) {
         this(new Recur.Builder<>().frequency(Frequency.MINUTELY)
                 .interval(interval.getAmount()).build());
     }
@@ -118,12 +118,12 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param interval
      */
-    public Schedule(Seconds interval) {
+    public Repeats(Seconds interval) {
         this(new Recur.Builder<>().frequency(Frequency.SECONDLY)
                 .interval(interval.getAmount()).build());
     }
 
-    private Schedule(Recur<?> recur) {
+    private Repeats(Recur<?> recur) {
         setRecur(recur);
     }
 
@@ -152,8 +152,8 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param day
      */
-    public Schedule<T> on(DayOfWeek... day) {
-        return new Schedule<>(new Recur.Builder<>(getRecur()).dayList(Arrays.stream(day).map(WeekDay::getWeekDay)
+    public Repeats<T> on(DayOfWeek... day) {
+        return new Repeats<>(new Recur.Builder<>(getRecur()).dayList(Arrays.stream(day).map(WeekDay::getWeekDay)
                 .collect(Collectors.toList())).build());
     }
 
@@ -162,12 +162,12 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      *
      * @param dayOfMonth
      */
-    public Schedule<T> on(Integer... dayOfMonth) {
-        return new Schedule<>(new Recur.Builder<>(getRecur()).monthDayList(Arrays.asList(dayOfMonth)).build());
+    public Repeats<T> on(Integer... dayOfMonth) {
+        return new Repeats<>(new Recur.Builder<>(getRecur()).monthDayList(Arrays.asList(dayOfMonth)).build());
     }
 
-    public Schedule<T> on(Month... month) {
-        return new Schedule<>(new Recur.Builder<>(getRecur()).monthList(Arrays.stream(month)
+    public Repeats<T> on(Month... month) {
+        return new Repeats<>(new Recur.Builder<>(getRecur()).monthList(Arrays.stream(month)
                 .map(m -> net.fortuna.ical4j.model.Month.valueOf(m.getValue()))
                 .collect(Collectors.toList())).build());
     }
@@ -178,8 +178,8 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      * @param endDate
      * @return
      */
-    public Schedule<T> until(T endDate) {
-        return new Schedule<>(new Recur.Builder<>(getRecur()).until(endDate).build());
+    public Repeats<T> until(T endDate) {
+        return new Repeats<>(new Recur.Builder<>(getRecur()).until(endDate).build());
     }
 
     /**
@@ -188,7 +188,7 @@ public class Schedule<T extends Temporal> extends RRule<T> implements ImmutableP
      * @param count
      * @return
      */
-    public Schedule<T> times(int count) {
-        return new Schedule<>(new Recur.Builder<>(getRecur()).count(count).build());
+    public Repeats<T> times(int count) {
+        return new Repeats<>(new Recur.Builder<>(getRecur()).count(count).build());
     }
 }
