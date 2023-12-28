@@ -619,3 +619,7 @@ acceptedBreaks:
         new: "method net.fortuna.ical4j.validate.ValidationResult net.fortuna.ical4j.validate.CalendarValidatorImpl::validate(net.fortuna.ical4j.model.Calendar)\
         \ throws net.fortuna.ical4j.validate.ValidationException @ net.fortuna.ical4j.extensions.validate.ExtensionsCalendarValidator"
         justification: "updated_validation"
+      - code: "java.method.returnTypeChangedCovariantly"
+        old: "method net.fortuna.ical4j.model.Parameter net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
+        new: "method net.fortuna.ical4j.extensions.parameter.Filename net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
+        justification: "implement_generics"
