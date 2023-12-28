@@ -19,6 +19,13 @@ public class MetricType extends ImmutableConcept {
 
     public static final MetricType DIAGNOSTIC = new MetricType("https://ical4j.org/extensions/concept/metric/DIAGNOSTIC");
 
+    /**
+     * The Presence metric is used to record checkins by individuals at physical or virtual locations. The concept of
+     * presence is typically associated with a `VJOURNAL` object that may be recurring (i.e. encapsulates multiple
+     * checkins for an individual at a specific location).
+     */
+    public static final MetricType PRESENCE = new MetricType("https://ical4j.org/extensions/concept/metric/PRESENCE");
+
     public MetricType(String uri) {
         super(URI.create(uri));
     }
