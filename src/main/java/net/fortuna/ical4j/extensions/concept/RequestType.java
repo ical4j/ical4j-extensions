@@ -10,20 +10,42 @@ import java.net.URI;
  */
 public class RequestType extends ImmutableConcept {
 
-    public static final RequestType REQUEST = new RequestType("https://ical4j.org/extensions/concept/request/REQUEST");
+    public enum Urn {
+        Request("urn:ical4j:concept:request"),
+
+        Order("urn:ical4j:concept:request:order"),
+
+        Provision("urn:ical4j:concept:request:provision"),
+
+        Decommission("urn:ical4j:concept:request:decommission"),
+
+        Fault("urn:ical4j:concept:request:fault");
+
+        private final URI uri;
+
+        Urn(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
+
+    public static final RequestType REQUEST = new RequestType(Urn.Request);
 
     /**
      * See: <a href="https://schema.org/Order">Order</a>
      */
-    public static final RequestType ORDER = new RequestType("https://ical4j.org/extensions/concept/request/ORDER");
+    public static final RequestType ORDER = new RequestType(Urn.Order);
 
-    public static final RequestType PROVISION = new RequestType("https://ical4j.org/extensions/concept/request/PROVISION");
+    public static final RequestType PROVISION = new RequestType(Urn.Provision);
 
-    public static final RequestType DECOMMISSION = new RequestType("https://ical4j.org/extensions/concept/request/DECOMMISSION");
+    public static final RequestType DECOMMISSION = new RequestType(Urn.Decommission);
 
-    public static final RequestType FAULT = new RequestType("https://ical4j.org/extensions/concept/request/FAULT");
+    public static final RequestType FAULT = new RequestType(Urn.Fault);
 
-    public RequestType(String uri) {
-        super(URI.create(uri));
+    public RequestType(Urn urn) {
+        super(urn.getUri());
     }
 }
