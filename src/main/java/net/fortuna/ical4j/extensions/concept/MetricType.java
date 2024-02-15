@@ -9,22 +9,22 @@ import java.net.URI;
  */
 public class MetricType extends ImmutableConcept {
 
-    public enum Urn {
-        Metric("urn:ical4j:concept:metric"),
+    public enum Id {
+        Metric("ical4j:concept:metric"),
 
-        Attendance("urn:ical4j:concept:metric:attendance"),
+        Attendance("ical4j:concept:metric:attendance"),
 
-        TimeToRespond("urn:ical4j:concept:metric:time_to_respond"),
+        TimeToRespond("ical4j:concept:metric:time_to_respond"),
 
-        TimeToResolve("urn:ical4j:concept:metric:time_to_resolve"),
+        TimeToResolve("ical4j:concept:metric:time_to_resolve"),
 
-        Diagnostic("urn:ical4j:concept:metric:diagnostic"),
+        Diagnostic("ical4j:concept:metric:diagnostic"),
 
-        Presence("urn:ical4j:concept:metric:presence");
+        Presence("ical4j:concept:metric:presence");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -33,24 +33,24 @@ public class MetricType extends ImmutableConcept {
         }
     }
 
-    public static final MetricType METRIC = new MetricType(Urn.Metric);
+    public static final MetricType METRIC = new MetricType(Id.Metric);
 
-    public static final MetricType ATTENDANCE = new MetricType(Urn.Attendance);
+    public static final MetricType ATTENDANCE = new MetricType(Id.Attendance);
 
-    public static final MetricType TIME_TO_RESPOND = new MetricType(Urn.TimeToRespond);
+    public static final MetricType TIME_TO_RESPOND = new MetricType(Id.TimeToRespond);
 
-    public static final MetricType TIME_TO_RESOLVE = new MetricType(Urn.TimeToResolve);
+    public static final MetricType TIME_TO_RESOLVE = new MetricType(Id.TimeToResolve);
 
-    public static final MetricType DIAGNOSTIC = new MetricType(Urn.Diagnostic);
+    public static final MetricType DIAGNOSTIC = new MetricType(Id.Diagnostic);
 
     /**
      * The Presence metric is used to record checkins by individuals at physical or virtual locations. The concept of
      * presence is typically associated with a `VJOURNAL` object that may be recurring (i.e. encapsulates multiple
      * checkins for an individual at a specific location).
      */
-    public static final MetricType PRESENCE = new MetricType(Urn.Presence);
+    public static final MetricType PRESENCE = new MetricType(Id.Presence);
 
-    public MetricType(Urn urn) {
-        super(urn.getUri());
+    public MetricType(Id id) {
+        super(id.getUri());
     }
 }

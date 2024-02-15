@@ -9,30 +9,30 @@ import java.net.URI;
  */
 public class NoteType extends ImmutableConcept {
 
-    public enum Urn {
-        Note("urn:ical4j:concept:note"),
+    public enum Id {
+        Note("ical4j:concept:note"),
 
-        DefinedTerm("urn:ical4j:concept:note:defined_term"),
+        DefinedTerm("ical4j:concept:note:defined_term"),
 
-        Article("urn:ical4j:concept:note:article"),
+        Article("ical4j:concept:note:article"),
 
-        DigitalDocument("urn:ical4j:concept:note:digital_document"),
+        DigitalDocument("ical4j:concept:note:digital_document"),
 
-        Release("urn:ical4j:concept:note:release"),
+        Release("ical4j:concept:note:release"),
 
-        Assumption("urn:ical4j:concept:note:assumption"),
+        Assumption("ical4j:concept:note:assumption"),
 
-        Decision("urn:ical4j:concept:note:decision"),
+        Decision("ical4j:concept:note:decision"),
 
-        Comment("urn:ical4j:concept:note:comment"),
+        Comment("ical4j:concept:note:comment"),
 
-        Timesheet("urn:ical4j:concept:note:timesheet"),
+        Timesheet("ical4j:concept:note:timesheet"),
 
-        Invoice("urn:ical4j:concept:note:invoice");
+        Invoice("ical4j:concept:note:invoice");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -41,43 +41,43 @@ public class NoteType extends ImmutableConcept {
         }
     }
 
-    public static final NoteType NOTE = new NoteType(Urn.Note);
+    public static final NoteType NOTE = new NoteType(Id.Note);
 
     /**
      * @see <a href="https://schema.org/DefinedTerm">schema.org</a>
      */
-    public static final NoteType DEFINED_TERM = new NoteType(Urn.DefinedTerm);
+    public static final NoteType DEFINED_TERM = new NoteType(Id.DefinedTerm);
 
-    public static final NoteType ARTICLE = new NoteType(Urn.Article);
+    public static final NoteType ARTICLE = new NoteType(Id.Article);
 
     /**
      * See: <a href="https://schema.org/DigitalDocument">schema.org: DigitalDocument</a>
      */
-    public static final NoteType DIGITAL_DOCUMENT = new NoteType(Urn.DigitalDocument);
+    public static final NoteType DIGITAL_DOCUMENT = new NoteType(Id.DigitalDocument);
 
     /**
      * Capture release notes and changelog for published version.
      */
-    public static final NoteType RELEASE = new NoteType(Urn.Release);
+    public static final NoteType RELEASE = new NoteType(Id.Release);
 
-    public static final NoteType ASSUMPTION = new NoteType(Urn.Assumption);
+    public static final NoteType ASSUMPTION = new NoteType(Id.Assumption);
 
-    public static final NoteType DECISION = new NoteType(Urn.Decision);
+    public static final NoteType DECISION = new NoteType(Id.Decision);
 
     /**
      * See: <a href="https://schema.org/Comment">schema.org: Comment</a>
      */
-    public static final NoteType COMMENT = new NoteType(Urn.Comment);
+    public static final NoteType COMMENT = new NoteType(Id.Comment);
 
 
-    public static final NoteType TIMESHEET = new NoteType(Urn.Timesheet);
+    public static final NoteType TIMESHEET = new NoteType(Id.Timesheet);
 
     /**
      * See: <a href="https://schema.org/Invoice">schema.org: Invoice</a>
      */
-    public static final NoteType INVOICE = new NoteType(Urn.Invoice);
+    public static final NoteType INVOICE = new NoteType(Id.Invoice);
 
-    public NoteType(Urn urn) {
-        super(urn.getUri());
+    public NoteType(Id id) {
+        super(id.getUri());
     }
 }

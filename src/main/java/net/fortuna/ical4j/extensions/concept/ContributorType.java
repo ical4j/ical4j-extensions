@@ -7,14 +7,14 @@ import java.net.URI;
  */
 public class ContributorType extends ImmutableConcept {
 
-    public enum Urn {
-        Reporter("urn:ical4j:concept:contributor:reporter"),
+    public enum Id {
+        Reporter("ical4j:concept:contributor:reporter"),
 
-        Assignee("urn:ical4j:concept:contributor:assignee");
+        Assignee("ical4j:concept:contributor:assignee");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -23,11 +23,11 @@ public class ContributorType extends ImmutableConcept {
         }
     }
 
-    public static final ContributorType REPORTER = new ContributorType(Urn.Reporter);
+    public static final ContributorType REPORTER = new ContributorType(Id.Reporter);
 
-    public static final ContributorType ASSIGNEE = new ContributorType(Urn.Assignee);
+    public static final ContributorType ASSIGNEE = new ContributorType(Id.Assignee);
 
-    public ContributorType(Urn urn) {
-        super(urn.getUri());
+    public ContributorType(Id id) {
+        super(id.getUri());
     }
 }

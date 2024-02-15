@@ -8,18 +8,18 @@ import java.net.URI;
 public class AssetType extends ImmutableConcept {
 
 
-    public enum Urn {
-        Asset("urn:ical4j:concept:asset"),
+    public enum Id {
+        Asset("ical4j:concept:asset"),
 
-        Vehicle("urn:ical4j:concept:asset:vehicle"),
+        Vehicle("ical4j:concept:asset:vehicle"),
 
-        Property("urn:ical4j:concept:asset:property"),
+        Property("ical4j:concept:asset:property"),
 
-        ConfigurationItem("urn:ical4j:concept:asset:configuration_item");
+        ConfigurationItem("ical4j:concept:asset:configuration_item");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -28,13 +28,13 @@ public class AssetType extends ImmutableConcept {
         }
     }
 
-    public static final AssetType VEHICLE = new AssetType(Urn.Vehicle);
+    public static final AssetType VEHICLE = new AssetType(Id.Vehicle);
 
-    public static final AssetType PROPERTY = new AssetType(Urn.Property);
+    public static final AssetType PROPERTY = new AssetType(Id.Property);
 
-    public static final AssetType CONFIGURATION_ITEM = new AssetType(Urn.ConfigurationItem);
+    public static final AssetType CONFIGURATION_ITEM = new AssetType(Id.ConfigurationItem);
 
-    public AssetType(Urn urn) {
-        super(urn.getUri());
+    public AssetType(Id id) {
+        super(id.getUri());
     }
 }

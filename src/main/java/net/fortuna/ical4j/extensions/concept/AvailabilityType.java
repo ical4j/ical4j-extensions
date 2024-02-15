@@ -4,20 +4,20 @@ import java.net.URI;
 
 public class AvailabilityType extends ImmutableConcept {
 
-    public enum Urn {
-        Availability("urn:ical4j:concept:availability"),
+    public enum Id {
+        Availability("ical4j:concept:availability"),
 
-        Roster("urn:ical4j:concept:availability:roster"),
+        Roster("ical4j:concept:availability:roster"),
 
-        Reservable("urn:ical4j:concept:availability:reservable"),
+        Reservable("ical4j:concept:availability:reservable"),
 
-        Invitation("urn:ical4j:concept:availability:invitation"),
+        Invitation("ical4j:concept:availability:invitation"),
 
-        Offer("urn:ical4j:concept:availability:offer");
+        Offer("ical4j:concept:availability:offer");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -26,31 +26,31 @@ public class AvailabilityType extends ImmutableConcept {
         }
     }
 
-    public static final AvailabilityType AVAILABILITY = new AvailabilityType(Urn.Availability);
+    public static final AvailabilityType AVAILABILITY = new AvailabilityType(Id.Availability);
 
     /**
      * A Roster is used to schedule availability for individuals.
      */
-    public static final AvailabilityType ROSTER = new AvailabilityType(Urn.Roster);
+    public static final AvailabilityType ROSTER = new AvailabilityType(Id.Roster);
 
     /**
      * A Reservable provides availability for a finite resource such as physical assets.
      */
-    public static final AvailabilityType RESERVABLE = new AvailabilityType(Urn.Reservable);
+    public static final AvailabilityType RESERVABLE = new AvailabilityType(Id.Reservable);
 
     /**
      * Defines availability period to subscribe to
      * a linked entity or resource. The definition of subscribe, and resulting actions are implementation-
      * specific and not defined here.
      */
-    public static final AvailabilityType INVITATION = new AvailabilityType(Urn.Invitation);
+    public static final AvailabilityType INVITATION = new AvailabilityType(Id.Invitation);
 
     /**
      * See: <a href="https://schema.org/Offer">schema.org: Offer</a>
      */
-    public static final AvailabilityType OFFER = new AvailabilityType(Urn.Offer);
+    public static final AvailabilityType OFFER = new AvailabilityType(Id.Offer);
 
-    public AvailabilityType(Urn urn) {
-        super(urn.getUri());
+    public AvailabilityType(Id id) {
+        super(id.getUri());
     }
 }

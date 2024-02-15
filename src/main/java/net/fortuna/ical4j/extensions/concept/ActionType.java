@@ -9,28 +9,28 @@ import java.net.URI;
  */
 public class ActionType extends ImmutableConcept {
 
-    public enum Urn {
-        Action("urn:ical4j:concept:action"),
+    public enum Id {
+        Action("ical4j:concept:action"),
 
-        Agenda("urn:ical4j:concept:action:agenda"),
+        Agenda("ical4j:concept:action:agenda"),
 
-        Approval("urn:ical4j:concept:action:approval"),
+        Approval("ical4j:concept:action:approval"),
 
-        ServiceQualification("urn:ical4j:concept:action:service_qualification"),
+        ServiceQualification("ical4j:concept:action:service_qualification"),
 
-        Payment("urn:ical4j:concept:action:payment"),
+        Payment("ical4j:concept:action:payment"),
 
-        Fulfilment("urn:ical4j:concept:action:fulfilment"),
+        Fulfilment("ical4j:concept:action:fulfilment"),
 
-        Clarification("urn:ical4j:concept:action:clarification"),
+        Clarification("ical4j:concept:action:clarification"),
 
-        Review("urn:ical4j:concept:action:review"),
+        Review("ical4j:concept:action:review"),
 
-        LinkRegistration("urn:ical4j:concept:action:link_registration");
+        LinkRegistration("ical4j:concept:action:link_registration");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -41,40 +41,40 @@ public class ActionType extends ImmutableConcept {
     /**
      * General action type.
      */
-    public static final ActionType ACTION = new ActionType(Urn.Action);
+    public static final ActionType ACTION = new ActionType(Id.Action);
 
     /**
      * A proposed agenda for events such as meetings, etc.
      */
-    public static final ActionType AGENDA = new ActionType(Urn.Agenda);
+    public static final ActionType AGENDA = new ActionType(Id.Agenda);
 
     /**
      * Approval action, typically used in a workflow involving orders and service requests.
      */
-    public static final ActionType APPROVAL = new ActionType(Urn.Approval);
+    public static final ActionType APPROVAL = new ActionType(Id.Approval);
 
     /**
      * Qualification action, used to review a service request to ensure requester qualifies for service.
      */
-    public static final ActionType SERVICE_QUALIFICATION = new ActionType(Urn.ServiceQualification);
+    public static final ActionType SERVICE_QUALIFICATION = new ActionType(Id.ServiceQualification);
 
-    public static final ActionType PAYMENT = new ActionType(Urn.Payment);
+    public static final ActionType PAYMENT = new ActionType(Id.Payment);
 
     /**
      * Fulfilment action, typically used to resolve orders and service requests.
      */
-    public static final ActionType FULFILMENT = new ActionType(Urn.Fulfilment);
+    public static final ActionType FULFILMENT = new ActionType(Id.Fulfilment);
 
     /**
      * Clarification action, typically use to request further information to resolve orders and service requests.
      */
-    public static final ActionType CLARIFICATION = new ActionType(Urn.Clarification);
+    public static final ActionType CLARIFICATION = new ActionType(Id.Clarification);
 
-    public static final ActionType REVIEW = new ActionType(Urn.Review);
+    public static final ActionType REVIEW = new ActionType(Id.Review);
 
-    public static final ActionType LINK_REGISTRATION = new ActionType(Urn.LinkRegistration);
+    public static final ActionType LINK_REGISTRATION = new ActionType(Id.LinkRegistration);
 
-    public ActionType(Urn urn) {
-        super(urn.getUri());
+    public ActionType(Id id) {
+        super(id.getUri());
     }
 }

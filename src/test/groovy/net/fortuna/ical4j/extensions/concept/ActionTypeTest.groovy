@@ -16,7 +16,7 @@ class ActionTypeTest extends Specification {
         expect: 'string matches expected value'
         toDo as String ==~ /BEGIN:VTODO\r
 SUMMARY:My new agenda\r
-CONCEPT:urn:ical4j:concept:action:agenda\r
+CONCEPT:ical4j:concept:action:agenda\r
 END:VTODO\r\n/
     }
 }

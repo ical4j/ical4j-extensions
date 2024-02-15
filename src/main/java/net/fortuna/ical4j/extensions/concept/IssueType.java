@@ -9,31 +9,31 @@ import java.net.URI;
  */
 public class IssueType extends ImmutableConcept {
 
-    public enum Urn {
-        Issue("urn:ical4j:concept:issue"),
+    public enum Id {
+        Issue("ical4j:concept:issue"),
 
-        Story("urn:ical4j:concept:issue:story"),
+        Story("ical4j:concept:issue:story"),
 
-        Epic("urn:ical4j:concept:issue:epic"),
+        Epic("ical4j:concept:issue:epic"),
 
-        Task("urn:ical4j:concept:issue:task"),
+        Task("ical4j:concept:issue:task"),
 
-        Subtask("urn:ical4j:concept:issue:subtask"),
+        Subtask("ical4j:concept:issue:subtask"),
 
-        Risk("urn:ical4j:concept:issue:risk"),
+        Risk("ical4j:concept:issue:risk"),
 
-        Improvement("urn:ical4j:concept:issue:improvement"),
+        Improvement("ical4j:concept:issue:improvement"),
 
-        Change("urn:ical4j:concept:issue:change"),
+        Change("ical4j:concept:issue:change"),
 
-        Incident("urn:ical4j:concept:issue:incident"),
+        Incident("ical4j:concept:issue:incident"),
 
 
-        Problem("urn:ical4j:concept:issue:problem");
+        Problem("ical4j:concept:issue:problem");
 
         private final URI uri;
 
-        Urn(String uri) {
+        Id(String uri) {
             this.uri = URI.create(uri);
         }
 
@@ -45,53 +45,53 @@ public class IssueType extends ImmutableConcept {
     /**
      * Generic issue type.
      */
-    public static final IssueType ISSUE = new IssueType(Urn.Issue);
+    public static final IssueType ISSUE = new IssueType(Id.Issue);
 
-    public static final IssueType STORY = new IssueType(Urn.Story);
+    public static final IssueType STORY = new IssueType(Id.Story);
 
     /**
      * A high-level feature or enhancement to a service or process. Typically, will consist of multiple
      * stories required to implement said feature.
      */
-    public static final IssueType EPIC = new IssueType(Urn.Epic);
+    public static final IssueType EPIC = new IssueType(Id.Epic);
 
     /**
      * A task to be performed, sometimes repeatedly, as part of BAU or other activities.
      */
-    public static final IssueType TASK = new IssueType(Urn.Task);
+    public static final IssueType TASK = new IssueType(Id.Task);
 
     /**
      * A child task that requires completion in order to complete the parent.
      */
-    public static final IssueType SUBTASK = new IssueType(Urn.Subtask);
+    public static final IssueType SUBTASK = new IssueType(Id.Subtask);
 
     /**
      * Identify a potential problem before it manifests.
      */
-    public static final IssueType RISK = new IssueType(Urn.Risk);
+    public static final IssueType RISK = new IssueType(Id.Risk);
 
     /**
      * Capture details of process improvements and feature roadmap. This can be used to track
      * demand from both internal and external sources.
      */
-    public static final IssueType IMPROVEMENT = new IssueType(Urn.Improvement);
+    public static final IssueType IMPROVEMENT = new IssueType(Id.Improvement);
 
     /**
      * Plan and track changes being made to critical environments and services.
      */
-    public static final IssueType CHANGE = new IssueType(Urn.Change);
+    public static final IssueType CHANGE = new IssueType(Id.Change);
 
     /**
      * Record incidents such as service degradation or other impacting events.
      */
-    public static final IssueType INCIDENT = new IssueType(Urn.Incident);
+    public static final IssueType INCIDENT = new IssueType(Id.Incident);
 
     /**
      * Identify and track problems that may not necessarily impact service offerings directly.
      */
-    public static final IssueType PROBLEM = new IssueType(Urn.Problem);
+    public static final IssueType PROBLEM = new IssueType(Id.Problem);
 
-    public IssueType(Urn urn) {
-        super(urn.getUri());
+    public IssueType(Id id) {
+        super(id.getUri());
     }
 }
