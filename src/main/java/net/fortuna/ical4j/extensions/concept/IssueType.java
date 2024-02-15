@@ -9,56 +9,89 @@ import java.net.URI;
  */
 public class IssueType extends ImmutableConcept {
 
+    public enum Id {
+        Issue("ical4j:concept:issue"),
+
+        Story("ical4j:concept:issue:story"),
+
+        Epic("ical4j:concept:issue:epic"),
+
+        Task("ical4j:concept:issue:task"),
+
+        Subtask("ical4j:concept:issue:subtask"),
+
+        Risk("ical4j:concept:issue:risk"),
+
+        Improvement("ical4j:concept:issue:improvement"),
+
+        Change("ical4j:concept:issue:change"),
+
+        Incident("ical4j:concept:issue:incident"),
+
+
+        Problem("ical4j:concept:issue:problem");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
+
     /**
      * Generic issue type.
      */
-    public static final IssueType ISSUE = new IssueType("https://ical4j.org/extensions/concept/issue/ISSUE");
+    public static final IssueType ISSUE = new IssueType(Id.Issue);
 
-    public static final IssueType STORY = new IssueType("https://ical4j.org/extensions/concept/issue/STORY");
+    public static final IssueType STORY = new IssueType(Id.Story);
 
     /**
      * A high-level feature or enhancement to a service or process. Typically, will consist of multiple
      * stories required to implement said feature.
      */
-    public static final IssueType EPIC = new IssueType("https://ical4j.org/extensions/concept/issue/EPIC");
+    public static final IssueType EPIC = new IssueType(Id.Epic);
 
     /**
      * A task to be performed, sometimes repeatedly, as part of BAU or other activities.
      */
-    public static final IssueType TASK = new IssueType("https://ical4j.org/extensions/concept/issue/TASK");
+    public static final IssueType TASK = new IssueType(Id.Task);
 
     /**
      * A child task that requires completion in order to complete the parent.
      */
-    public static final IssueType SUBTASK = new IssueType("https://ical4j.org/extensions/concept/issue/SUBTASK");
+    public static final IssueType SUBTASK = new IssueType(Id.Subtask);
 
     /**
      * Identify a potential problem before it manifests.
      */
-    public static final IssueType RISK = new IssueType("https://ical4j.org/extensions/concept/issue/RISK");
+    public static final IssueType RISK = new IssueType(Id.Risk);
 
     /**
      * Capture details of process improvements and feature roadmap. This can be used to track
      * demand from both internal and external sources.
      */
-    public static final IssueType IMPROVEMENT = new IssueType("https://ical4j.org/extensions/concept/issue/IMPROVEMENT");
+    public static final IssueType IMPROVEMENT = new IssueType(Id.Improvement);
 
     /**
      * Plan and track changes being made to critical environments and services.
      */
-    public static final IssueType CHANGE = new IssueType("https://ical4j.org/extensions/concept/issue/CHANGE");
+    public static final IssueType CHANGE = new IssueType(Id.Change);
 
     /**
      * Record incidents such as service degradation or other impacting events.
      */
-    public static final IssueType INCIDENT = new IssueType("https://ical4j.org/extensions/concept/issue/INCIDENT");
+    public static final IssueType INCIDENT = new IssueType(Id.Incident);
 
     /**
      * Identify and track problems that may not necessarily impact service offerings directly.
      */
-    public static final IssueType PROBLEM = new IssueType("https://ical4j.org/extensions/concept/issue/PROBLEM");
+    public static final IssueType PROBLEM = new IssueType(Id.Problem);
 
-    public IssueType(String uri) {
-        super(URI.create(uri));
+    public IssueType(Id id) {
+        super(id.getUri());
     }
 }

@@ -9,41 +9,72 @@ import java.net.URI;
  */
 public class ActionType extends ImmutableConcept {
 
+    public enum Id {
+        Action("ical4j:concept:action"),
+
+        Agenda("ical4j:concept:action:agenda"),
+
+        Approval("ical4j:concept:action:approval"),
+
+        ServiceQualification("ical4j:concept:action:service_qualification"),
+
+        Payment("ical4j:concept:action:payment"),
+
+        Fulfilment("ical4j:concept:action:fulfilment"),
+
+        Clarification("ical4j:concept:action:clarification"),
+
+        Review("ical4j:concept:action:review"),
+
+        LinkRegistration("ical4j:concept:action:link_registration");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
     /**
      * General action type.
      */
-    public static final ActionType ACTION = new ActionType("https://ical4j.org/extensions/concept/action/ACTION");
+    public static final ActionType ACTION = new ActionType(Id.Action);
 
     /**
      * A proposed agenda for events such as meetings, etc.
      */
-    public static final ActionType AGENDA = new ActionType("https://ical4j.org/extensions/concept/action/AGENDA");
+    public static final ActionType AGENDA = new ActionType(Id.Agenda);
 
     /**
      * Approval action, typically used in a workflow involving orders and service requests.
      */
-    public static final ActionType APPROVAL = new ActionType("https://ical4j.org/extensions/concept/action/APPROVAL");
+    public static final ActionType APPROVAL = new ActionType(Id.Approval);
 
     /**
      * Qualification action, used to review a service request to ensure requester qualifies for service.
      */
-    public static final ActionType SERVICE_QUALIFICATION = new ActionType("https://ical4j.org/extensions/concept/action/SERVICE_QUALIFICATION");
+    public static final ActionType SERVICE_QUALIFICATION = new ActionType(Id.ServiceQualification);
 
-    public static final ActionType PAYMENT = new ActionType("https://ical4j.org/extensions/concept/action/PAYMENT");
+    public static final ActionType PAYMENT = new ActionType(Id.Payment);
 
     /**
      * Fulfilment action, typically used to resolve orders and service requests.
      */
-    public static final ActionType FULFILMENT = new ActionType("https://ical4j.org/extensions/concept/action/FULFILMENT");
+    public static final ActionType FULFILMENT = new ActionType(Id.Fulfilment);
 
     /**
      * Clarification action, typically use to request further information to resolve orders and service requests.
      */
-    public static final ActionType CLARIFICATION = new ActionType("https://ical4j.org/extensions/concept/action/CLARIFICATION");
+    public static final ActionType CLARIFICATION = new ActionType(Id.Clarification);
 
-    public static final ActionType REVIEW = new ActionType("https://schema.org/Review");
+    public static final ActionType REVIEW = new ActionType(Id.Review);
 
-    public ActionType(String uri) {
-        super(URI.create(uri));
+    public static final ActionType LINK_REGISTRATION = new ActionType(Id.LinkRegistration);
+
+    public ActionType(Id id) {
+        super(id.getUri());
     }
 }

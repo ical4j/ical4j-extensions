@@ -8,38 +8,43 @@ import java.net.URI;
  */
 public class EventType extends ImmutableConcept {
 
-    public static final EventType EVENT = new EventType("https://ical4j.org/extensions/concept/event/EVENT");
+    public enum Id {
+        Event("ical4j:concept:event"),
 
-    public static final EventType MEETING = new EventType("https://ical4j.org/extensions/concept/event/MEETING");
+        Meeting("ical4j:concept:event:meeting"),
 
-    public static final EventType APPOINTMENT = new EventType("https://ical4j.org/extensions/concept/event/APPOINTMENT");
+        Appointment("ical4j:concept:event:appointment"),
 
-    public static final EventType SEMINAR = new EventType("https://ical4j.org/extensions/concept/event/SEMINAR");
+        Seminar("ical4j:concept:event:seminar"),
 
-    public static final EventType CONFERENCE = new EventType("https://ical4j.org/extensions/concept/event/CONFERENCE");
+        Conference("ical4j:concept:event:conference"),
 
-    public static final EventType PERFORMANCE = new EventType("https://ical4j.org/extensions/concept/event/PERFORMANCE");
+        Performance("ical4j:concept:event:performance");
 
-    /**
-     * Defines a transparent event used to describe a period of time that one or more subscribers are "interested"
-     * in a linked entity or resource. The definition of interested, and resulting actions are implementation-
-     * specific and not defined here.
-     */
-    public static final EventType SUBSCRIPTION = new EventType("https://ical4j.org/extensions/concept/event/SUBSCRIPTION");
+        private final URI uri;
 
-    /**
-     * Defines a transparent event used to describe temporary permission to subscribe to
-     * a linked entity or resource. The definition of subscribe, and resulting actions are implementation-
-     * specific and not defined here.
-     */
-    public static final EventType INVITATION = new EventType("https://ical4j.org/extensions/concept/event/INVITATION");
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
 
-    /**
-     * See: <a href="https://schema.org/Offer">schema.org: Offer</a>
-     */
-    public static final EventType OFFER = new EventType("https://ical4j.org/extensions/concept/event/OFFER");
+        public URI getUri() {
+            return uri;
+        }
+    }
 
-    public EventType(String type) {
-        super(URI.create(type));
+    public static final EventType EVENT = new EventType(Id.Event);
+
+    public static final EventType MEETING = new EventType(Id.Meeting);
+
+    public static final EventType APPOINTMENT = new EventType(Id.Appointment);
+
+    public static final EventType SEMINAR = new EventType(Id.Seminar);
+
+    public static final EventType CONFERENCE = new EventType(Id.Conference);
+
+    public static final EventType PERFORMANCE = new EventType(Id.Performance);
+
+    public EventType(Id id) {
+        super(id.getUri());
     }
 }

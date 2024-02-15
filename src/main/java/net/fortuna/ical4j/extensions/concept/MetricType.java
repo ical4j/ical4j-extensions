@@ -9,24 +9,48 @@ import java.net.URI;
  */
 public class MetricType extends ImmutableConcept {
 
-    public static final MetricType METRIC = new MetricType("https://ical4j.org/extensions/concept/metric/METRIC");
+    public enum Id {
+        Metric("ical4j:concept:metric"),
 
-    public static final MetricType ATTENDANCE = new MetricType("https://ical4j.org/extensions/concept/metric/ATTENDANCE");
+        Attendance("ical4j:concept:metric:attendance"),
 
-    public static final MetricType TIME_TO_RESPOND = new MetricType("https://ical4j.org/extensions/concept/metric/TIME_TO_RESPOND");
+        TimeToRespond("ical4j:concept:metric:time_to_respond"),
 
-    public static final MetricType TIME_TO_RESOLVE = new MetricType("https://ical4j.org/extensions/concept/metric/TIME_TO_RESOLVE");
+        TimeToResolve("ical4j:concept:metric:time_to_resolve"),
 
-    public static final MetricType DIAGNOSTIC = new MetricType("https://ical4j.org/extensions/concept/metric/DIAGNOSTIC");
+        Diagnostic("ical4j:concept:metric:diagnostic"),
+
+        Presence("ical4j:concept:metric:presence");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
+
+    public static final MetricType METRIC = new MetricType(Id.Metric);
+
+    public static final MetricType ATTENDANCE = new MetricType(Id.Attendance);
+
+    public static final MetricType TIME_TO_RESPOND = new MetricType(Id.TimeToRespond);
+
+    public static final MetricType TIME_TO_RESOLVE = new MetricType(Id.TimeToResolve);
+
+    public static final MetricType DIAGNOSTIC = new MetricType(Id.Diagnostic);
 
     /**
      * The Presence metric is used to record checkins by individuals at physical or virtual locations. The concept of
      * presence is typically associated with a `VJOURNAL` object that may be recurring (i.e. encapsulates multiple
      * checkins for an individual at a specific location).
      */
-    public static final MetricType PRESENCE = new MetricType("https://ical4j.org/extensions/concept/metric/PRESENCE");
+    public static final MetricType PRESENCE = new MetricType(Id.Presence);
 
-    public MetricType(String uri) {
-        super(URI.create(uri));
+    public MetricType(Id id) {
+        super(id.getUri());
     }
 }
