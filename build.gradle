@@ -6,13 +6,13 @@ plugins {
     id 'jacoco'
     id 'signing'
     id 'pl.allegro.tech.build.axion-release' version '1.13.6'
-    id "nebula.optional-base" version "7.0.0"
     id "com.palantir.revapi" version "1.7.0"
     id "biz.aQute.bnd.builder" version "$bndVersion"
+    id 'org.javamodularity.moduleplugin' version '1.8.14'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -26,17 +26,24 @@ repositories {
 java {
     withJavadocJar()
     withSourcesJar()
+
+    registerFeature('groovyDsl') {
+        usingSourceSet(sourceSets.main)
+    }
 }
+
+sourcesJar.dependsOn ':compileModuleInfoJava'
 
 dependencies {
     api "org.mnode.ical4j:ical4j:$ical4jVersion",
             "org.mnode.ical4j:ical4j-vcard:$ical4jVCardVersion",
             'com.sun.mail:jakarta.mail:2.0.1'
 
-    implementation "org.codehaus.groovy:groovy:$groovyVersion", optional
+    // optional groovy DSL for calendar builder..
+    groovyDslImplementation "org.codehaus.groovy:groovy:$groovyVersion"
 
     // junit
-    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+    testImplementation "org.junit.vintage:junit-vintage-engine:$junitVintageVersion"
 
     // groovy-test
     testImplementation "org.codehaus.groovy:groovy-test:$groovyVersion"
@@ -48,14 +55,41 @@ dependencies {
             "org.apache.logging.log4j:log4j:$log4jVersion"
 }
 
+compileTestJava {
+    moduleOptions {
+        compileOnClasspath = true
+    }
+}
+
 test {
+    moduleOptions {
+        runOnClasspath = true
+    }
+
     useJUnitPlatform()
+
+    finalizedBy jacocoTestCoverageVerification, jacocoTestReport // Ensure Jacoco is run after tests have completed
+
+    jvmArgs = ["-Duser.timezone=UTC"] // Some tests require default timezone to be UTC
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.7
+            }
+            failOnViolation = false
+        }
+    }
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
-        xml.enabled true
-        html.enabled 'true' == jacoco_htmlReport
+        xml.required = true
+        html.required = jacoco_htmlReport == 'true'
     }
 }
 
@@ -89,11 +123,6 @@ jar {
                 'Implementation-Vendor': 'Ben Fortuna'
         )
     }
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
 }
 
 revapi {
