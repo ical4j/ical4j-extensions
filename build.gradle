@@ -55,6 +55,12 @@ dependencies {
             "org.apache.logging.log4j:log4j:$log4jVersion"
 }
 
+compileTestJava {
+    moduleOptions {
+        compileOnClasspath = true
+    }
+}
+
 test {
     moduleOptions {
         runOnClasspath = true
