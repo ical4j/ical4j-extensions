@@ -10,25 +10,25 @@ import java.net.URI;
 public class NoteType extends ImmutableConcept {
 
     public enum Id {
-        Note("ical4j:concept:note"),
+        Note("semcal:concept:note"),
 
-        DefinedTerm("ical4j:concept:note:defined_term"),
+        DefinedTerm("semcal:concept:note:defined_term"),
 
-        Article("ical4j:concept:note:article"),
+        Article("semcal:concept:note:article"),
 
-        DigitalDocument("ical4j:concept:note:digital_document"),
+        DigitalDocument("semcal:concept:note:digital_document"),
 
-        Release("ical4j:concept:note:release"),
+        Release("semcal:concept:note:release"),
 
-        Assumption("ical4j:concept:note:assumption"),
+        Assumption("semcal:concept:note:assumption"),
 
-        Decision("ical4j:concept:note:decision"),
+        Decision("semcal:concept:note:decision"),
 
-        Comment("ical4j:concept:note:comment"),
+        Comment("semcal:concept:note:comment"),
 
-        Timesheet("ical4j:concept:note:timesheet"),
+        Timesheet("semcal:concept:note:timesheet"),
 
-        Invoice("ical4j:concept:note:invoice");
+        Invoice("semcal:concept:note:invoice");
 
         private final URI uri;
 

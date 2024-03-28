@@ -5,15 +5,15 @@ import java.net.URI;
 public class AvailabilityType extends ImmutableConcept {
 
     public enum Id {
-        Availability("ical4j:concept:availability"),
+        Availability("semcal:concept:availability"),
 
-        Roster("ical4j:concept:availability:roster"),
+        Roster("semcal:concept:availability:roster"),
 
-        Reservable("ical4j:concept:availability:reservable"),
+        Reservable("semcal:concept:availability:reservable"),
 
-        Invitation("ical4j:concept:availability:invitation"),
+        Invitation("semcal:concept:availability:invitation"),
 
-        Offer("ical4j:concept:availability:offer");
+        Offer("semcal:concept:availability:offer");
 
         private final URI uri;
 

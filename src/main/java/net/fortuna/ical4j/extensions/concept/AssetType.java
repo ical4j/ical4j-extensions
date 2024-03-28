@@ -9,13 +9,13 @@ public class AssetType extends ImmutableConcept {
 
 
     public enum Id {
-        Asset("ical4j:concept:asset"),
+        Asset("semcal:concept:asset"),
 
-        Vehicle("ical4j:concept:asset:vehicle"),
+        Vehicle("semcal:concept:asset:vehicle"),
 
-        Property("ical4j:concept:asset:property"),
+        Property("semcal:concept:asset:property"),
 
-        ConfigurationItem("ical4j:concept:asset:configuration_item");
+        ConfigurationItem("semcal:concept:asset:configuration_item");
 
         private final URI uri;
 

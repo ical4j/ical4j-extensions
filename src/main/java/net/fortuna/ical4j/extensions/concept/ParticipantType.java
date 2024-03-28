@@ -5,12 +5,12 @@ import java.net.URI;
 /**
  * A concept typically applied to PARTICIPANT objects when embedded metadata for contributors is required.
  */
-public class ContributorType extends ImmutableConcept {
+public class ParticipantType extends ImmutableConcept {
 
     public enum Id {
-        Reporter("ical4j:concept:contributor:reporter"),
+        Reporter("semcal:concept:contributor:reporter"),
 
-        Assignee("ical4j:concept:contributor:assignee");
+        Assignee("semcal:concept:contributor:assignee");
 
         private final URI uri;
 
@@ -23,11 +23,11 @@ public class ContributorType extends ImmutableConcept {
         }
     }
 
-    public static final ContributorType REPORTER = new ContributorType(Id.Reporter);
+    public static final ParticipantType REPORTER = new ParticipantType(Id.Reporter);
 
-    public static final ContributorType ASSIGNEE = new ContributorType(Id.Assignee);
+    public static final ParticipantType ASSIGNEE = new ParticipantType(Id.Assignee);
 
-    public ContributorType(Id id) {
+    public ParticipantType(Id id) {
         super(id.getUri());
     }
 }

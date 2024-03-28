@@ -11,15 +11,15 @@ import java.net.URI;
 public class RequestType extends ImmutableConcept {
 
     public enum Id {
-        Request("ical4j:concept:request"),
+        Request("semcal:concept:request"),
 
-        Order("ical4j:concept:request:order"),
+        Order("semcal:concept:request:order"),
 
-        Provision("ical4j:concept:request:provision"),
+        Provision("semcal:concept:request:provision"),
 
-        Decommission("ical4j:concept:request:decommission"),
+        Decommission("semcal:concept:request:decommission"),
 
-        Fault("ical4j:concept:request:fault");
+        Fault("semcal:concept:request:fault");
 
         private final URI uri;
 

@@ -5,11 +5,11 @@ import java.net.URI;
 public class ObservanceType extends ImmutableConcept {
 
     public enum Id {
-        Observance("ical4j:concept:observance"),
+        Observance("semcal:concept:observance"),
 
-        Subscription("ical4j:concept:observance:subscription"),
+        Subscription("semcal:concept:observance:subscription"),
 
-        Reservation("ical4j:concept:observance:reservation");
+        Reservation("semcal:concept:observance:reservation");
 
         private final URI uri;
 

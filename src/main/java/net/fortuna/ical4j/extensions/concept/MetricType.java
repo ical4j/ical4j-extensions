@@ -10,17 +10,17 @@ import java.net.URI;
 public class MetricType extends ImmutableConcept {
 
     public enum Id {
-        Metric("ical4j:concept:metric"),
+        Metric("semcal:concept:metric"),
 
-        Attendance("ical4j:concept:metric:attendance"),
+        Attendance("semcal:concept:metric:attendance"),
 
-        TimeToRespond("ical4j:concept:metric:time_to_respond"),
+        TimeToRespond("semcal:concept:metric:time_to_respond"),
 
-        TimeToResolve("ical4j:concept:metric:time_to_resolve"),
+        TimeToResolve("semcal:concept:metric:time_to_resolve"),
 
-        Diagnostic("ical4j:concept:metric:diagnostic"),
+        Diagnostic("semcal:concept:metric:diagnostic"),
 
-        Presence("ical4j:concept:metric:presence");
+        Presence("semcal:concept:metric:presence");
 
         private final URI uri;
 

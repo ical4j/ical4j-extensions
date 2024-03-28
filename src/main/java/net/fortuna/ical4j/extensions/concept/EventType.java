@@ -9,17 +9,17 @@ import java.net.URI;
 public class EventType extends ImmutableConcept {
 
     public enum Id {
-        Event("ical4j:concept:event"),
+        Event("semcal:concept:event"),
 
-        Meeting("ical4j:concept:event:meeting"),
+        Meeting("semcal:concept:event:meeting"),
 
-        Appointment("ical4j:concept:event:appointment"),
+        Appointment("semcal:concept:event:appointment"),
 
-        Seminar("ical4j:concept:event:seminar"),
+        Seminar("semcal:concept:event:seminar"),
 
-        Conference("ical4j:concept:event:conference"),
+        Conference("semcal:concept:event:conference"),
 
-        Performance("ical4j:concept:event:performance");
+        Performance("semcal:concept:event:performance");
 
         private final URI uri;
 

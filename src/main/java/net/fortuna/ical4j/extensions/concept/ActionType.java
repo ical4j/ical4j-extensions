@@ -10,23 +10,23 @@ import java.net.URI;
 public class ActionType extends ImmutableConcept {
 
     public enum Id {
-        Action("ical4j:concept:action"),
+        Action("semcal:concept:action"),
 
-        Agenda("ical4j:concept:action:agenda"),
+        Agenda("semcal:concept:action:agenda"),
 
-        Approval("ical4j:concept:action:approval"),
+        Approval("semcal:concept:action:approval"),
 
-        ServiceQualification("ical4j:concept:action:service_qualification"),
+        ServiceQualification("semcal:concept:action:service_qualification"),
 
-        Payment("ical4j:concept:action:payment"),
+        Payment("semcal:concept:action:payment"),
 
-        Fulfilment("ical4j:concept:action:fulfilment"),
+        Fulfilment("semcal:concept:action:fulfilment"),
 
-        Clarification("ical4j:concept:action:clarification"),
+        Clarification("semcal:concept:action:clarification"),
 
-        Review("ical4j:concept:action:review"),
+        Review("semcal:concept:action:review"),
 
-        LinkRegistration("ical4j:concept:action:link_registration");
+        LinkRegistration("semcal:concept:action:link_registration");
 
         private final URI uri;
 
