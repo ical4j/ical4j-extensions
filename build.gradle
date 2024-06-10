@@ -51,8 +51,7 @@ dependencies {
     // spock
     testImplementation platform("org.spockframework:spock-bom:$spockVersion"),
             "org.spockframework:spock-core",
-            "org.slf4j:slf4j-log4j12:$slf4jVersion",
-            "org.apache.logging.log4j:log4j:$log4jVersion"
+            "org.apache.logging.log4j:log4j-core:$log4jVersion"
 }
 
 compileTestJava {
