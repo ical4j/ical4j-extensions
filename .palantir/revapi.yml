@@ -142,6 +142,27 @@ acceptedBreaks:
         old: "class net.fortuna.ical4j.extensions.outlook.OriginalStart"
         new: "class net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
         justification: "major_version_update"
+      - code: "java.generics.elementNowParameterized"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "prototype_singature_change"
+      - code: "java.generics.elementNowParameterized"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
+      - code: "java.generics.elementNowParameterized"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
       - code: "java.generics.formalTypeParameterAdded"
         old: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd"
         new: "class net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
@@ -150,6 +171,27 @@ acceptedBreaks:
         old: "class net.fortuna.ical4j.extensions.outlook.OriginalStart"
         new: "class net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
         justification: "major_version_update"
+      - code: "java.generics.formalTypeParameterAdded"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "prototype_singature_change"
+      - code: "java.generics.formalTypeParameterAdded"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
+      - code: "java.generics.formalTypeParameterAdded"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
       - code: "java.method.exception.checkedRemoved"
         old: "method net.fortuna.ical4j.extensions.caldav.property.Acknowledged net.fortuna.ical4j.extensions.caldav.property.Acknowledged.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
         \ java.lang.String) throws java.text.ParseException"
@@ -178,6 +220,13 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
         \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "prototype_singature_change"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
         new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
         justification: "major_version_update"
@@ -185,9 +234,23 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
         \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
         new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
         justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
       - code: "java.method.exception.checkedRemoved"
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
@@ -308,6 +371,13 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
         \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "prototype_singature_change"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
         new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
         justification: "major_version_update"
@@ -315,9 +385,23 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
         \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
         new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
         justification: "major_version_update"
+      - code: "java.method.nowFinal"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
       - code: "java.method.nowFinal"
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
@@ -647,3 +731,24 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Parameter net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
         new: "method net.fortuna.ical4j.extensions.parameter.Filename net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
         justification: "implement_generics"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.caldav.property.Acknowledged"
+        justification: "prototype_singature_change"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
+        \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart"
+        new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
+        justification: "prototype_singature_change"
