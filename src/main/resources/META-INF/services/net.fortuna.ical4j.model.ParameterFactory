@@ -1,2 +1,2 @@
 # calext extensions
-net.fortuna.ical4j.extensions.parameter.Filename$Factory
+net.fortuna.ical4j.extensions.model.parameter.Filename$Factory

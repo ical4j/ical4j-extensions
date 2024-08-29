@@ -1,6 +1,6 @@
 package net.fortuna.ical4j.extensions.validate;
 
-import net.fortuna.ical4j.extensions.property.*;
+import net.fortuna.ical4j.extensions.model.property.*;
 import net.fortuna.ical4j.validate.CalendarValidatorImpl;
 import net.fortuna.ical4j.validate.ValidationRule;
 

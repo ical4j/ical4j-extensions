@@ -1,7 +1,7 @@
 package net.fortuna.ical4j.extensions.data;
 
 import net.fortuna.ical4j.data.DefaultPropertyFactorySupplier;
-import net.fortuna.ical4j.extensions.property.*;
+import net.fortuna.ical4j.extensions.model.property.*;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.PropertyFactory;
 

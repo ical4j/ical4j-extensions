@@ -31,7 +31,7 @@
  */
 package net.fortuna.ical4j.extensions
 
-import net.fortuna.ical4j.extensions.property.*
+import net.fortuna.ical4j.extensions.model.property.*
 import net.fortuna.ical4j.model.PropertyFactoryWrapper
 
 /**
