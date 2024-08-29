@@ -29,28 +29,20 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions
+package net.fortuna.ical4j.extensions.model.property
 
-import net.fortuna.ical4j.extensions.model.property.*
-import net.fortuna.ical4j.model.PropertyFactoryWrapper
 
-/**
- * @author fortuna
- *
- */
-public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
+import net.fortuna.ical4j.model.ParameterList
+import spock.lang.Specification
 
-    public ContentBuilder(boolean init = true) {
-        super(init)
-    }
-    
-    def registerExtendedProperties() {
-        // register property factories..
-        registerFactory 'calstart', new PropertyFactoryWrapper(CalStart, new CalStart.Factory())
-        registerFactory 'liclocation', new PropertyFactoryWrapper(LicLocation, new LicLocation.Factory())
-        registerFactory 'wralarmid', new PropertyFactoryWrapper(WrAlarmId, new WrAlarmId.Factory())
-        registerFactory 'wrcaldesc', new PropertyFactoryWrapper(WrCalDesc, new WrCalDesc.Factory())
-        registerFactory 'wrcalname', new PropertyFactoryWrapper(WrCalName, new WrCalName.Factory())
-        registerFactory 'wrtimezone', new PropertyFactoryWrapper(WrTimezone, new WrTimezone.Factory())
+class CalStartSpec extends Specification {
+
+    def 'verify value'() {
+        expect:
+        new CalStart(new ParameterList(), value).value == expectedValue
+
+        where:
+        value             | expectedValue
+        '20110101T120000' | '20110101T120000'
     }
 }

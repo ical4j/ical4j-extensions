@@ -1,7 +1,7 @@
 package net.fortuna.ical4j.extensions.data;
 
 import net.fortuna.ical4j.data.DefaultParameterFactorySupplier;
-import net.fortuna.ical4j.extensions.parameter.Filename;
+import net.fortuna.ical4j.extensions.model.parameter.Filename;
 import net.fortuna.ical4j.model.Parameter;
 import net.fortuna.ical4j.model.ParameterFactory;
 import net.fortuna.ical4j.model.parameter.Display;

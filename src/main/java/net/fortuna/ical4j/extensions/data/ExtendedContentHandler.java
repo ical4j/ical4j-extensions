@@ -2,7 +2,7 @@ package net.fortuna.ical4j.extensions.data;
 
 import net.fortuna.ical4j.data.ContentHandlerContext;
 import net.fortuna.ical4j.data.DefaultContentHandler;
-import net.fortuna.ical4j.extensions.property.WrTimezone;
+import net.fortuna.ical4j.extensions.model.property.WrTimezone;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.TimeZoneRegistry;

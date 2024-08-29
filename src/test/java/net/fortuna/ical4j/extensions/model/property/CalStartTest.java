@@ -29,28 +29,27 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.fortuna.ical4j.extensions
+package net.fortuna.ical4j.extensions.model.property;
 
-import net.fortuna.ical4j.extensions.model.property.*
-import net.fortuna.ical4j.model.PropertyFactoryWrapper
+import junit.framework.Assert;
+import net.fortuna.ical4j.model.ParameterList;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.text.ParseException;
+
 
 /**
  * @author fortuna
  *
  */
-public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
+public class CalStartTest {
 
-    public ContentBuilder(boolean init = true) {
-        super(init)
-    }
-    
-    def registerExtendedProperties() {
-        // register property factories..
-        registerFactory 'calstart', new PropertyFactoryWrapper(CalStart, new CalStart.Factory())
-        registerFactory 'liclocation', new PropertyFactoryWrapper(LicLocation, new LicLocation.Factory())
-        registerFactory 'wralarmid', new PropertyFactoryWrapper(WrAlarmId, new WrAlarmId.Factory())
-        registerFactory 'wrcaldesc', new PropertyFactoryWrapper(WrCalDesc, new WrCalDesc.Factory())
-        registerFactory 'wrcalname', new PropertyFactoryWrapper(WrCalName, new WrCalName.Factory())
-        registerFactory 'wrtimezone', new PropertyFactoryWrapper(WrTimezone, new WrTimezone.Factory())
+    @Test
+    public void testFactoryCreate() throws IOException, URISyntaxException, ParseException {
+        CalStart property = (CalStart) new CalStart.Factory().createProperty(new ParameterList(),
+                "20081030T193000Z");
+        Assert.assertNotNull(property);
     }
 }
