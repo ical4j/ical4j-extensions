@@ -5,6 +5,7 @@ on:
     tags:
       - "ical4j-extensions-*"
       - "!ical4j-extensions-*-pre"
+      - "!ical4j-extensions-*-alpha"
 
 jobs:
   build:
