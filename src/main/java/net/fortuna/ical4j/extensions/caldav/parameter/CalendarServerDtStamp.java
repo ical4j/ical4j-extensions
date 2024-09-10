@@ -49,7 +49,7 @@ public class CalendarServerDtStamp extends Parameter {
 
     public static final String PARAMETER_NAME = "X-CALENDARSERVER-DTSTAMP";
 
-    private String value;
+    private final String value;
 
     /**
      * @param aValue a string representation of a participation role

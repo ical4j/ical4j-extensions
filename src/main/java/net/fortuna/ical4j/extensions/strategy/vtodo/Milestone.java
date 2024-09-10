@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Milestone {
 
-    private List<VToDo> tasks = new ArrayList<>();
+    private final List<VToDo> tasks = new ArrayList<>();
 
     public VToDo apply(VToDo vToDo) {
         return vToDo;

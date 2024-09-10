@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Backlog {
 
-    private List<VToDo> stories = new ArrayList<>();
+    private final List<VToDo> stories = new ArrayList<>();
 
     public VToDo apply(VToDo vToDo) {
         return vToDo;

@@ -8,15 +8,15 @@ import java.util.List;
 
 public class Project {
 
-    private List<VJournal> objectives = new ArrayList<>();
+    private final List<VJournal> objectives = new ArrayList<>();
 
-    private List<VToDo> milestones = new ArrayList<>();
+    private final List<VToDo> milestones = new ArrayList<>();
 
-    private List<VToDo> tasks = new ArrayList<>();
+    private final List<VToDo> tasks = new ArrayList<>();
 
-    private List<VJournal> risks = new ArrayList<>();
+    private final List<VJournal> risks = new ArrayList<>();
 
-    private List<VToDo> issues = new ArrayList<>();
+    private final List<VToDo> issues = new ArrayList<>();
 
     public VToDo apply(VToDo vToDo) {
         return vToDo;

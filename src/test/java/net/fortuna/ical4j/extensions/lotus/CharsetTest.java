@@ -47,7 +47,7 @@ public class CharsetTest {
 
     @Test
     public void testFactoryUTF8() throws IOException, URISyntaxException, ParseException {
-        Charset property = (Charset) new Charset.Factory().createProperty(null, "UTF-8");
+        Charset property = new Charset.Factory().createProperty(null, "UTF-8");
         Assert.assertEquals(ImmutableCharset.UTF8, property);
     }
 }

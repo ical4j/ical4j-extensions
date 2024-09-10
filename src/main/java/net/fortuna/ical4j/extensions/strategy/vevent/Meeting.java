@@ -47,7 +47,7 @@ public class Meeting {
 
     private VLocation location;
 
-    private List<VAlarm> notifications = new ArrayList<>();
+    private final List<VAlarm> notifications = new ArrayList<>();
 
     private VToDo agenda;
 

@@ -42,7 +42,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,10 +56,10 @@ import java.util.List;
 public class CalendarBuilderTest {
 
     private CalendarBuilder builder;
-    
-    private String filename;
-    
-    private boolean expectedValid;
+
+    private final String filename;
+
+    private final boolean expectedValid;
     
     public CalendarBuilderTest(String filename, boolean expectedValid) {
         this.filename = filename;
@@ -75,7 +74,7 @@ public class CalendarBuilderTest {
     }
     
     @Test
-    public void testBuild() throws FileNotFoundException, IOException, ParserException, ValidationException {
+    public void testBuild() throws IOException, ParserException, ValidationException {
         Calendar calendar = builder.build(getClass().getResourceAsStream(filename));
         try {
             calendar.validate();

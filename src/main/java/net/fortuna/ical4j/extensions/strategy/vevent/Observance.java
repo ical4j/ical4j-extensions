@@ -27,7 +27,7 @@ public class Observance {
 
     private Temporal end;
 
-    private List<LocalDate> dates = new ArrayList<>();
+    private final List<LocalDate> dates = new ArrayList<>();
 
     private Repeats<LocalDate> schedule;
 
