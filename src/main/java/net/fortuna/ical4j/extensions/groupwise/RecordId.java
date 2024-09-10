@@ -105,8 +105,7 @@ public class RecordId extends Property {
         }
 
         public RecordId createProperty(ParameterList parameters, String value) {
-            RecordId property = new RecordId(parameters, value);
-            return property;
+            return new RecordId(parameters, value);
         }
     }
 }

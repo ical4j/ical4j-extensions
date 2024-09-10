@@ -110,7 +110,7 @@ public class BusyStatus extends Property {
         }
 
         public BusyStatus createProperty(ParameterList parameters, String value) {
-            BusyStatus property = null;
+            BusyStatus property;
             if (ImmutableBusyStatus.BUSY.getValue().equals(value)) {
                 property = ImmutableBusyStatus.BUSY;
             } else {

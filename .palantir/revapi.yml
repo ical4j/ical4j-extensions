@@ -201,9 +201,21 @@ acceptedBreaks:
       - code: "java.method.exception.checkedRemoved"
         old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
         \ java.lang.String) throws java.text.ParseException"
+        new: "method T net.fortuna.ical4j.model.PropertyFactory<T extends net.fortuna.ical4j.model.Property>::createProperty(java.lang.String)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory"
+        justification: "original_start_fixed_generics"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
         new: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
         \ java.lang.String)"
         justification: "major_version_update"
+      - code: "java.method.exception.checkedRemoved"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method T net.fortuna.ical4j.model.PropertyFactory<T extends net.fortuna.ical4j.model.Property>::createProperty(java.lang.String)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory"
+        justification: "original_start_fixed_generics"
       - code: "java.method.exception.checkedRemoved"
         old: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
         \ java.lang.String) throws java.text.ParseException"
@@ -416,6 +428,18 @@ acceptedBreaks:
         new: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.property.CalStart"
         justification: "major_version_update"
+      - code: "java.method.numberOfParametersChanged"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method T net.fortuna.ical4j.model.PropertyFactory<T extends net.fortuna.ical4j.model.Property>::createProperty(java.lang.String)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory"
+        justification: "original_start_fixed_generics"
+      - code: "java.method.numberOfParametersChanged"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method T net.fortuna.ical4j.model.PropertyFactory<T extends net.fortuna.ical4j.model.Property>::createProperty(java.lang.String)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory"
+        justification: "original_start_fixed_generics"
       - code: "java.method.parameterTypeChanged"
         old: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(===net.fortuna.ical4j.model.DateTime===)"
         new: "parameter void net.fortuna.ical4j.extensions.caldav.property.Acknowledged::<init>(===java.time.Instant===)"
@@ -731,6 +755,20 @@ acceptedBreaks:
         old: "method net.fortuna.ical4j.model.Parameter net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
         new: "method net.fortuna.ical4j.extensions.parameter.Filename net.fortuna.ical4j.extensions.parameter.Filename.Factory::createParameter(java.lang.String)"
         justification: "implement_generics"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty()"
+        new: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd<?> net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty()"
+        justification: "original_start_fixed_generics"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalEnd net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory::createProperty(net.fortuna.ical4j.model.ParameterList,\
+        \ java.lang.String) throws java.text.ParseException"
+        new: "method T net.fortuna.ical4j.model.PropertyFactory<T extends net.fortuna.ical4j.model.Property>::createProperty(java.lang.String)\
+        \ @ net.fortuna.ical4j.extensions.outlook.OriginalEnd.Factory"
+        justification: "original_start_fixed_generics"
+      - code: "java.method.returnTypeTypeParametersChanged"
+        old: "method net.fortuna.ical4j.extensions.outlook.OriginalStart net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty()"
+        new: "method net.fortuna.ical4j.extensions.outlook.OriginalStart<?> net.fortuna.ical4j.extensions.outlook.OriginalStart.Factory::createProperty()"
+        justification: "original_start_fixed_generics"
       - code: "java.method.returnTypeTypeParametersChanged"
         old: "method net.fortuna.ical4j.model.Property net.fortuna.ical4j.model.property.DateProperty::copy()\
         \ throws java.io.IOException, java.net.URISyntaxException, java.text.ParseException\

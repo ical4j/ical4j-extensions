@@ -105,8 +105,7 @@ public class MessageId extends Property {
         }
 
         public MessageId createProperty(ParameterList parameters, String value) {
-            MessageId property = new MessageId(parameters, value);
-            return property;
+            return new MessageId(parameters, value);
         }
     }
 }

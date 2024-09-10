@@ -94,9 +94,7 @@ public class CalendarServerPrivateComment extends Property {
         }
 
         public CalendarServerPrivateComment createProperty(ParameterList parameters, String value) {
-            CalendarServerPrivateComment property = null;
-            property = new CalendarServerPrivateComment(parameters, value);
-            return property;
+            return new CalendarServerPrivateComment(parameters, value);
         }
     }
 

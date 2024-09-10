@@ -92,8 +92,7 @@ public class CalStart extends DateProperty<Instant> {
         }
 
         public CalStart createProperty(ParameterList parameters, String value) {
-            CalStart property = new CalStart(parameters, value);
-            return property;
+            return new CalStart(parameters, value);
         }
     }
 }

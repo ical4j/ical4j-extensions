@@ -103,8 +103,7 @@ public class LicLocation extends Property {
         }
 
         public LicLocation createProperty(ParameterList parameters, String value) {
-            LicLocation property = new LicLocation(parameters, value);
-            return property;
+            return new LicLocation(parameters, value);
         }
     }
 }

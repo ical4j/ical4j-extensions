@@ -105,8 +105,7 @@ public class WrAlarmId extends Property {
         }
 
         public WrAlarmId createProperty(ParameterList parameters, String value) {
-            WrAlarmId property = new WrAlarmId(parameters, value);
-            return property;
+            return new WrAlarmId(parameters, value);
         }
     }
 }

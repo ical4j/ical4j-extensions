@@ -105,8 +105,7 @@ public class WrRelCalId extends Property {
         }
 
         public WrRelCalId createProperty(ParameterList parameters, String value) {
-            WrRelCalId property = new WrRelCalId(parameters, value);
-            return property;
+            return new WrRelCalId(parameters, value);
         }
     }
 }

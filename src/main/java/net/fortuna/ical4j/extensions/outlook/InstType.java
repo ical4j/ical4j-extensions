@@ -106,8 +106,7 @@ public class InstType extends Property {
         }
 
         public InstType createProperty(ParameterList parameters, String value) {
-            InstType property = new InstType(parameters, value);
-            return property;
+            return new InstType(parameters, value);
         }
     }
 }

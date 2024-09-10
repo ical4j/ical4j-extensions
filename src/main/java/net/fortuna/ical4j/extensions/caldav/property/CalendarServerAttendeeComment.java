@@ -110,9 +110,7 @@ public class CalendarServerAttendeeComment extends Property {
         }
 
         public CalendarServerAttendeeComment createProperty(ParameterList parameters, String value) {
-            CalendarServerAttendeeComment property = null;
-            property = new CalendarServerAttendeeComment(parameters, value);
-            return property;
+            return new CalendarServerAttendeeComment(parameters, value);
         }
     }
 
