@@ -1,6 +1,7 @@
 package net.fortuna.ical4j.extensions.strategy.vevent;
 
 import net.fortuna.ical4j.extensions.model.property.Repeats;
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VEvent;
 
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ import static net.fortuna.ical4j.model.RecurrencePropertyModifiers.RRULE;
 /**
  * Creates a recurring {@link VEvent} representing a birthday/anniversary, etc.
  */
-public class Anniversary {
+public class Anniversary extends AbstractStrategy<VEvent> {
 
     private Repeats<?> schedule;
 
@@ -27,9 +28,11 @@ public class Anniversary {
         return this;
     }
 
-    public VEvent apply(VEvent vEvent) {
-        vEvent.with(DTSTART, date);
-        vEvent.with(RRULE, schedule);
-        return vEvent;
+    @Override
+    public VEvent get() {
+        VEvent anniversary = getPrototype().isPresent() ? getPrototype().get().copy() : new VEvent();
+        anniversary.with(DTSTART, date);
+        anniversary.with(RRULE, schedule);
+        return anniversary;
     }
 }

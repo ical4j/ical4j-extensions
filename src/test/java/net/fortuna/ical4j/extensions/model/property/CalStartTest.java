@@ -48,7 +48,7 @@ public class CalStartTest {
 
     @Test
     public void testFactoryCreate() throws IOException, URISyntaxException, ParseException {
-        CalStart property = (CalStart) new CalStart.Factory().createProperty(new ParameterList(),
+        CalStart property = new CalStart.Factory().createProperty(new ParameterList(),
                 "20081030T193000Z");
         Assert.assertNotNull(property);
     }

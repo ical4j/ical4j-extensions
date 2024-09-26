@@ -105,8 +105,7 @@ public class WrCalName extends Property {
         }
 
         public WrCalName createProperty(ParameterList parameters, String value) {
-            WrCalName property = new WrCalName(parameters, value);
-            return property;
+            return new WrCalName(parameters, value);
         }
     }
 }

@@ -38,9 +38,9 @@ import net.fortuna.ical4j.model.PropertyFactoryWrapper
  * @author fortuna
  *
  */
-public class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
+class ContentBuilder extends net.fortuna.ical4j.model.ContentBuilder {
 
-    public ContentBuilder(boolean init = true) {
+    ContentBuilder(boolean init = true) {
         super(init)
     }
     

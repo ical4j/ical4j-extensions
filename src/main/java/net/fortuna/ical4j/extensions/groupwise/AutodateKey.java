@@ -105,8 +105,7 @@ public class AutodateKey extends Property {
         }
 
         public AutodateKey createProperty(ParameterList parameters, String value) {
-            AutodateKey property = new AutodateKey(parameters, value);
-            return property;
+            return new AutodateKey(parameters, value);
         }
     }
 }

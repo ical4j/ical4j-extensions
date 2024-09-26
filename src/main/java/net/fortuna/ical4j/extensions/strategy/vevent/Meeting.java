@@ -2,9 +2,10 @@ package net.fortuna.ical4j.extensions.strategy.vevent;
 
 import net.fortuna.ical4j.extensions.model.concept.EventType;
 import net.fortuna.ical4j.extensions.model.property.Repeats;
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.*;
 import net.fortuna.ical4j.model.property.Uid;
-import net.fortuna.ical4j.vcard.VCard;
+import net.fortuna.ical4j.vcard.Entity;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
@@ -23,13 +24,13 @@ import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.UID;
 /**
  * Creates a {@link VEvent} representing a meeting of one or more attendees.
  */
-public class Meeting {
+public class Meeting extends AbstractStrategy<VEvent> {
 
     private ZonedDateTime start;
 
     private TemporalAmount duration;
 
-    private VCard organizer;
+    private Entity organizer;
 
     private Uid uid;
 
@@ -47,7 +48,7 @@ public class Meeting {
 
     private VLocation location;
 
-    private List<VAlarm> notifications = new ArrayList<>();
+    private final List<VAlarm> notifications = new ArrayList<>();
 
     private VToDo agenda;
 
@@ -57,8 +58,8 @@ public class Meeting {
 
     private VResource transcript;
 
-    public Meeting organizer(VCard card) {
-        this.organizer = card;
+    public Meeting organizer(Entity entity) {
+        this.organizer = entity;
         return this;
     }
 
@@ -107,7 +108,9 @@ public class Meeting {
         return this;
     }
 
-    public VEvent apply(VEvent vEvent) {
+    @Override
+    public VEvent get() {
+        VEvent vEvent = getPrototype().isPresent() ? getPrototype().get().copy() : new VEvent();
         vEvent.with(DTSTAMP, Instant.now());
         // apply mandatory properties..
         vEvent.replace(EventType.MEETING);

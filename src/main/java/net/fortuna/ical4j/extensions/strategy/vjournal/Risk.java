@@ -1,14 +1,15 @@
 package net.fortuna.ical4j.extensions.strategy.vjournal;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VJournal;
 import net.fortuna.ical4j.model.property.Status;
 import net.fortuna.ical4j.model.property.StyledDescription;
-import net.fortuna.ical4j.vcard.VCard;
+import net.fortuna.ical4j.vcard.Entity;
 
 /**
  * Used to identify potential issues relating to a project.
  */
-public class Risk {
+public class Risk extends AbstractStrategy<VJournal> {
 
     private String title;
 
@@ -18,11 +19,13 @@ public class Risk {
 
     private StyledDescription mitigation;
 
-    private VCard owner;
+    private Entity owner;
 
     private Status status;
 
-    public VJournal apply(VJournal vJournal) {
+    @Override
+    public VJournal get() {
+        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
         vJournal.replace(status);
         return vJournal;
     }

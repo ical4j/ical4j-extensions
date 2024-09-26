@@ -1,10 +1,13 @@
 package net.fortuna.ical4j.extensions.strategy.vtodo;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VToDo;
 
-public class Task {
+public class Task extends AbstractStrategy<VToDo> {
 
-    public VToDo apply(VToDo vToDo) {
+    @Override
+    public VToDo get() {
+        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
         return vToDo;
     }
 }

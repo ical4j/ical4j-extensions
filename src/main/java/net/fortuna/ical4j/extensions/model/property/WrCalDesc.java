@@ -105,8 +105,7 @@ public class WrCalDesc extends Property {
         }
 
         public WrCalDesc createProperty(ParameterList parameters, String value) {
-            WrCalDesc property = new WrCalDesc(parameters, value);
-            return property;
+            return new WrCalDesc(parameters, value);
         }
     }
 }

@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vjournal;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VJournal;
 import net.fortuna.ical4j.model.component.VLocation;
 
@@ -12,7 +13,7 @@ import static net.fortuna.ical4j.model.DescriptivePropertyModifiers.SUMMARY;
  * A Note is an independent journal item that may or may not refer to one or more other
  * referencable items. A Note may be location-specific in addition to temporal.
  */
-public class Note {
+public class Note extends AbstractStrategy<VJournal> {
 
     private String title;
 
@@ -35,7 +36,9 @@ public class Note {
         return this;
     }
 
-    public VJournal apply(VJournal vJournal) {
+    @Override
+    public VJournal get() {
+        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
         vJournal.with(SUMMARY, title);
         vJournal.with(DTSTART, date);
         vJournal.add(location);

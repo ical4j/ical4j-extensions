@@ -6,8 +6,8 @@ import net.fortuna.ical4j.model.component.VEvent;
 import net.fortuna.ical4j.model.parameter.*;
 import net.fortuna.ical4j.model.property.Attendee;
 import net.fortuna.ical4j.model.property.Organizer;
+import net.fortuna.ical4j.vcard.Entity;
 import net.fortuna.ical4j.vcard.PropertyName;
-import net.fortuna.ical4j.vcard.VCard;
 import net.fortuna.ical4j.vcard.property.CalAdrUri;
 import net.fortuna.ical4j.vcard.property.Fn;
 
@@ -26,7 +26,7 @@ public interface VEventPropertyModifiers {
     ParameterList ATT_CHAIR_PARAMS = new ParameterList(Arrays.asList(
             CuType.INDIVIDUAL, Role.CHAIR));
 
-    BiFunction<VEvent, VCard, VEvent> ORGANIZER = (c, p) -> {
+    BiFunction<VEvent, Entity, VEvent> ORGANIZER = (c, p) -> {
         if (p != null) {
             CalAdrUri uri = p.getRequiredProperty(PropertyName.CALADRURI);
             Fn name = p.getRequiredProperty(PropertyName.FN);

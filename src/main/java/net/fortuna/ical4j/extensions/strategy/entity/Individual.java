@@ -1,8 +1,9 @@
-package net.fortuna.ical4j.extensions.strategy.vcard;
+package net.fortuna.ical4j.extensions.strategy.entity;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
+import net.fortuna.ical4j.vcard.Entity;
 import net.fortuna.ical4j.vcard.GeneralPropertyModifiers;
 import net.fortuna.ical4j.vcard.IdentificationPropertyModifiers;
-import net.fortuna.ical4j.vcard.VCard;
 import net.fortuna.ical4j.vcard.property.N;
 import net.fortuna.ical4j.vcard.property.immutable.ImmutableKind;
 
@@ -11,9 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A strategy used to populate a {@link VCard} to represent an individual.
+ * A strategy used to populate an {@link Entity} to represent an individual.
  */
-public class Individual {
+public class Individual extends AbstractStrategy<Entity> {
 
     private String familyName;
 
@@ -50,12 +51,13 @@ public class Individual {
         return this;
     }
 
-    public VCard apply(VCard vCard) {
-
-        vCard.with(GeneralPropertyModifiers.KIND, ImmutableKind.INDIVIDUAL);
-        vCard.with(IdentificationPropertyModifiers.N, new N(familyName, givenName,
+    @Override
+    public Entity get() {
+        Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
+        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.INDIVIDUAL);
+        entity.with(IdentificationPropertyModifiers.N, new N(familyName, givenName,
                 additionalNames.toArray(new String[0]), prefixes.toArray(new String[0]),
                 suffixes.toArray(new String[0])));
-        return vCard;
+        return entity;
     }
 }

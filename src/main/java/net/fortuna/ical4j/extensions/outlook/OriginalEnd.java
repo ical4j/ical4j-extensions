@@ -78,7 +78,7 @@ public class OriginalEnd<T extends Temporal> extends DateProperty<T> {
         return new Factory();
     }
 
-    public static class Factory extends Content.Factory implements PropertyFactory<OriginalEnd> {
+    public static class Factory extends Content.Factory implements PropertyFactory<OriginalEnd<?>> {
 
         private static final long serialVersionUID = 596282786680252116L;
 
@@ -86,13 +86,12 @@ public class OriginalEnd<T extends Temporal> extends DateProperty<T> {
             super(PROPERTY_NAME);
         }
 
-        public OriginalEnd createProperty() {
-            return new OriginalEnd();
+        public OriginalEnd<?> createProperty() {
+            return new OriginalEnd<>();
         }
 
-        public OriginalEnd createProperty(ParameterList parameters, String value) {
-            OriginalEnd property = new OriginalEnd(parameters, value);
-            return property;
+        public OriginalEnd<?> createProperty(ParameterList parameters, String value) {
+            return new OriginalEnd<>(parameters, value);
         }
     }
 }

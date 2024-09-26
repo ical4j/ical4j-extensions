@@ -2,6 +2,7 @@ package net.fortuna.ical4j.extensions.strategy.vtodo;
 
 import net.fortuna.ical4j.extensions.model.concept.ActionType;
 import net.fortuna.ical4j.extensions.model.link.Next;
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VToDo;
 import net.fortuna.ical4j.model.property.Uid;
 
@@ -15,7 +16,7 @@ import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.*;
 /**
  * One or more objectives, typically linked to a Meeting to guide outcomes.
  */
-public class Agenda {
+public class Agenda extends AbstractStrategy<VToDo> {
 
     private Temporal start;
 
@@ -46,7 +47,9 @@ public class Agenda {
         return this;
     }
 
-    public VToDo apply(VToDo vToDo) {
+    @Override
+    public VToDo get() {
+        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
         vToDo.replace(ActionType.AGENDA);
         vToDo.with(SUMMARY, summary);
         vToDo.with(DESCRIPTION, description);

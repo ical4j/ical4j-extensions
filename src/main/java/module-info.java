@@ -6,18 +6,24 @@ module ical4j.extensions {
     requires org.threeten.extra;
     requires static org.codehaus.groovy;
 
-    exports net.fortuna.ical4j.extensions.model.alarm;
-    exports net.fortuna.ical4j.extensions.caldav.parameter;
-    exports net.fortuna.ical4j.extensions.caldav.property;
-    exports net.fortuna.ical4j.extensions.model.concept;
     exports net.fortuna.ical4j.extensions.data;
-    exports net.fortuna.ical4j.extensions.groupwise;
+    exports net.fortuna.ical4j.extensions.model.alarm;
+    exports net.fortuna.ical4j.extensions.model.concept;
     exports net.fortuna.ical4j.extensions.model.link;
     exports net.fortuna.ical4j.extensions.model.location;
-    exports net.fortuna.ical4j.extensions.lotus;
-    exports net.fortuna.ical4j.extensions.outlook;
     exports net.fortuna.ical4j.extensions.model.parameter;
     exports net.fortuna.ical4j.extensions.model.participant;
     exports net.fortuna.ical4j.extensions.model.property;
+    exports net.fortuna.ical4j.extensions.caldav.parameter;
+    exports net.fortuna.ical4j.extensions.caldav.property;
+    exports net.fortuna.ical4j.extensions.groupwise;
+    exports net.fortuna.ical4j.extensions.lotus;
+    exports net.fortuna.ical4j.extensions.outlook;
     exports net.fortuna.ical4j.extensions.validate;
+    exports net.fortuna.ical4j.extensions.strategy;
+    exports net.fortuna.ical4j.extensions.strategy.vavailability;
+    exports net.fortuna.ical4j.extensions.strategy.vtodo;
+    exports net.fortuna.ical4j.extensions.strategy.entity;
+    exports net.fortuna.ical4j.extensions.strategy.vevent;
+    exports net.fortuna.ical4j.extensions.strategy.vjournal;
 }

@@ -130,8 +130,7 @@ public class WrTimezone extends Property {
         }
 
         public WrTimezone createProperty(ParameterList parameters, String value) {
-            WrTimezone property = new WrTimezone(parameters, value);
-            return property;
+            return new WrTimezone(parameters, value);
         }
     }
 }

@@ -105,8 +105,7 @@ public class UpdateSubject extends Property {
         }
 
         public UpdateSubject createProperty(ParameterList parameters, String value) {
-            UpdateSubject property = new UpdateSubject(parameters, value);
-            return property;
+            return new UpdateSubject(parameters, value);
         }
     }
 }

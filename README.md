@@ -1,11 +1,19 @@
-[![Build Status](https://drone.io/github.com/ical4j/ical4j-extensions/status.png)](https://drone.io/github.com/ical4j/ical4j-extensions/latest)
+# iCal4j Extensions
 
-Extensions
-==========
+Java support for non-standard extensions to the iCalendar and vCard format specifications.
 
-iCal4j Extensions is a Java library that provides support for widely used non-standard iCalendar objects (i.e. properties and parameters). These model extensions are implemented via the custom object registry support in iCal4j.
+## Overview
+
+iCal4j Extensions is a Java library that provides additional properties and parameters for iCalendar and vCard object models.
+These model extensions are implemented via the custom registry support in iCal4j.
+
+This library also includes a collection of strategies for object model construction using opinionated fields
+designed to be more intuitive and easier to use.
+
 
 ## Usage
+
+### Factory Support
 
 To add support for extensions you may register the required factories with your CalendarBuilder instance:
 
@@ -20,10 +28,15 @@ To add support for extensions you may register the required factories with your 
         TimeZoneRegistry tzRegistry = TimeZoneRegistryFactory.getInstance().createRegistry();
         
         builder = new CalendarBuilder(parser, propertyFactoryRegistry, parameterFactoryRegistry, tzRegistry);
-        
+
+### Strategies
+
+TBD.
+
+
 ## Minimum requirements
 
-iCal4j Extensions requires a minimum of Java 5 due to the use of features introduced in this version.
+iCal4j Extensions requires a minimum of Java 11.
 
 
 ## References:

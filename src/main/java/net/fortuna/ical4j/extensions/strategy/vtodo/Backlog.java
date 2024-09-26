@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represents a project milestone, which may consist of one or more child tasks.
+ * A collection of work items, typically associated with a Sprint or higher level objective.
  */
-public class Milestone extends AbstractStrategy<VToDo> {
+public class Backlog extends AbstractStrategy<VToDo> {
 
-    private final List<VToDo> tasks = new ArrayList<>();
+    private final List<VToDo> stories = new ArrayList<>();
 
     @Override
     public VToDo get() {

@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vtodo;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.Participant;
 import net.fortuna.ical4j.model.component.VToDo;
 
@@ -17,7 +18,7 @@ import static net.fortuna.ical4j.model.DescriptivePropertyModifiers.SUMMARY;
  * <p>
  * See: <a href="https://schema.org/Action">Action</a>
  */
-public class Action {
+public class Action extends AbstractStrategy<VToDo> {
 
     private Participant participant;
 
@@ -42,7 +43,9 @@ public class Action {
         return this;
     }
 
-    public VToDo apply(VToDo vToDo) {
+    @Override
+    public VToDo get() {
+        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
 //        vToDo.with(CONCEPT, ImmutableConcept.ACTION);
         vToDo.with(SUMMARY, summary);
         vToDo.with(DUE, due);

@@ -40,7 +40,7 @@ import spock.lang.Specification
  *
  * @author fortuna*
  */
-public class ContentBuilderTest extends Specification {
+class ContentBuilderTest extends Specification {
 
     def 'testBuildCalendar'() {
         given: 'a calendar builder'

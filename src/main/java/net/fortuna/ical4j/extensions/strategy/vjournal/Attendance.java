@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vjournal;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.Participant;
 import net.fortuna.ical4j.model.component.VEvent;
 import net.fortuna.ical4j.model.component.VJournal;
@@ -11,7 +12,7 @@ import static net.fortuna.ical4j.model.DateTimePropertyModifiers.DTEND;
 import static net.fortuna.ical4j.model.DateTimePropertyModifiers.DTSTART;
 import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.RELATED_COMPONENT;
 
-public class Attendance {
+public class Attendance extends AbstractStrategy<VJournal> {
 
     private Participant participant;
 
@@ -41,7 +42,9 @@ public class Attendance {
         return this;
     }
 
-    public VJournal apply(VJournal vJournal) {
+    @Override
+    public VJournal get() {
+        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
         vJournal.with(DTSTART, start);
         vJournal.with(DTEND, end);
         vJournal.with(RELATED_COMPONENT, context);

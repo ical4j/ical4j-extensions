@@ -1,7 +1,7 @@
 package net.fortuna.ical4j.extensions.model.participant;
 
 import net.fortuna.ical4j.model.property.immutable.ImmutableParticipantType;
-import net.fortuna.ical4j.vcard.VCard;
+import net.fortuna.ical4j.vcard.Entity;
 
 public class Contact extends AbstractRole {
 
@@ -9,7 +9,7 @@ public class Contact extends AbstractRole {
         super(ImmutableParticipantType.CONTACT);
     }
 
-    public Contact(VCard card) {
-        super(card, ImmutableParticipantType.CONTACT);
+    public Contact(Entity entity) {
+        super(entity, ImmutableParticipantType.CONTACT);
     }
 }

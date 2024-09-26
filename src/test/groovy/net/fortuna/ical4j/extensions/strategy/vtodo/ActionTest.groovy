@@ -1,7 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vtodo
 
 import net.fortuna.ical4j.extensions.model.participant.Contact
-import net.fortuna.ical4j.model.component.VToDo
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Specification
 
@@ -11,7 +10,7 @@ class ActionTest extends Specification {
 
     def 'create new action'() {
         when: 'an empty action is created'
-        def action = new Action().apply(new VToDo())
+        def action = new Action().get()
 
         then: 'result matches expected'
         action ==~ /BEGIN:VTODO\r
@@ -19,7 +18,7 @@ DTSTAMP:\d{8}T\d{6}Z\r
 END:VTODO\r\n/
 
         when: 'action is updated'
-        def attendee = new ContentBuilder().vcard {
+        def attendee = new ContentBuilder().entity {
             uid '1234'
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
@@ -27,7 +26,7 @@ END:VTODO\r\n/
         action = new Action().participant(new Contact(attendee))
                 .summary('Complete outstanding code reviews')
                 .due(LocalDateTime.of(2023, 11, 15, 9, 0))
-                .apply(action)
+                .withPrototype(action).get()
 
         then: 'result matches expected'
         action ==~ /BEGIN:VTODO\r

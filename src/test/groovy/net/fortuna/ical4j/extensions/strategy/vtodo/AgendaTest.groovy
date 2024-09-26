@@ -1,8 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vtodo
 
-
 import net.fortuna.ical4j.model.ComponentList
-import net.fortuna.ical4j.model.component.VToDo
 import net.fortuna.ical4j.model.property.Uid
 import spock.lang.Specification
 
@@ -10,7 +8,7 @@ class AgendaTest extends Specification {
 
     def 'create a new agenda'() {
         when: 'an agenda is created from the default template'
-        def agenda = new Agenda().apply(new VToDo())
+        def agenda = new Agenda().get()
 
         then: 'the result matches expected'
         agenda as String ==~ /BEGIN:VTODO\r
@@ -20,13 +18,13 @@ END:VTODO\r\n/
 
         when: 'the agenda is updated'
         def results = new Agenda().summary('Financial results').uid(new Uid('4'))
-                .apply(new VToDo())
+                .get()
         def review = new Agenda().summary('The year in review').uid(new Uid('3'))
-                .nextItem(results).apply(new VToDo())
+                .nextItem(results).get()
         def welcome = new Agenda().summary('Welcome and introductions').uid(new Uid('2'))
-                .nextItem(review).apply(new VToDo())
+                .nextItem(review).get()
         agenda = new Agenda().summary('Annual General Meeting (AGM)').uid(new Uid('1'))
-                .nextItem(welcome).apply(agenda)
+                .nextItem(welcome).withPrototype(agenda).get()
 
         def components = new ComponentList([agenda, welcome, review, results])
 

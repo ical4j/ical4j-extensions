@@ -86,13 +86,12 @@ public class OriginalStart<T extends Temporal> extends DateProperty<T> {
             super(PROPERTY_NAME);
         }
 
-        public OriginalStart createProperty() {
-            return new OriginalStart();
+        public OriginalStart<?> createProperty() {
+            return new OriginalStart<>();
         }
 
-        public OriginalStart createProperty(ParameterList parameters, String value) {
-            OriginalStart property = new OriginalStart(parameters, value);
-            return property;
+        public OriginalStart<?> createProperty(ParameterList parameters, String value) {
+            return new OriginalStart<>(parameters, value);
         }
     }
 }

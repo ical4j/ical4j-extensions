@@ -104,8 +104,7 @@ public class Importance extends Property {
         }
 
         public Importance createProperty(ParameterList parameters, String value) {
-            Importance property = new Importance(parameters, value);
-            return property;
+            return new Importance(parameters, value);
         }
     }
 }

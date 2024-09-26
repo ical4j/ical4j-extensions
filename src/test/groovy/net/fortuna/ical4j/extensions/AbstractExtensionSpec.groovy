@@ -11,7 +11,7 @@ abstract class AbstractExtensionSpec extends Specification {
     def setup() {
         builder = new CalendarBuilder(CalendarParserFactory.getInstance().get(),
                 new ServiceLoaderParameterFactorySupplier(), new ServiceLoaderPropertyFactorySupplier(),
-                new ServiceLoaderComponentFactorySupplier(), TimeZoneRegistryFactory.getInstance().createRegistry());
+                new ServiceLoaderComponentFactorySupplier(), TimeZoneRegistryFactory.getInstance().createRegistry())
     }
 
 }
