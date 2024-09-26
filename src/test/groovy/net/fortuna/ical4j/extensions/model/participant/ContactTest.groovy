@@ -8,7 +8,7 @@ class ContactTest extends Specification {
 
     def 'create new contact'() {
         when: 'a contact is created'
-        def card = new ContentBuilder().vcard {
+        def card = new ContentBuilder().entity {
             uid '1234'
             fn 'A Contact'
             caladruri 'mailto:contact@example.com'
