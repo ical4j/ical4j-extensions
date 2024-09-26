@@ -59,7 +59,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Years interval) {
-        this(new Recur.Builder<>().frequency(Frequency.YEARLY)
+        this(new Recur.Builder<T>().frequency(Frequency.YEARLY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -69,7 +69,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Months interval) {
-        this(new Recur.Builder<>().frequency(Frequency.MONTHLY)
+        this(new Recur.Builder<T>().frequency(Frequency.MONTHLY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -79,7 +79,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Weeks interval) {
-        this(new Recur.Builder<>().frequency(Frequency.WEEKLY)
+        this(new Recur.Builder<T>().frequency(Frequency.WEEKLY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -89,7 +89,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Days interval) {
-        this(new Recur.Builder<>().frequency(Frequency.DAILY)
+        this(new Recur.Builder<T>().frequency(Frequency.DAILY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -99,7 +99,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Hours interval) {
-        this(new Recur.Builder<>().frequency(Frequency.HOURLY)
+        this(new Recur.Builder<T>().frequency(Frequency.HOURLY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -109,7 +109,7 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Minutes interval) {
-        this(new Recur.Builder<>().frequency(Frequency.MINUTELY)
+        this(new Recur.Builder<T>().frequency(Frequency.MINUTELY)
                 .interval(interval.getAmount()).build());
     }
 
@@ -119,11 +119,11 @@ public class Repeats<T extends Temporal> extends RRule<T> implements ImmutablePr
      * @param interval
      */
     public Repeats(Seconds interval) {
-        this(new Recur.Builder<>().frequency(Frequency.SECONDLY)
+        this(new Recur.Builder<T>().frequency(Frequency.SECONDLY)
                 .interval(interval.getAmount()).build());
     }
 
-    private Repeats(Recur<?> recur) {
+    private Repeats(Recur<T> recur) {
         setRecur(recur);
     }
 
