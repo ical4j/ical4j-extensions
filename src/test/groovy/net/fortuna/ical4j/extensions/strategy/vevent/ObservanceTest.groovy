@@ -18,7 +18,7 @@ class ObservanceTest extends Specification {
 
         when: 'initialised'
         VEvent event = template.date(LocalDate.of(2019, DECEMBER, 25))
-                .repeats(Repeats.YEARLY).apply(new VEvent())
+                .repeats(Repeats.YEARLY).get()
 
         then: 'the event represents a public holiday'
         event.getRequiredProperty(SUMMARY).value == 'Christmas Day'
@@ -30,7 +30,7 @@ class ObservanceTest extends Specification {
                 .start(LocalDate.of(1988, 11, 6))
                 .end(LocalDate.of(1988, 11, 12))
 //                .url(URI.create("https://www.un.org/en/observances/world-science-day/week"))
-                .repeats(new Repeats(Years.ONE)).apply(new VEvent())
+                .repeats(new Repeats(Years.ONE)).get()
 
         then: 'result matches expected'
         iwsp as String ==~ /BEGIN:VEVENT\r

@@ -1,7 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vevent
 
 import net.fortuna.ical4j.extensions.model.property.Repeats
-import net.fortuna.ical4j.model.component.VEvent
 import spock.lang.Specification
 
 import java.time.LocalDate
@@ -10,7 +9,7 @@ class AnniversaryTest extends Specification {
 
     def 'test anniversary creation'() {
         expect: 'result matches expected'
-        new Anniversary().withRepeats(Repeats.YEARLY).withDate(date).apply(new VEvent()) as String ==~ expectedValue
+        new Anniversary().withRepeats(Repeats.YEARLY).withDate(date).get() as String ==~ expectedValue
 
         where:
         date                    | expectedValue
@@ -27,7 +26,7 @@ END:VEVENT\r\n/
                 .withDate(LocalDate.of(0, 12, 25))
 
         expect: 'result matches expected'
-        anniversary.apply(new VEvent()) as String ==~ expectedValue
+        anniversary.get() as String ==~ expectedValue
 
         where:
         date                    | expectedValue

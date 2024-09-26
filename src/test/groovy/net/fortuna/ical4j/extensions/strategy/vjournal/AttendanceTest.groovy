@@ -2,7 +2,6 @@ package net.fortuna.ical4j.extensions.strategy.vjournal
 
 import net.fortuna.ical4j.extensions.model.participant.Contact
 import net.fortuna.ical4j.model.component.VEvent
-import net.fortuna.ical4j.model.component.VJournal
 import net.fortuna.ical4j.model.property.Summary
 import net.fortuna.ical4j.model.property.Uid
 import net.fortuna.ical4j.vcard.ContentBuilder
@@ -14,7 +13,7 @@ class AttendanceTest extends Specification {
 
     def 'create new attendance'() {
         when: 'an empty attendance is created'
-        def attendance = new Attendance().apply(new VJournal())
+        def attendance = new Attendance().get()
 
         then: 'result matches expected'
         attendance ==~ /BEGIN:VJOURNAL\r
@@ -24,7 +23,7 @@ END:VJOURNAL\r\n/
         when: 'attendance is updated'
         VEvent meeting = new VEvent().withProperty(new Summary('Meeting'))
                 .withProperty(new Uid('9000')).fluentTarget
-        def attendee = new ContentBuilder().vcard {
+        def attendee = new ContentBuilder().entity {
             uid '1234'
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
@@ -33,7 +32,7 @@ END:VJOURNAL\r\n/
                 .start(LocalDateTime.of(2023, 11, 15, 9, 0))
                 .end(LocalDateTime.of(2023, 11, 15, 9, 30))
                 .context(meeting)
-                .apply(attendance)
+                .withPrototype(attendance).get()
 
         then: 'result matches expected'
         attendance ==~ /BEGIN:VJOURNAL\r

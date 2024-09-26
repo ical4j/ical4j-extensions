@@ -20,8 +20,10 @@ module ical4j.extensions {
     exports net.fortuna.ical4j.extensions.lotus;
     exports net.fortuna.ical4j.extensions.outlook;
     exports net.fortuna.ical4j.extensions.validate;
+    exports net.fortuna.ical4j.extensions.strategy;
+    exports net.fortuna.ical4j.extensions.strategy.vavailability;
     exports net.fortuna.ical4j.extensions.strategy.vtodo;
-    exports net.fortuna.ical4j.extensions.strategy.vcard;
+    exports net.fortuna.ical4j.extensions.strategy.entity;
     exports net.fortuna.ical4j.extensions.strategy.vevent;
     exports net.fortuna.ical4j.extensions.strategy.vjournal;
 }

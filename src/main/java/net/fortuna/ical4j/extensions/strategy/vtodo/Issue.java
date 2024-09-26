@@ -1,6 +1,7 @@
 package net.fortuna.ical4j.extensions.strategy.vtodo;
 
 import net.fortuna.ical4j.extensions.model.concept.IssueType;
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VToDo;
 import net.fortuna.ical4j.model.property.RelatedTo;
 
@@ -8,7 +9,7 @@ import net.fortuna.ical4j.model.property.RelatedTo;
  * A workflow component representing a problem ticket requiring resolution. This may be used to
  * track incidents, change requests, impediments, etc.
  */
-public class Issue {
+public class Issue extends AbstractStrategy<VToDo> {
 
     private IssueType issueType;
 
@@ -31,7 +32,9 @@ public class Issue {
         return this;
     }
 
-    public VToDo apply(VToDo vToDo) {
+    @Override
+    public VToDo get() {
+        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
         vToDo.replace(issueType);
 //        vToDo.replace(status);
         vToDo.replace(parent);

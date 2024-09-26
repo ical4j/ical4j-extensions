@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vjournal;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VJournal;
 import net.fortuna.ical4j.model.property.Status;
 import net.fortuna.ical4j.model.property.StyledDescription;
@@ -10,7 +11,7 @@ import net.fortuna.ical4j.model.property.StyledDescription;
  * but ultimately the goal is the same: to capture a decision along with reasons and status
  * (i.e. proposed, accepted, superseded).
  */
-public class Decision {
+public class Decision extends AbstractStrategy<VJournal> {
 
     private String title;
 
@@ -24,7 +25,9 @@ public class Decision {
 
     private Status status;
 
-    public VJournal apply(VJournal vJournal) {
+    @Override
+    public VJournal get() {
+        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
         vJournal.replace(status);
         return vJournal;
     }

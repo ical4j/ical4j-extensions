@@ -1,7 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.vevent
 
 import net.fortuna.ical4j.extensions.model.participant.Contact
-import net.fortuna.ical4j.model.component.VEvent
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Shared
 import spock.lang.Specification
@@ -21,7 +20,7 @@ class MeetingTest extends Specification {
 
     def 'create a new meeting'() {
         when: 'a new meeting is created from a template'
-        def meeting = new Meeting().apply(new VEvent())
+        def meeting = new Meeting().get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
@@ -30,7 +29,7 @@ CONCEPT:semcal:concept:event:meeting\r
 END:VEVENT\r\n/
 
         when: 'the meeting is updated with more details'
-        def organizer = vcardBuilder.vcard {
+        def organizer = vcardBuilder.entity {
             fn('Big Boss')
             caladruri('mailto:boss@example.com')
         }
@@ -39,7 +38,7 @@ END:VEVENT\r\n/
                 .start(LocalDate.of(2023, 11, 13)
                         .atStartOfDay().atZone(ZoneId.of('America/New_York')))
                 .duration(Duration.ofMinutes(30))
-                .apply(meeting)
+                .withPrototype(meeting).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
@@ -51,12 +50,12 @@ ORGANIZER;CN=Big Boss:mailto:boss@example.com\r
 END:VEVENT\r\n/
 
         when: 'the meeting is updated with more details'
-        def chair = vcardBuilder.vcard {
+        def chair = vcardBuilder.entity {
             uid '1234'
             fn 'Team Lead'
             caladruri 'mailto:lead-by@example.com'
         }
-        meeting = new Meeting().chair(new Contact(chair)).apply(meeting)
+        meeting = new Meeting().chair(new Contact(chair)).withPrototype(meeting).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
@@ -91,7 +90,7 @@ END:VEVENT\r\n/
             calendaraddress 'mailto:vanessa@example.com'
         }
         def meeting = new Meeting().start(ZonedDateTime.parse('2023-11-11T11:00:00Z'))
-                .required(required).optional(optional).chair(chair).apply(new VEvent())
+                .required(required).optional(optional).chair(chair).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
@@ -138,7 +137,7 @@ END:VEVENT\r\n/
             calendaraddress 'mailto:vanessa@example.com'
         }
         def meeting = new Meeting()
-                .required(required).optional(optional).chair(chair).apply(meeting0930am)
+                .required(required).optional(optional).chair(chair).withPrototype(meeting0930am).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r

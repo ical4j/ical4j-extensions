@@ -1,10 +1,12 @@
 package net.fortuna.ical4j.extensions.strategy.vavailability;
 
+import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VAvailability;
 
-public class Roster {
+public class Roster extends AbstractStrategy<VAvailability> {
 
-    public VAvailability apply(VAvailability vAvailability) {
-        return vAvailability;
+    @Override
+    public VAvailability get() {
+        return new VAvailability();
     }
 }
