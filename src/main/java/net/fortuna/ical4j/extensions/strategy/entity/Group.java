@@ -14,18 +14,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Team extends AbstractStrategy<Entity> {
+/**
+ * A group is a named entity used to group other entities.
+ */
+public class Group extends AbstractStrategy<Entity> {
 
     private final List<String> names = new ArrayList<>();
 
     private final List<URI> members = new ArrayList<>();
 
-    public Team name(String... name) {
+    public Group name(String... name) {
         names.addAll(Arrays.asList(name));
         return this;
     }
 
-    public Team member(URI... member) {
+    public Group member(URI... member) {
         members.addAll(Arrays.asList(member));
         return this;
     }

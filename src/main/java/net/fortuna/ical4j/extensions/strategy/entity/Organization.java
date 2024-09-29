@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * An organization is used to represent a collective entity such as a corporation.
+ */
 public class Organization extends AbstractStrategy<Entity> {
 
     private final List<String> names = new ArrayList<>();
