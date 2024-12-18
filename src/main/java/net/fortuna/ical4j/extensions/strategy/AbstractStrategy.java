@@ -6,15 +6,15 @@ import java.util.Optional;
 
 public abstract class AbstractStrategy<T> implements Strategy<T> {
 
-    private Prototype<? super T> prototype;
+    private Prototype<T> prototype;
 
     @Override
-    public Strategy<T> withPrototype(Prototype<? super T> prototype) {
+    public Strategy<T> withPrototype(Prototype<T> prototype) {
         this.prototype = prototype;
         return this;
     }
 
-    protected Optional<Prototype<? super T>> getPrototype() {
+    protected Optional<Prototype<T>> getPrototype() {
         return Optional.ofNullable(prototype);
     }
 }

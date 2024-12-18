@@ -12,13 +12,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * An organization is used to represent a collective entity such as a corporation.
+ * A device represents a network-enabled hardware device.
  */
-public class Organization extends AbstractStrategy<Entity> {
+public class Device extends AbstractStrategy<Entity> {
 
     private final List<String> names = new ArrayList<>();
 
-    public Organization name(String... name) {
+    public Device name(String... name) {
         names.addAll(Arrays.asList(name));
         return this;
     }
@@ -26,7 +26,7 @@ public class Organization extends AbstractStrategy<Entity> {
     @Override
     public Entity get() {
         Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
-        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.ORG);
+        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.DEVICE);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         return entity;
     }
