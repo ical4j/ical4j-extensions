@@ -17,7 +17,7 @@ import java.util.function.Supplier;
  */
 public interface Strategy<T> extends Supplier<T> {
 
-    default Strategy<T> withPrototype(Prototype<? super T> prototype) {
+    default Strategy<T> withPrototype(Prototype<T> prototype) {
         throw new UnsupportedOperationException("Prototypes not supported for this strategy");
     }
 }
