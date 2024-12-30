@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.observance;
 
+import net.fortuna.ical4j.extensions.model.concept.ObservanceType;
 import net.fortuna.ical4j.extensions.model.property.Repeats;
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.DateList;
@@ -59,7 +60,7 @@ public class Observance extends AbstractStrategy<VEvent> {
 
     @Override
     public VEvent get() {
-        VEvent vEvent = getPrototype().isPresent() ? getPrototype().get().copy() : new VEvent();
+        VEvent vEvent = newInstance(VEvent::new).replace(ObservanceType.OBSERVANCE);
         vEvent.replace(ImmutableTransp.TRANSPARENT);
         vEvent.with(DescriptivePropertyModifiers.SUMMARY, title);
         vEvent.with(DateTimePropertyModifiers.DTSTART, start);

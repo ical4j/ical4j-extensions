@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.report;
 
+import net.fortuna.ical4j.extensions.model.concept.ReportType;
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.Participant;
 import net.fortuna.ical4j.model.component.VEvent;
@@ -44,7 +45,7 @@ public class Attendance extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
+        VJournal vJournal = newInstance(VJournal::new).replace(ReportType.ATTENDANCE);
         vJournal.with(DTSTART, start);
         vJournal.with(DTEND, end);
         vJournal.with(RELATED_COMPONENT, context);

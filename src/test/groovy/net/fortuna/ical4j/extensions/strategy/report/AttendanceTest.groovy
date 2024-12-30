@@ -18,6 +18,7 @@ class AttendanceTest extends Specification {
         then: 'result matches expected'
         attendance ==~ /BEGIN:VJOURNAL\r
 DTSTAMP:\d{8}T\d{6}Z\r
+CONCEPT:semcal:concept:report:attendance\r
 END:VJOURNAL\r\n/
 
         when: 'attendance is updated'
@@ -37,6 +38,7 @@ END:VJOURNAL\r\n/
         then: 'result matches expected'
         attendance ==~ /BEGIN:VJOURNAL\r
 DTSTAMP:\d{8}T\d{6}Z\r
+CONCEPT:semcal:concept:report:attendance\r
 DTSTART:20231115T090000\r
 DTEND:20231115T093000\r
 RELATED-TO:9000\r

@@ -10,7 +10,7 @@ public class Approval extends AbstractStrategy<VToDo> {
 
     @Override
     public VToDo get() {
-        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
+        VToDo vToDo = newInstance(VToDo::new);
         return vToDo;
     }
 }

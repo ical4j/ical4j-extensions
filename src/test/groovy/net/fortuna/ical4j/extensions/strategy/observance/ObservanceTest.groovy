@@ -35,6 +35,7 @@ class ObservanceTest extends Specification {
         then: 'result matches expected'
         iwsp as String ==~ /BEGIN:VEVENT\r
 DTSTAMP:\d{8}T\d{6}Z\r
+CONCEPT:semcal:concept:observance\r
 TRANSP:TRANSPARENT\r
 SUMMARY:International Week of Science and Peace\r
 DTSTART;VALUE=DATE:19881106\r

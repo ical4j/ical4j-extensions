@@ -25,7 +25,7 @@ public class Application extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
+        Entity entity = newInstance(Entity::new);
         entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.APPLICATION);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         return entity;

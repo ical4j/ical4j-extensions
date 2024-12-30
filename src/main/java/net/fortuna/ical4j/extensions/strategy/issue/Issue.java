@@ -34,8 +34,7 @@ public class Issue extends AbstractStrategy<VToDo> {
 
     @Override
     public VToDo get() {
-        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
-        vToDo.replace(issueType);
+        VToDo vToDo = newInstance(VToDo::new).replace(issueType);
 //        vToDo.replace(status);
         vToDo.replace(parent);
         return vToDo;

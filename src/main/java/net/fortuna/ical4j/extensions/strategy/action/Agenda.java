@@ -49,8 +49,7 @@ public class Agenda extends AbstractStrategy<VToDo> {
 
     @Override
     public VToDo get() {
-        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
-        vToDo.replace(ActionType.AGENDA);
+        VToDo vToDo = newInstance(VToDo::new).replace(ActionType.AGENDA);
         vToDo.with(SUMMARY, summary);
         vToDo.with(DESCRIPTION, description);
         vToDo.with(ORGANIZER_URI, organizer);

@@ -110,11 +110,9 @@ public class Meeting extends AbstractStrategy<VEvent> {
 
     @Override
     public VEvent get() {
-        VEvent vEvent = getPrototype().isPresent() ? getPrototype().get().copy() : new VEvent();
+        VEvent vEvent = newInstance(VEvent::new).replace(EventType.MEETING);
         vEvent.with(DTSTAMP, Instant.now());
         // apply mandatory properties..
-        vEvent.replace(EventType.MEETING);
-
         vEvent.with(UID, uid);
         vEvent.with(RRULE, repeats);
         vEvent.with(SUMMARY, summary);

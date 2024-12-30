@@ -25,7 +25,7 @@ public class Risk extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
+        VJournal vJournal = newInstance(VJournal::new);
         vJournal.replace(status);
         return vJournal;
     }

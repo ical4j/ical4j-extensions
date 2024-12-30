@@ -53,7 +53,7 @@ public class Individual extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
+        Entity entity = newInstance(Entity::new);
         entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.INDIVIDUAL);
         entity.with(IdentificationPropertyModifiers.N, new N(familyName, givenName,
                 additionalNames.toArray(new String[0]), prefixes.toArray(new String[0]),

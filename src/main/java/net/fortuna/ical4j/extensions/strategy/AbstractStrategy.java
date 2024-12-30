@@ -2,7 +2,7 @@ package net.fortuna.ical4j.extensions.strategy;
 
 import net.fortuna.ical4j.model.Prototype;
 
-import java.util.Optional;
+import java.util.function.Supplier;
 
 public abstract class AbstractStrategy<T> implements Strategy<T> {
 
@@ -14,7 +14,11 @@ public abstract class AbstractStrategy<T> implements Strategy<T> {
         return this;
     }
 
-    protected Optional<Prototype<T>> getPrototype() {
-        return Optional.ofNullable(prototype);
+    protected T newInstance(Supplier<T> defaultIns) {
+        if (prototype != null) {
+            return prototype.copy();
+        } else {
+            return defaultIns.get();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.action;
 
+import net.fortuna.ical4j.extensions.model.concept.ActionType;
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.Participant;
 import net.fortuna.ical4j.model.component.VToDo;
@@ -45,8 +46,7 @@ public class Action extends AbstractStrategy<VToDo> {
 
     @Override
     public VToDo get() {
-        VToDo vToDo = getPrototype().isPresent() ? getPrototype().get().copy() : new VToDo();
-//        vToDo.with(CONCEPT, ImmutableConcept.ACTION);
+        VToDo vToDo = newInstance(VToDo::new).replace(ActionType.ACTION);
         vToDo.with(SUMMARY, summary);
         vToDo.with(DUE, due);
         vToDo.with(COMPLETED, completed);

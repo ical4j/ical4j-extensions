@@ -32,7 +32,7 @@ public class Anniversary extends AbstractStrategy<VEvent> {
 
     @Override
     public VEvent get() {
-        VEvent anniversary = getPrototype().isPresent() ? getPrototype().get().copy() : new VEvent();
+        VEvent anniversary = newInstance(VEvent::new);
         anniversary.with(DTSTART, date);
         anniversary.with(RRULE, schedule);
         anniversary.with(TRANSP, ImmutableTransp.TRANSPARENT);

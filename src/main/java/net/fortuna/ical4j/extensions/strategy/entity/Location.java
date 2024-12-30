@@ -61,7 +61,7 @@ public class Location extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
+        Entity entity = newInstance(Entity::new);
         entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.LOCATION);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         entity.with(GeographicalPropertyModifiers.GEO, new Geo(latitude, longitude));

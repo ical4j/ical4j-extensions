@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.note;
 
+import net.fortuna.ical4j.extensions.model.concept.NoteType;
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VJournal;
 import net.fortuna.ical4j.model.component.VLocation;
@@ -38,7 +39,7 @@ public class Note extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
+        VJournal vJournal = newInstance(VJournal::new).replace(NoteType.NOTE);
         vJournal.with(SUMMARY, title);
         vJournal.with(DTSTART, date);
         vJournal.add(location);

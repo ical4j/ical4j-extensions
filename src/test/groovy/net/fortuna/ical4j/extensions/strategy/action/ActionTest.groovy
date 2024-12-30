@@ -15,6 +15,7 @@ class ActionTest extends Specification {
         then: 'result matches expected'
         action ==~ /BEGIN:VTODO\r
 DTSTAMP:\d{8}T\d{6}Z\r
+CONCEPT:semcal:concept:action\r
 END:VTODO\r\n/
 
         when: 'action is updated'
@@ -31,6 +32,7 @@ END:VTODO\r\n/
         then: 'result matches expected'
         action ==~ /BEGIN:VTODO\r
 DTSTAMP:\d{8}T\d{6}Z\r
+CONCEPT:semcal:concept:action\r
 SUMMARY:Complete outstanding code reviews\r
 DUE:20231115T090000\r
 BEGIN:PARTICIPANT\r

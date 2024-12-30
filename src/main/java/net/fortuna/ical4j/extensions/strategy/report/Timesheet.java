@@ -7,7 +7,7 @@ public class Timesheet extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = getPrototype().isPresent() ? getPrototype().get().copy() : new VJournal();
+        VJournal vJournal = newInstance(VJournal::new);
         return vJournal;
     }
 }

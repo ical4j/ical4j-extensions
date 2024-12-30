@@ -24,8 +24,8 @@ class MeetingTest extends Specification {
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
-DTSTAMP:\d{8}T\d{6}Z\r
 CONCEPT:semcal:concept:event:meeting\r
+DTSTAMP:\d{8}T\d{6}Z\r
 END:VEVENT\r\n/
 
         when: 'the meeting is updated with more details'
@@ -42,8 +42,8 @@ END:VEVENT\r\n/
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
-DTSTAMP:\d{8}T\d{6}Z\r
 CONCEPT:semcal:concept:event:meeting\r
+DTSTAMP:\d{8}T\d{6}Z\r
 DTSTART;TZID=America\/New_York:20231113T000000\r
 DURATION:PT30M\r
 ORGANIZER;CN=Big Boss:mailto:boss@example.com\r
@@ -62,8 +62,8 @@ END:VEVENT\r\n/
 DTSTART;TZID=America\/New_York:20231113T000000\r
 DURATION:PT30M\r
 ORGANIZER;CN=Big Boss:mailto:boss@example.com\r
-DTSTAMP:\d{8}T\d{6}Z\r
 CONCEPT:semcal:concept:event:meeting\r
+DTSTAMP:\d{8}T\d{6}Z\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=CHAIR:mailto:lead-by@example.com\r
 BEGIN:PARTICIPANT\r
 PARTICIPANT-TYPE:CONTACT\r
@@ -94,8 +94,8 @@ END:VEVENT\r\n/
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
-DTSTAMP:\d{8}T\d{6}Z\r
 CONCEPT:semcal:concept:event:meeting\r
+DTSTAMP:\d{8}T\d{6}Z\r
 DTSTART;TZID=Z:20231111T110000Z\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=CHAIR:mailto:vanessa@example.com\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:joe@example.com\r
@@ -142,8 +142,8 @@ END:VEVENT\r\n/
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
 DTSTART:20231104T093000\r
-DTSTAMP:\d{8}T\d{6}Z\r
 CONCEPT:semcal:concept:event:meeting\r
+DTSTAMP:\d{8}T\d{6}Z\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=CHAIR:mailto:vanessa@example.com\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:joe@example.com\r
 ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION:mailto:sally@example.com\r

@@ -35,7 +35,7 @@ public class Group extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = getPrototype().isPresent() ? getPrototype().get().copy() : new Entity();
+        Entity entity = newInstance(Entity::new);
         entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.GROUP);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         members.forEach(member -> entity.with(OrganizationalPropertyModifiers.MEMBER, new Member(member)));
