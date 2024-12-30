@@ -790,3 +790,8 @@ acceptedBreaks:
         new: "method <T extends net.fortuna.ical4j.model.Property> T net.fortuna.ical4j.model.Property::copy()\
         \ @ net.fortuna.ical4j.extensions.outlook.OriginalStart<T extends java.time.temporal.Temporal>"
         justification: "prototype_singature_change"
+  "2.0.0":
+    org.mnode.ical4j:ical4j-extensions:
+      - code: "java.method.removed"
+        old: "method java.util.Optional<net.fortuna.ical4j.model.Prototype<T>> net.fortuna.ical4j.extensions.strategy.AbstractStrategy<T>::getPrototype()"
+        justification: "refactoring_strategies"
