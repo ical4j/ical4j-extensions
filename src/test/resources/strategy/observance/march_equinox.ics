@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+CONCEPT:semcal:concept:observance
+SUMMARY:March Equinox
+DTSTART:20250320T090100Z
+LINK;VALUE=URI;LINKREL=related;LABEL=March Equinox (timeanddate):https://www.timeanddate.com/calendar/march-equinox.html
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

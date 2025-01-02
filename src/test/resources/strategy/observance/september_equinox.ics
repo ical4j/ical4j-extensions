@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+CONCEPT:semcal:concept:observance
+SUMMARY:September Equinox
+DTSTART:20250922T181900Z
+LINK;VALUE=URI;LINKREL=related;LABEL=September Equinox (timeanddate):https://www.timeanddate.com/calendar/september-equinox.html
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

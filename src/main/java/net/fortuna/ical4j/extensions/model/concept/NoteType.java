@@ -18,6 +18,8 @@ public class NoteType extends ImmutableConcept {
 
         DigitalDocument("semcal:concept:note:digital_document"),
 
+        WebSite("semcal:concept:note:web_site"),
+
         Release("semcal:concept:note:release"),
 
         Assumption("semcal:concept:note:assumption"),

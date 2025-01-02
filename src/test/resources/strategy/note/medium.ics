@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:Medium
+LINK;VALUE=URI;LINKREL=bookmark:https://medium.com/
+LINK;VALUE=URI;LINKREL=related;LABEL=Software Architecture is Hard:https://medium.com/@ozanani/software-architecture-is-hard-71fe3ddafb60
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

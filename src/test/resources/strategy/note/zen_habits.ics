@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:zen habits
+LINK;VALUE=URI;LINKREL=bookmark:https://zenhabits.net/
+LINK;VALUE=URI;LINKREL=alternate;LABEL=Zen Habits (YouTube):https://www.youtube.com/@zenhabitsofficial
+LINK;VALUE=URI;LINKREL=alternate;LABEL=Zen Habits Podcast:https://link.chtbl.com/ZenHabits
+LINK;VALUE=URI;LINKREL=related;LABEL=The Joys of Getting Organized:https://zenhabits.net/joy/
+CATEGORIES:Health and Wellbeing
+END:VJOURNAL
+END:VCALENDAR

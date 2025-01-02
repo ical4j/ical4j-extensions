@@ -1,0 +1,223 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Government Directory - Commonwealth entities and companies
+KIND:GROUP
+URL:https://www.directory.gov.au/commonwealth-entities-and-companies
+CATEGORIES:Legal and Government
+MEMBER:urn:uuid:1
+MEMBER:urn:uuid:2
+MEMBER:urn:uuid:3
+MEMBER:urn:uuid:4
+MEMBER:urn:uuid:5
+MEMBER:urn:uuid:6
+MEMBER:urn:uuid:7
+MEMBER:urn:uuid:8
+MEMBER:urn:uuid:9
+MEMBER:urn:uuid:10
+MEMBER:urn:uuid:11
+MEMBER:urn:uuid:12
+MEMBER:urn:uuid:13
+MEMBER:urn:uuid:14
+MEMBER:urn:uuid:15
+MEMBER:urn:uuid:16
+MEMBER:urn:uuid:17
+MEMBER:urn:uuid:18
+MEMBER:urn:uuid:19
+MEMBER:urn:uuid:20
+MEMBER:urn:uuid:21
+MEMBER:urn:uuid:22
+MEMBER:urn:uuid:23
+MEMBER:urn:uuid:24
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Broadcasting Corporation
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/infrastructure-transport-regional-development-communications-and-arts/australian-broadcasting-corporation
+UID:1
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Bureau of Statistics
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/treasury/australian-bureau-statistics
+UID:2
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Communications and Media Authority
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/infrastructure-transport-regional-development-communications-and-arts/australian-communications-and-media-authority
+UID:3
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Competition and Consumer Commission
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/treasury/australian-competition-and-consumer-commission
+UID:4
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Electoral Commission
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/finance/australian-electoral-commission
+UID:5
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Federal Police
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/attorney-generals/australian-federal-police
+UID:6
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Human Rights Commission
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/attorney-generals/australian-human-rights-commission
+UID:7
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian National University
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/education/australian-national-university
+UID:8
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Postal Corporation
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/infrastructure-transport-regional-development-communications-and-arts/australian-postal-corporation
+UID:9
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Prudential Regulation Authority
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/treasury/australian-prudential-regulation-authority
+UID:10
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Renewable Energy Agency
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/climate-change-energy-environment-and-water/australian-renewable-energy-agency
+UID:11
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Research Council
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/education/australian-research-council
+UID:12
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Secret Intelligence Service
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/foreign-affairs-and-trade/australian-secret-intelligence-service
+UID:13
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Securities and Investments Commission
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/treasury/australian-securities-and-investments-commission
+UID:14
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Security Intelligence Organisation
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/attorney-generals/australian-security-intelligence-organisation
+UID:15
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Signals Directorate
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/defence/australian-signals-directorate
+UID:16
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Sports Commission
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/health-and-aged-care/australian-sports-commission
+UID:17
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian Taxation Office
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/treasury/australian-taxation-office
+UID:18
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Australian War Memorial
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/veterans-affairs-part-defence-portfolio/australian-war-memorial
+UID:19
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Bureau of Meteorology
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/climate-change-energy-environment-and-water/bureau-meteorology
+UID:20
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Climate Change Authority
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/climate-change-energy-environment-and-water/climate-change-authority
+UID:21
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Department of Agriculture, Fisheries and Forestry
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/agriculture-fisheries-and-forestry/department-agriculture-fisheries-and-forestry
+UID:22
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Department of Defence
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/defence/department-defence
+UID:23
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Department of Education
+KIND:ORG
+URL:https://www.directory.gov.au/portfolios/education/department-education
+UID:24
+END:VCARD

@@ -2,6 +2,7 @@ package net.fortuna.ical4j.extensions.strategy.observance
 
 import net.fortuna.ical4j.extensions.model.property.Repeats
 import net.fortuna.ical4j.model.component.VEvent
+import net.fortuna.ical4j.util.Calendars
 import org.threeten.extra.Years
 import spock.lang.Specification
 
@@ -42,5 +43,15 @@ DTSTART;VALUE=DATE:19881106\r
 DTEND;VALUE=DATE:19881112\r
 RRULE:FREQ=YEARLY;INTERVAL=1\r
 END:VEVENT\r\n/
+    }
+
+    def 'test parsing equivalence'() {
+        expect: 'parsed model matches strategy'
+        new Observance().withPrototype(prototype).get().propertyList == prototype.propertyList
+
+        where: 'prototype loaded from samples'
+        prototype << new File('src/test/resources/strategy/observance').listFiles().collect {
+            return Calendars.load(it.absolutePath).components
+        }.flatten()
     }
 }

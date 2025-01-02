@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 /**
  * A location represents a physical place.
@@ -64,9 +66,13 @@ public class Location extends AbstractStrategy<Entity> {
         Entity entity = newInstance(Entity::new);
         entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.LOCATION);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
-        entity.with(GeographicalPropertyModifiers.GEO, new Geo(latitude, longitude));
-        entity.with(AddressPropertyModifiers.ADR, new Address("", "", "", locality,
-                "", postalCode, country));
+        if (latitude != null && longitude != null) {
+            entity.with(GeographicalPropertyModifiers.GEO, new Geo(latitude, longitude));
+        }
+        if (Stream.of(locality, postalCode, country).anyMatch(s -> !Objects.isNull(s) && !s.isBlank())) {
+            entity.with(AddressPropertyModifiers.ADR, new Address("", "", "", locality,
+                    "", postalCode, country));
+        }
         return entity;
     }
 }

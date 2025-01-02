@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+CONCEPT:semcal:concept:observance
+SUMMARY:December Solstice
+DTSTART:20251221T092000Z
+LINK;VALUE=URI;LINKREL=related;LABEL=December Solstice (timeanddate):https://www.timeanddate.com/calendar/december-solstice.html
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

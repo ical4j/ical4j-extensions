@@ -28,7 +28,6 @@ public class IssueType extends ImmutableConcept {
 
         Incident("semcal:concept:issue:incident"),
 
-
         Problem("semcal:concept:issue:problem");
 
         private final URI uri;

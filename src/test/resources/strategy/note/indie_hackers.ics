@@ -1,0 +1,8 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:Indie Hackers
+LINK;VALUE=URI;LINKREL=bookmark:https://www.indiehackers.com/
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

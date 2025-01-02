@@ -1,0 +1,8 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:Waranga News
+LINK;VALUE=URI;LINKREL=bookmark:https://www.wnews.org.au/
+CATEGORIES:Lifestyle
+END:VJOURNAL
+END:VCALENDAR

@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:Baeldung
+LINK;VALUE=URI;LINKREL=bookmark:https://www.baeldung.com/
+LINK;VALUE=URI;LINKREL=alternate;LABEL=Baeldung (RSS):https://www.baeldung.com/feed
+LINK;VALUE=URI;LINKREL=related;LABEL=Handling Daylight Savings:https://www.baeldung.com/java-daylight-savings
+LINK;VALUE=URI;LINKREL=related;LABEL=Why There Is No Sorted List in Java?:https://www.baeldung.com/java-sorted-list
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

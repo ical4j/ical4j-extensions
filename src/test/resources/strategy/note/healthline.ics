@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:healthline
+LINK;VALUE=URI;LINKREL=bookmark:https://www.healthline.com/
+LINK;VALUE=URI;LINKREL=alternate;LABEL=Healthline (YouTube):https://www.youtube.com/channel/UC7snF15Idi7px6XujWe_h9A
+LINK;VALUE=URI;LINKREL=related;LABEL="Pilates for Men: It’s Not Just for Ballerinas Anymore":https://www.healthline.com/nutrition/pilates-for-men
+CATEGORIES:Health and Wellbeing
+END:VJOURNAL
+END:VCALENDAR

@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+CONCEPT:semcal:concept:observance
+SUMMARY:June Solstice
+DTSTART:20250621T124200Z
+LINK;VALUE=URI;LINKREL=related;LABEL=June Solstice (timeanddate):https://www.timeanddate.com/calendar/june-solstice.html
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

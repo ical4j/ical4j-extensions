@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note:web_site
+SUMMARY:RecipeTin Eats
+LINK;VALUE=URI;LINKREL=bookmark:https://www.recipetineats.com/
+LINK;VALUE=URI;LINKREL=alternate;LABEL=RecipeTin Eats (YouTube):https://www.youtube.com/c/recipetineats
+LINK;VALUE=URI;LINKREL=related;LABEL=Slow Cooker Roast Lamb Leg:https://www.recipetineats.com/slow-cooker-roast-lamb-leg/
+LINK;VALUE=URI;LINKREL=related;LABEL=Pork Roast with Crispy Crackling:https://www.recipetineats.com/pork-shoulder-roast-with-crispy-crackling/
+LINK;VALUE=URI;LINKREL=related;LABEL=Incredible BBQ Grilled Vegetables – marinated!:https://www.recipetineats.com/marinated-bbq-vegetables/
+LINK;VALUE=URI;LINKREL=related;LABEL=One-pan baked sausage and lentils:https://www.recipetineats.com/one-pan-baked-sausage-and-lentils/
+CATEGORIES:Lifestyle
+END:VJOURNAL
+END:VCALENDAR
