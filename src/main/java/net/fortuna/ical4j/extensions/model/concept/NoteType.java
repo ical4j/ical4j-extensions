@@ -57,6 +57,8 @@ public class NoteType extends ImmutableConcept {
      */
     public static final NoteType DIGITAL_DOCUMENT = new NoteType(Id.DigitalDocument);
 
+    public static final NoteType WEB_SITE = new NoteType(Id.WebSite);
+
     /**
      * Capture release notes and changelog for published version.
      */

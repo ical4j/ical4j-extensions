@@ -42,7 +42,9 @@ public class Note extends AbstractStrategy<VJournal> {
         VJournal vJournal = newInstance(VJournal::new).replace(NoteType.NOTE);
         vJournal.with(SUMMARY, title);
         vJournal.with(DTSTART, date);
-        vJournal.add(location);
+        if (location != null) {
+            vJournal.add(location);
+        }
         return vJournal;
     }
 }

@@ -47,7 +47,7 @@ END:VEVENT\r\n/
 
     def 'test parsing equivalence'() {
         expect: 'parsed model matches strategy'
-        new Observance().withPrototype(prototype).get().propertyList == prototype.propertyList
+        new Observance().withPrototype(prototype).get().propertyList <=> prototype.propertyList == 0
 
         where: 'prototype loaded from samples'
         prototype << new File('src/test/resources/strategy/observance').listFiles().collect {

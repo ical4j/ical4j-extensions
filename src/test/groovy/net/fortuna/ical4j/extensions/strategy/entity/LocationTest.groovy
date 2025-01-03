@@ -24,10 +24,10 @@ END:VCARD\r\n'''
 
     def 'test parsing equivalence'() {
         expect: 'parsed model matches strategy'
-        new Location().withPrototype(prototype).get().propertyList == prototype.propertyList
+        new Location().withPrototype(prototype).get().propertyList <=> prototype.propertyList == 0
 
         where: 'prototype loaded from samples'
-        prototype << new File('src/test/resources/strategy/entity').listFiles().collect {
+        prototype << new File('src/test/resources/strategy/location').listFiles().collect {
             return new VCardBuilder(new FileInputStream(it)).build().entities
         }.flatten()
     }
