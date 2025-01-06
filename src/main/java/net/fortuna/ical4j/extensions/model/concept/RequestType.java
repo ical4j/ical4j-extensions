@@ -11,15 +11,14 @@ import java.net.URI;
 public class RequestType extends ImmutableConcept {
 
     public enum Id {
-        Request("semcal:concept:request"),
 
-        Order("semcal:concept:request:order"),
-
-        Provision("semcal:concept:request:provision"),
-
+        Approval("semcal:concept:request:approval"),
         Decommission("semcal:concept:request:decommission"),
+        Fault("semcal:concept:request:fault"),
+        Order("semcal:concept:request:order"),
+        Provision("semcal:concept:request:provision"),
+        Request("semcal:concept:request");
 
-        Fault("semcal:concept:request:fault");
 
         private final URI uri;
 
@@ -31,6 +30,8 @@ public class RequestType extends ImmutableConcept {
             return uri;
         }
     }
+
+    public static final RequestType APPROVAL = new RequestType(Id.Approval);
 
     public static final RequestType REQUEST = new RequestType(Id.Request);
 

@@ -8,7 +8,11 @@ class EventTest extends Specification {
 
     def 'test parsing equivalence'() {
         expect: 'parsed model matches strategy'
-        new Event().withPrototype(prototype).get().propertyList <=> prototype.propertyList == 0
+        def event = new Event().withPrototype(prototype).get()
+        event.propertyList <=> prototype.propertyList == 0
+
+        and: 'output is valid'
+        !event.validate().hasErrors()
 
         where: 'prototype loaded from samples'
         prototype << new File('src/test/resources/strategy/event').listFiles().collect {

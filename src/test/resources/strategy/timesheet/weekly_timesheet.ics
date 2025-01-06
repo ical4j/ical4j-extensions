@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:report:timesheet
+SUMMARY:Work-day Timesheet
+STYLED-DESCRIPTION;VALUE=TEXT;FMTTYPE=text/markdown:\n
+ A timesheet used to record time spent on a weekly basis.\n
+ __NOTE: It is important to record time with the correct granularity, as too much granularity can lead
+ to administration overhead, whilst too little granularity will not capture the full story.\n
+ Too much granularity can also lead to a copy/paste strategy to deal with the admin overhead, which
+ also results in insufficient data.__
+DESCRIPTION;DERIVED=true:\n
+ A timesheet used to record time spent on a weekly basis.\n
+ NOTE: It is important to record time with the correct granularity, as too much granularity can lead
+ to administration overhead, whilst too little granularity will not capture the full story.\n
+ Too much granularity can also lead to a copy/paste strategy to deal with the admin overhead, which
+ also results in insufficient data.
+RRULE:FREQ=WEEKLY
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:2
+END:VJOURNAL
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:report:timesheet
+SUMMARY:Timesheet - Project A
+RRULE:FREQ=WEEKLY
+UID:2
+END:VJOURNAL
+END:VCALENDAR

@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:ACME Mapper
 LINK;VALUE=URI;LINKREL=bookmark:https://mapper.acme.com/
 END:VJOURNAL

@@ -10,25 +10,18 @@ import java.net.URI;
 public class IssueType extends ImmutableConcept {
 
     public enum Id {
-        Issue("semcal:concept:issue"),
-
-        Story("semcal:concept:issue:story"),
-
-        Epic("semcal:concept:issue:epic"),
-
-        Task("semcal:concept:issue:task"),
-
-        Subtask("semcal:concept:issue:subtask"),
-
-        Risk("semcal:concept:issue:risk"),
-
-        Improvement("semcal:concept:issue:improvement"),
 
         Change("semcal:concept:issue:change"),
-
+        Epic("semcal:concept:issue:epic"),
+        Improvement("semcal:concept:issue:improvement"),
         Incident("semcal:concept:issue:incident"),
+        Issue("semcal:concept:issue"),
+        Problem("semcal:concept:issue:problem"),
+        Risk("semcal:concept:issue:risk"),
+        Story("semcal:concept:issue:story"),
+        Subtask("semcal:concept:issue:subtask"),
+        Task("semcal:concept:issue:task");
 
-        Problem("semcal:concept:issue:problem");
 
         private final URI uri;
 

@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Scaleway Blog
 LINK;VALUE=URI;LINKREL=bookmark:https://www.scaleway.com/en/blog/
 LINK;VALUE=URI;LINKREL=related;LABEL=How to monetize your open source project (and pay your developers):https://www.scaleway.com/en/blog/how-to-monetize-your-open-source-project/

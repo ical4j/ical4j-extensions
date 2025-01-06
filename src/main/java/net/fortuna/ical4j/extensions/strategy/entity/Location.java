@@ -1,7 +1,10 @@
 package net.fortuna.ical4j.extensions.strategy.entity;
 
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
-import net.fortuna.ical4j.vcard.*;
+import net.fortuna.ical4j.vcard.AddressPropertyModifiers;
+import net.fortuna.ical4j.vcard.Entity;
+import net.fortuna.ical4j.vcard.GeographicalPropertyModifiers;
+import net.fortuna.ical4j.vcard.IdentificationPropertyModifiers;
 import net.fortuna.ical4j.vcard.property.Address;
 import net.fortuna.ical4j.vcard.property.Fn;
 import net.fortuna.ical4j.vcard.property.Geo;
@@ -63,8 +66,7 @@ public class Location extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = newInstance(Entity::new);
-        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.LOCATION);
+        Entity entity = newInstance(Entity::new).replace(ImmutableKind.LOCATION);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         if (latitude != null && longitude != null) {
             entity.with(GeographicalPropertyModifiers.GEO, new Geo(latitude, longitude));

@@ -2,7 +2,6 @@ package net.fortuna.ical4j.extensions.strategy.entity;
 
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.vcard.Entity;
-import net.fortuna.ical4j.vcard.GeneralPropertyModifiers;
 import net.fortuna.ical4j.vcard.IdentificationPropertyModifiers;
 import net.fortuna.ical4j.vcard.OrganizationalPropertyModifiers;
 import net.fortuna.ical4j.vcard.property.Fn;
@@ -35,8 +34,7 @@ public class Group extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = newInstance(Entity::new);
-        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.GROUP);
+        Entity entity = newInstance(Entity::new).replace(ImmutableKind.GROUP);
         names.forEach(name -> entity.with(IdentificationPropertyModifiers.FN, new Fn(name)));
         members.forEach(member -> entity.with(OrganizationalPropertyModifiers.MEMBER, new Member(member)));
         return entity;

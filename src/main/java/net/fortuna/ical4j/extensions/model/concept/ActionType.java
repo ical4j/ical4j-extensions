@@ -10,23 +10,18 @@ import java.net.URI;
 public class ActionType extends ImmutableConcept {
 
     public enum Id {
+
         Action("semcal:concept:action"),
-
         Agenda("semcal:concept:action:agenda"),
-
         Approval("semcal:concept:action:approval"),
-
-        ServiceQualification("semcal:concept:action:service_qualification"),
-
-        Payment("semcal:concept:action:payment"),
-
-        Fulfilment("semcal:concept:action:fulfilment"),
-
         Clarification("semcal:concept:action:clarification"),
-
+        Fulfilment("semcal:concept:action:fulfilment"),
+        LinkRegistration("semcal:concept:action:link_registration"),
+        Payment("semcal:concept:action:payment"),
+        Project("semcal:concept:action:project"),
         Review("semcal:concept:action:review"),
+        ServiceQualification("semcal:concept:action:service_qualification");
 
-        LinkRegistration("semcal:concept:action:link_registration");
 
         private final URI uri;
 
@@ -59,6 +54,8 @@ public class ActionType extends ImmutableConcept {
     public static final ActionType SERVICE_QUALIFICATION = new ActionType(Id.ServiceQualification);
 
     public static final ActionType PAYMENT = new ActionType(Id.Payment);
+
+    public static final ActionType PROJECT = new ActionType(Id.Project);
 
     /**
      * Fulfilment action, typically used to resolve orders and service requests.

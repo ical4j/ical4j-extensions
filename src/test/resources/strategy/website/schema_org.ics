@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Schema.org
 LINK;VALUE=URI;LINKREL=bookmark:https://schema.org/
 CATEGORIES:Education and Employment

@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:web_site
+SUMMARY:timeanddate
+LINK;VALUE=URI;LINKREL=bookmark:https://www.timeanddate.com/
+LINK;VALUE=URI;LINKREL=related;LABEL=World Clock Meeting Planner:https://www.timeanddate.com/worldclock/meeting.html
+LINK;VALUE=URI;LINKREL=related;LABEL=World Temperatures — Weather Around The World:https://www.timeanddate.com/weather/
+END:VJOURNAL
+END:VCALENDAR

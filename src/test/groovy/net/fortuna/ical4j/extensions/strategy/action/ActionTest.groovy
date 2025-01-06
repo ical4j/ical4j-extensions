@@ -1,6 +1,7 @@
 package net.fortuna.ical4j.extensions.strategy.action
 
 import net.fortuna.ical4j.extensions.model.participant.Contact
+import net.fortuna.ical4j.util.Calendars
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Specification
 
@@ -43,5 +44,19 @@ STRUCTURED-DATA;VALUE=BINARY;ENCODING=BASE64;FMTTYPE=text\/vcard:QkVHSU46VkNBUkQ
 END:PARTICIPANT\r
 END:VTODO\r\n/
 
+    }
+
+    def 'test parsing equivalence'() {
+        expect: 'parsed model matches strategy'
+        def action = new Action().withPrototype(prototype).get()
+        action.propertyList <=> prototype.propertyList == 0
+
+        and: 'output is valid'
+        !action.validate().hasErrors()
+
+        where: 'prototype loaded from samples'
+        prototype << new File('src/test/resources/strategy/action').listFiles().collect {
+            return Calendars.load(it.absolutePath).components
+        }.flatten()
     }
 }

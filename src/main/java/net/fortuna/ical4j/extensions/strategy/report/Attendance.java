@@ -45,16 +45,16 @@ public class Attendance extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = newInstance(VJournal::new).replace(ReportType.ATTENDANCE);
-        vJournal.with(DTSTART, start);
-        vJournal.with(DTEND, end);
-        vJournal.with(RELATED_COMPONENT, context);
-        vJournal.with((BiFunction<VJournal, Participant, VJournal>) (c, p) -> {
+        VJournal attendance = newInstance(VJournal::new).replace(ReportType.ATTENDANCE);
+        attendance.with(DTSTART, start);
+        attendance.with(DTEND, end);
+        attendance.with(RELATED_COMPONENT, context);
+        attendance.with((BiFunction<VJournal, Participant, VJournal>) (c, p) -> {
                     if (p != null) c.add(p);
                     return c;
                 },
                 participant);
 
-        return vJournal;
+        return attendance;
     }
 }

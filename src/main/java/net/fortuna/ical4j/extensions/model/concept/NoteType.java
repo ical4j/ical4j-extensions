@@ -10,27 +10,20 @@ import java.net.URI;
 public class NoteType extends ImmutableConcept {
 
     public enum Id {
-        Note("semcal:concept:note"),
-
-        DefinedTerm("semcal:concept:note:defined_term"),
 
         Article("semcal:concept:note:article"),
-
-        DigitalDocument("semcal:concept:note:digital_document"),
-
-        WebSite("semcal:concept:note:web_site"),
-
-        Release("semcal:concept:note:release"),
-
         Assumption("semcal:concept:note:assumption"),
-
-        Decision("semcal:concept:note:decision"),
-
         Comment("semcal:concept:note:comment"),
+        Decision("semcal:concept:note:decision"),
+        DefinedTerm("semcal:concept:note:defined_term"),
+        DigitalDocument("semcal:concept:note:digital_document"),
+        Invoice("semcal:concept:note:invoice"),
+        Note("semcal:concept:note"),
+        Objective("semcal:concept:note:objective"),
+        Release("semcal:concept:note:release"),
+        Risk("semcal:concept:note:risk"),
+        Timesheet("semcal:concept:note:timesheet");
 
-        Timesheet("semcal:concept:note:timesheet"),
-
-        Invoice("semcal:concept:note:invoice");
 
         private final URI uri;
 
@@ -57,8 +50,6 @@ public class NoteType extends ImmutableConcept {
      */
     public static final NoteType DIGITAL_DOCUMENT = new NoteType(Id.DigitalDocument);
 
-    public static final NoteType WEB_SITE = new NoteType(Id.WebSite);
-
     /**
      * Capture release notes and changelog for published version.
      */
@@ -80,6 +71,10 @@ public class NoteType extends ImmutableConcept {
      * See: <a href="https://schema.org/Invoice">schema.org: Invoice</a>
      */
     public static final NoteType INVOICE = new NoteType(Id.Invoice);
+
+    public static final NoteType OBJECTIVE = new NoteType(Id.Objective);
+
+    public static final NoteType RISK = new NoteType(Id.Risk);
 
     public NoteType(Id id) {
         super(id.getUri());

@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Infrequently Noted
 LINK;VALUE=URI;LINKREL=bookmark:https://infrequently.org/
 LINK;VALUE=URI;LINKREL=author;LABEL=Alex Russell:https://toot.cafe/@slightlyoff

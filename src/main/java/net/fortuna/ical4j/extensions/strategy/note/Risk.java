@@ -1,5 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.note;
 
+import net.fortuna.ical4j.extensions.model.concept.NoteType;
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.model.component.VJournal;
 import net.fortuna.ical4j.model.property.Status;
@@ -25,8 +26,8 @@ public class Risk extends AbstractStrategy<VJournal> {
 
     @Override
     public VJournal get() {
-        VJournal vJournal = newInstance(VJournal::new);
-        vJournal.replace(status);
-        return vJournal;
+        VJournal risk = newInstance(VJournal::new).replace(NoteType.RISK);
+        risk.replace(status);
+        return risk;
     }
 }

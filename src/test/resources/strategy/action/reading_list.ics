@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:Reading List
+DESCRIPTION:A list of books to read
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:2
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:3
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:4
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:5
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:6
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:7
+RELATED-TO;VALUE=UID;RELTYPE=CHILD:8
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:Meditations by Marcus Aurelius
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#1_Meditations_by_Marcus_Aurelius
+UID:2
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:Man’s Search for Meaning by Viktor Frankl
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#2_Man8217s_Search_for_Meaning_by_Viktor_Frankl
+UID:3
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:The Daily Stoic by Ryan Holiday
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#3_The_Daily_Stoic_by_Ryan_Holiday
+UID:4
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:The Story of Philosophy by Will Durant
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#4_The_Story_of_Philosophy_by_Will_Durant
+UID:5
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:The Republic by Plato
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#5_The_Republic_by_Plato
+UID:6
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:Discourses by Epictetus
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#6_Discourses_by_Epictetus
+UID:7
+END:VTODO
+BEGIN:VTODO
+CONCEPT:semcal:concept:action
+SUMMARY:The Last Lecture by Randy Pausch
+LINK;VALUE=URI;LINKREL=bookmark:https://fourminutebooks.com/best-philosophy-books/#7_The_Last_Lecture_by_Randy_Pauschnbsp
+UID:8
+END:VTODO
+END:VCALENDAR

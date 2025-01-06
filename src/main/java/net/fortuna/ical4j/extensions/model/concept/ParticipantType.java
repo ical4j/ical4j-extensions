@@ -8,9 +8,10 @@ import java.net.URI;
 public class ParticipantType extends ImmutableConcept {
 
     public enum Id {
-        Reporter("semcal:concept:contributor:reporter"),
 
-        Assignee("semcal:concept:contributor:assignee");
+        Assignee("semcal:concept:contributor:assignee"),
+        Reporter("semcal:concept:contributor:reporter");
+
 
         private final URI uri;
 

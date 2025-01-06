@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Internet Assigned Numbers Authority
+KIND:ORG
+URL:https://www.iana.org
+TEL:tel:+1-424-254-5300
+ADR:;Suite 300;12025 Waterfront Drive;Los Angeles;CA;90094;USA
+EMAIL:mailto:iana@iana.org
+END:VCARD

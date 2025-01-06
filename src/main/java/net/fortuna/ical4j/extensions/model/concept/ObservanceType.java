@@ -5,11 +5,12 @@ import java.net.URI;
 public class ObservanceType extends ImmutableConcept {
 
     public enum Id {
+
+        Anniversary("semcal:concept:observance:anniversary"),
         Observance("semcal:concept:observance"),
+        Reservation("semcal:concept:observance:reservation"),
+        Subscription("semcal:concept:observance:subscription");
 
-        Subscription("semcal:concept:observance:subscription"),
-
-        Reservation("semcal:concept:observance:reservation");
 
         private final URI uri;
 
@@ -21,6 +22,8 @@ public class ObservanceType extends ImmutableConcept {
             return uri;
         }
     }
+
+    public static final ObservanceType ANNIVERSARY = new ObservanceType(Id.Anniversary);
 
     public static final ObservanceType OBSERVANCE = new ObservanceType(Id.Observance);
 

@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Internet Assigned Numbers Authority
 LINK;VALUE=URI;LINKREL=bookmark:https://www.iana.org/
 LINK;VALUE=URI;LINKREL=related;LABEL=Message Headers:https://www.iana.org/assignments/message-headers/message-headers.xhtml

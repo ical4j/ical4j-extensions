@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:web_site
+SUMMARY:RFC Editor
+LINK;VALUE=URI;LINKREL=bookmark:https://www.rfc-editor.org/
+LINK;VALUE=URI;LINKREL=alternate;LABEL=Recent RFCs (Feed):https://www.rfc-editor.org/rfcrss.xml
+LINK;VALUE=URI;LINKREL=related;LABEL=Internet Calendaring and Scheduling Core Object Specification (iCalendar):
+ https://www.rfc-editor.org/rfc/rfc5545.html
+LINK;VALUE=URI;LINKREL=related;LABEL=RFC 9073 - Event Publishing Extensions to iCalendar:
+ https://www.rfc-editor.org/rfc/rfc9073.html
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

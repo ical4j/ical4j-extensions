@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:zen habits
 LINK;VALUE=URI;LINKREL=bookmark:https://zenhabits.net/
 LINK;VALUE=URI;LINKREL=alternate;LABEL=Zen Habits (YouTube):https://www.youtube.com/@zenhabitsofficial

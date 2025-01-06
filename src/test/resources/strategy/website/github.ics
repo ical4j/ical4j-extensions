@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:GitHub
 LINK;VALUE=URI;LINKREL=bookmark:https://github.com/
 LINK;VALUE=URI;LINKREL=related;LABEL=iCal4j (GitHub):https://github.com/ical4j

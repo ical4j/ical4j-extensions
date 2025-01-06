@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:web_site
+SUMMARY:Forte Labs
+LINK;VALUE=URI;LINKREL=bookmark:https://fortelabs.com/
+LINK;VALUE=URI;LINKREL=related;LABEL="The PARA Method:The Simple System for Organizing Your Digital Life in Seconds":
+ https://fortelabs.com/blog/para/
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

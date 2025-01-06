@@ -2,7 +2,6 @@ package net.fortuna.ical4j.extensions.strategy.entity;
 
 import net.fortuna.ical4j.extensions.strategy.AbstractStrategy;
 import net.fortuna.ical4j.vcard.Entity;
-import net.fortuna.ical4j.vcard.GeneralPropertyModifiers;
 import net.fortuna.ical4j.vcard.IdentificationPropertyModifiers;
 import net.fortuna.ical4j.vcard.property.N;
 import net.fortuna.ical4j.vcard.property.immutable.ImmutableKind;
@@ -53,8 +52,7 @@ public class Individual extends AbstractStrategy<Entity> {
 
     @Override
     public Entity get() {
-        Entity entity = newInstance(Entity::new);
-        entity.with(GeneralPropertyModifiers.KIND, ImmutableKind.INDIVIDUAL);
+        Entity entity = newInstance(Entity::new).replace(ImmutableKind.INDIVIDUAL);
         entity.with(IdentificationPropertyModifiers.N, new N(familyName, givenName,
                 additionalNames.toArray(new String[0]), prefixes.toArray(new String[0]),
                 suffixes.toArray(new String[0])));

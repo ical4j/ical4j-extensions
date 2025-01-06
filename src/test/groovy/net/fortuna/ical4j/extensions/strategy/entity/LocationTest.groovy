@@ -24,7 +24,11 @@ END:VCARD\r\n'''
 
     def 'test parsing equivalence'() {
         expect: 'parsed model matches strategy'
-        new Location().withPrototype(prototype).get().propertyList <=> prototype.propertyList == 0
+        def location = new Location().withPrototype(prototype).get()
+        location.propertyList <=> prototype.propertyList == 0
+
+        and: 'output is valid'
+        !location.validate().hasErrors()
 
         where: 'prototype loaded from samples'
         prototype << new File('src/test/resources/strategy/location').listFiles().collect {

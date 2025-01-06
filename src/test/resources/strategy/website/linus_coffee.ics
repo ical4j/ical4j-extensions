@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:linus.coffee
 LINK;VALUE=URI;LINKREL=bookmark:https://linus.coffee/
 LINK;VALUE=URI;LINKREL=related;LABEL=Thoughts on the software industry:https://linus.coffee/note/software-industry/

@@ -7,7 +7,11 @@ class GroupTest extends Specification {
 
     def 'test parsing equivalence'() {
         expect: 'parsed model matches strategy'
-        new Group().withPrototype(prototype).get().propertyList <=> prototype.propertyList == 0
+        def group = new Group().withPrototype(prototype).get()
+        group.propertyList <=> prototype.propertyList == 0
+
+        and: 'output is valid'
+        !group.validate().hasErrors()
 
         where: 'prototype loaded from samples'
         prototype << new File('src/test/resources/strategy/group').listFiles().collect {

@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:note
+SUMMARY:Reasons why iCalendar is good for interoperability
+STYLED-DESCRIPTION;VALUE=TEXT;FMTTYPE=text/markdown:\n
+ 1. Human-readable text - even if you don't support full parsing you can understand the content and use text processing
+  tools like grep, awk, etc. to extract values;\n
+ 2. Common semantics for standardized properties - data is meaningful without needing to know the source;\n
+ 3. Compatibility is assured via graceful degradation - specifications explicitly state how unrecognized data is to
+  be handled;\n
+ 4. Most email clients also support iCalendar events - so you can email data to almost anyone and benefit from
+  existing calendar features;
+ 5. Object linking support allows for building knowledge graphs;
+DESCRIPTION;DERIVED=TRUE:\n
+ 1. Human-readable text - even if you don't support full parsing you can understand the content and use text processing
+  tools like grep to extract values;\n
+ 2. Common semantics for standardized properties - data is meaningful without needing to know the source;\n
+ 3. Compatibility is assured via graceful degradation - specifications explicitly state how unrecognized data is to
+  be handled;\n
+END:VJOURNAL
+END:VCALENDAR

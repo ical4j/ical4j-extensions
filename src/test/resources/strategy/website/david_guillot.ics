@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:David Guillot
 LINK;VALUE=URI;LINKREL=bookmark:https://david.guillot.me/en/
 LINK;VALUE=URI;LINKREL=related;LABEL=Following up "Mother of all htmx demos":https://david.guillot.me/en/posts/tech/following-up-mother-of-all-htmx-demos/

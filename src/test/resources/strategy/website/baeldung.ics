@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Baeldung
 LINK;VALUE=URI;LINKREL=bookmark:https://www.baeldung.com/
 LINK;VALUE=URI;LINKREL=alternate;LABEL=Baeldung (RSS):https://www.baeldung.com/feed

@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 BEGIN:VJOURNAL
-CONCEPT:semcal:concept:note:web_site
+CONCEPT:semcal:concept:resource:web_site
 SUMMARY:Hacker News
 LINK;VALUE=URI;LINKREL=bookmark:https://news.ycombinator.com/
 LINK;VALUE=URI;LINKREL=related;LABEL=If not React, then what?:https://news.ycombinator.com/item?id=42279172
