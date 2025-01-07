@@ -2,7 +2,6 @@ package net.fortuna.ical4j.extensions.data;
 
 import net.fortuna.ical4j.data.CalendarParser;
 import net.fortuna.ical4j.data.ContentHandler;
-import net.fortuna.ical4j.data.ParserException;
 
 import java.io.*;
 
@@ -18,12 +17,12 @@ public class CalendarCSVParser implements CalendarParser {
     }
 
     @Override
-    public void parse(InputStream inputStream, ContentHandler contentHandler) throws IOException, ParserException {
+    public void parse(InputStream inputStream, ContentHandler contentHandler) throws IOException {
         parse(new InputStreamReader(inputStream), contentHandler);
     }
 
     @Override
-    public void parse(Reader reader, ContentHandler contentHandler) throws IOException, ParserException {
+    public void parse(Reader reader, ContentHandler contentHandler) throws IOException {
         try (BufferedReader in = new BufferedReader(reader)) {
             contentHandler.startCalendar();
 

@@ -9,6 +9,8 @@ public class ResourceType extends ImmutableConcept {
 
     public enum Id {
 
+        Application("semcal:concept:resource:application"),
+        Asset("semcal:concept:resource:asset"),
         Book("semcal:concept:resource:book"),
         Collection("semcal:concept:resource:collection"),
         ConfigurationItem("semcal:concept:resource:configuration_item"),
@@ -27,6 +29,10 @@ public class ResourceType extends ImmutableConcept {
             return uri;
         }
     }
+
+    public static final ResourceType APPLICATION = new ResourceType(Id.Application);
+
+    public static final ResourceType ASSET = new ResourceType(Id.Asset);
 
     public static final ResourceType COLLECTION = new ResourceType(Id.Collection);
 

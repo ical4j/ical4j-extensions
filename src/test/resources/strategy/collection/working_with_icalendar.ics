@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:collection
+SUMMARY:Working with iCalendar
+DESCRIPTION:Articles on working with the iCalendar specification
+LINK;VALUE=URI;LINKREL=related;LABEL=iCalendar, CalDAV & Elixir:
+ https://blog.swmansion.com/icalendar-caldav-elixir-13be601572eb
+CATEGORIES:Education and Employment
+END:VJOURNAL
+END:VCALENDAR

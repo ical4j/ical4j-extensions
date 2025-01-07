@@ -1,5 +1,4 @@
 module ical4j.extensions {
-    requires java.base;
     requires ical4j.core;
     requires ical4j.vcard;
 
@@ -30,4 +29,5 @@ module ical4j.extensions {
     exports net.fortuna.ical4j.extensions.strategy.observance;
     exports net.fortuna.ical4j.extensions.strategy.issue;
     exports net.fortuna.ical4j.extensions.strategy.request;
+    exports net.fortuna.ical4j.extensions.strategy.resource;
 }

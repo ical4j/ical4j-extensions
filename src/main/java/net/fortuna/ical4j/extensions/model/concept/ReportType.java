@@ -12,8 +12,10 @@ public class ReportType extends ImmutableConcept {
     public enum Id {
 
         Attendance("semcal:concept:report:attendance"),
+        Budget("semcal:concept:report:budget"),
         Diagnostic("semcal:concept:report:diagnostic"),
         Expense("semcal:concept:report:expense"),
+        Income("semcal:concept:report:income"),
         Presence("semcal:concept:report:presence"),
         Report("semcal:concept:report"),
         Timesheet("semcal:concept:report:timesheet"),
@@ -35,6 +37,8 @@ public class ReportType extends ImmutableConcept {
     public static final ReportType REPORT = new ReportType(Id.Report);
 
     public static final ReportType ATTENDANCE = new ReportType(Id.Attendance);
+
+    public static final ReportType BUDGET = new ReportType(Id.Budget);
 
     public static final ReportType TIME_TO_RESPOND = new ReportType(Id.TimeToRespond);
 

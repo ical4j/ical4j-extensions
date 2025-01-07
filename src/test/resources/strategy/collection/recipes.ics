@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:collection
+SUMMARY:Recipes on the Web
+DESCRIPTION:Links to various recipes
+LINK;VALUE=URI;LINKREL=related;LABEL=How to make scones:
+ https://www.womensweeklyfood.com.au/recipe/quick-and-easy/basic-scone-22571/
+CATEGORIES:Lifestyle
+END:VJOURNAL
+END:VCALENDAR

@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+BEGIN:VJOURNAL
+CONCEPT:semcal:concept:resource:collection
+SUMMARY:Productivity on the Web
+DESCRIPTION:Links and resources for different productivity methodologies and strategies.
+LINK;VALUE=URI;LINKREL=related;LABEL=Intro & Overview of Pillars, Pipelines & Vaults – Notion Life OS:
+ https://youtu.be/d93SGaf82OM?si=KgPq9Hj37sI6xY9j
+END:VJOURNAL
+END:VCALENDAR
