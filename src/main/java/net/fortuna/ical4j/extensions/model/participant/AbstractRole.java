@@ -10,6 +10,12 @@ import net.fortuna.ical4j.vcard.PropertyName;
 import net.fortuna.ical4j.vcard.property.CalAdrUri;
 import net.fortuna.ical4j.vcard.property.Uid;
 
+/**
+ * Abstract base class for roles in a calendar event.
+ * This class extends the Participant class and provides constructors
+ * to initialize a role with a participant type and optionally with
+ * an entity representing a card.
+ */
 public abstract class AbstractRole extends Participant {
 
     public AbstractRole(ParticipantType participantType) {

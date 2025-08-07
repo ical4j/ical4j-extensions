@@ -37,6 +37,10 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a Calendar Server Relative Calendar ID property.
+ * This property is used to indicate the relative calendar ID of a calendar.
+ * It extends the Property class and provides a factory for creating instances.
+ *
  * @author fortuna
  */
 public class WrRelCalId extends Property {

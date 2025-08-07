@@ -39,6 +39,16 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Represents an alarm identifier for a calendar event.
+ * This property is used to uniquely identify an alarm associated with a calendar event
+ * and is defined by the X-WR-ALARMID property.
+ * It extends the Property class and provides a factory for creating instances.
+ * <p>
+ * The X-WR-ALARMID property is used to specify the identifier of an alarm in a calendar event.
+ * This can be useful for applications that need to track alarms associated with calendar events,
+ * such as reminders or notifications.
+ * @see <a href="https://www.iana.org/assignments/icalendar-extensions/icalendar-extensions.xhtml#x-wr-alarmid">X-WR-ALARMID</a>
+*
  * @author fortuna
  */
 public class WrAlarmId extends Property {

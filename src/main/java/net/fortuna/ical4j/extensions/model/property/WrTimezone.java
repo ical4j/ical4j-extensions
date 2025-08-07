@@ -39,6 +39,17 @@ import net.fortuna.ical4j.validate.ValidationResult;
 import java.time.ZoneId;
 
 /**
+ * Represents a timezone for a calendar.
+ * This property is used to specify the timezone of a calendar
+ * and is defined by the X-WR-TIMEZONE property.
+ * It extends the Property class and provides a factory for creating instances.
+ * <p>
+ * The X-WR-TIMEZONE property is used to indicate the timezone of a calendar.
+ * This can be useful for applications that need to handle calendar events
+ * in different timezones, ensuring that the events are displayed correctly
+ * based on the specified timezone.
+ * @see <a href="https://www.iana.org/assignments/icalendar-extensions/icalendar-extensions.xhtml#x-wr-timezone">X-WR-TIMEZONE</a>
+ *
  * @author fortuna
  */
 public class WrTimezone extends Property {

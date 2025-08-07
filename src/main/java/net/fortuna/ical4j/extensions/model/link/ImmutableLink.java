@@ -7,6 +7,16 @@ import net.fortuna.ical4j.model.property.Link;
 
 import java.net.URI;
 
+/**
+ * Represents a link that cannot be modified after creation.
+ * <p>
+ * This class extends the {@link Link} class and implements the {@link ImmutableProperty} interface,
+ * ensuring that once an instance is created, its properties cannot be changed.
+ * </p>
+ * <p>
+ * See also <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link Relations</a>
+ * </p>
+ */
 public class ImmutableLink extends Link implements ImmutableProperty {
 
     public ImmutableLink(URI uri) {

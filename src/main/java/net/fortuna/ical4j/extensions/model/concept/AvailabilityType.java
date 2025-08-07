@@ -2,6 +2,13 @@ package net.fortuna.ical4j.extensions.model.concept;
 
 import java.net.URI;
 
+/**
+ * Represents different types of availability concepts in the iCalendar extension model.
+ * This class defines various availability types such as Availability, Invitation, Offer, Reservable, and Roster.
+ * Each type is represented by a unique URI.
+ *
+ * @see <a href="https://semcal.org">Semantic Calendar</a>
+ */
 public class AvailabilityType extends ImmutableConcept {
 
     public enum Id {

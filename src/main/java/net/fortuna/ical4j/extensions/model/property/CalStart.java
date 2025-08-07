@@ -41,6 +41,12 @@ import net.fortuna.ical4j.validate.ValidationResult;
 import java.time.Instant;
 
 /**
+ *
+ * Represents a start date for a calendar event.
+ * This property is used to indicate the start date of a calendar event
+ * and is defined by the X-CALSTART property.
+ * It extends the DateProperty class and provides a factory for creating instances.
+ *
  * @author fortuna
  */
 public class CalStart extends DateProperty<Instant> {

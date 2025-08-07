@@ -8,6 +8,16 @@ import net.fortuna.ical4j.vcard.PropertyName;
 import net.fortuna.ical4j.vcard.property.Fn;
 import net.fortuna.ical4j.vcard.property.Geo;
 
+/**
+ * Represents a public place in a calendar context.
+ * <p>
+ * This class extends {@link VLocation} and includes properties specific to public places.
+ * It can be constructed with a name or from a vCard entity.
+ * </p>
+ * <p>
+ * See also <a href="https://www.iana.org/assignments/location-types/location-types.xhtml#public">Location Types</a>
+ * </p>
+ */
 public class PublicPlace extends VLocation {
 
     public PublicPlace(String name) {

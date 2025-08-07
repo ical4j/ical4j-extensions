@@ -37,6 +37,16 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Represents a calendar description for a calendar event.
+ * This property is used to provide a description of the calendar event
+ * and is defined by the X-WR-CALDESC property.
+ * It extends the Property class and provides a factory for creating instances.
+ * <p>
+ * The X-WR-CALDESC property is used to specify a description of a calendar event
+ * in a calendar. This can be useful for applications that need to display or
+ * process calendar events with additional descriptive information.
+ * @see <a href="https://www.iana.org/assignments/icalendar-extensions/icalendar-extensions.xhtml#x-wr-caldesc">X-WR-CALDESC</a>
+ *
  * @author fortuna
  */
 public class WrCalDesc extends Property {

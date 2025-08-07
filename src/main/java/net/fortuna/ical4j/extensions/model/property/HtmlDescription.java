@@ -4,6 +4,15 @@ import net.fortuna.ical4j.model.parameter.FmtType;
 import net.fortuna.ical4j.model.parameter.Value;
 import net.fortuna.ical4j.model.property.StyledDescription;
 
+/**
+ * Represents a description in HTML format.
+ * <p>
+ * This class extends {@link StyledDescription} to provide a description
+ * that is specifically formatted as HTML.
+ * </p>
+ *
+ * @see StyledDescription
+ */
 public class HtmlDescription extends StyledDescription {
 
     public HtmlDescription(String value) {

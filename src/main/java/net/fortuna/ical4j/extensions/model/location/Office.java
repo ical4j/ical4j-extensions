@@ -8,6 +8,16 @@ import net.fortuna.ical4j.vcard.PropertyName;
 import net.fortuna.ical4j.vcard.property.Fn;
 import net.fortuna.ical4j.vcard.property.Geo;
 
+/**
+ * Represents an office location in a calendar context.
+ * <p>
+ * This class extends {@link VLocation} and includes properties specific to office locations.
+ * It can be constructed with a name or from a vCard entity.
+ * </p>
+ * <p>
+ * See also <a href="https://www.iana.org/assignments/location-types/location-types.xhtml#office">Location Types</a>
+ * </p>
+ */
 public class Office extends VLocation {
 
     public Office(String name) {

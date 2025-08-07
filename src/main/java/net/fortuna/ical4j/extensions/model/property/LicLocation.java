@@ -37,6 +37,16 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Represents a location for a license.
+ * This property is used to indicate the location of a license
+ * and is defined by the X-LIC-LOCATION property.
+ * It extends the Property class and provides a factory for creating instances.
+ * <p>
+ * The X-LIC-LOCATION property is used to specify the location of a license
+ * in a calendar event. This can be useful for applications that need to track
+ * licenses associated with calendar events, such as software licenses or
+ * content licenses.
+ * @see <a href="https://www.iana.org/assignments/icalendar-extensions/icalendar-extensions.xhtml#x-lic-location">X-LIC-LOCATION</a>
  * @author fortuna
  */
 public class LicLocation extends Property {

@@ -37,6 +37,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Represents a calendar name for a calendar.
+ * This property is used to provide a name for the calendar
+ * and is defined by the X-WR-CALNAME property.
+ * It extends the Property class and provides a factory for creating instances.
+ *
  * @author fortuna
  */
 public class WrCalName extends Property {

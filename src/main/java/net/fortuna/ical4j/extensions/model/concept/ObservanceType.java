@@ -2,6 +2,13 @@ package net.fortuna.ical4j.extensions.model.concept;
 
 import java.net.URI;
 
+/**
+ * Represents different types of observance concepts in the iCalendar extension model.
+ * This class defines various observance types such as Anniversary, Observance, Reservation, and Subscription.
+ * Each type is represented by a unique URI.
+ *
+ * @see <a href="https://semcal.org">Semantic Calendar</a>
+ */
 public class ObservanceType extends ImmutableConcept {
 
     public enum Id {
