@@ -15,6 +15,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.function.BiFunction;
 
+/**
+ * Defines common modifiers for properties of {@link VEvent} instances.
+ * These modifiers are used to add or modify properties related to event participants,
+ * such as organizers and attendees.
+ */
 public interface VEventPropertyModifiers {
 
     ParameterList ATT_REQUIRED_PARAMS = new ParameterList(Arrays.asList(

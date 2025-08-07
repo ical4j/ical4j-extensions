@@ -8,6 +8,10 @@ import net.fortuna.ical4j.model.component.VToDo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a project, which may include objectives, milestones, tasks, risks, and issues.
+ * Projects can be used to manage complex workflows and track progress across multiple components.
+ */
 public class Project extends AbstractStrategy<VToDo> {
 
     private final List<VJournal> objectives = new ArrayList<>();

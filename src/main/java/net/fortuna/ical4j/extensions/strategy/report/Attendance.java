@@ -13,6 +13,11 @@ import static net.fortuna.ical4j.model.DateTimePropertyModifiers.DTEND;
 import static net.fortuna.ical4j.model.DateTimePropertyModifiers.DTSTART;
 import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.RELATED_COMPONENT;
 
+/**
+ * Represents an attendance report in a calendar context.
+ * This class extends the AbstractStrategy to create a VJournal component
+ * with the ReportType set to ATTENDANCE.
+ */
 public class Attendance extends AbstractStrategy<VJournal> {
 
     private Participant participant;

@@ -14,6 +14,11 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a website in a calendar context.
+ * This class extends the AbstractStrategy to create a VJournal component
+ * with the ResourceType set to WEB_SITE.
+ */
 public class WebSite extends AbstractStrategy<VJournal> {
 
     private URI bookmark;

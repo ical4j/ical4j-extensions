@@ -9,6 +9,11 @@ import net.fortuna.ical4j.util.RandomUidGenerator;
 
 import java.time.Instant;
 
+/**
+ * Represents a timesheet in a calendar context.
+ * This class extends the AbstractStrategy to create a VJournal component
+ * with the ReportType set to TIMESHEET.
+ */
 public class Timesheet extends AbstractStrategy<VJournal> {
 
     @Override

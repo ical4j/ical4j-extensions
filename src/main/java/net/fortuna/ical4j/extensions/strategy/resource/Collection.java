@@ -15,6 +15,11 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a collection of resources in a calendar context.
+ * This class extends the AbstractStrategy to create a VJournal component
+ * with the ResourceType set to COLLECTION.
+ */
 public class Collection extends AbstractStrategy<VJournal> {
 
     private URI bookmark;

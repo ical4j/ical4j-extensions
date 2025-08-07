@@ -8,6 +8,10 @@ import java.time.ZonedDateTime;
 
 import static net.fortuna.ical4j.model.DateTimePropertyModifiers.DTSTART;
 
+/**
+ * An appointment is a scheduled event that typically involves a specific time and place.
+ * It can be used to represent meetings, consultations, or other time-bound engagements.
+ */
 public class Appointment extends AbstractStrategy<VEvent> {
 
     private ZonedDateTime start;
