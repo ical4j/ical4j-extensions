@@ -39,6 +39,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a Lotus Notes Charset property.
+ * This property is used to specify the character set used in a Lotus Notes document.
+ * It extends the Property class and provides methods for setting and validating the charset.
+ * @see <a href="http://www.lotus.com/ldd/doc/domino_notes/r5x.nsf/0/3f7c1b4d6ef3b4c985256a2d007f8e1b?OpenDocument">Lotus Notes Charset Extension</a>
+ *
  * @author fortuna
  */
 public class Charset extends Property {

@@ -10,6 +10,12 @@ import net.fortuna.ical4j.model.TimeZoneRegistry;
 import java.util.Optional;
 import java.util.function.Consumer;
 
+/**
+ * An extended content handler that supports additional properties and parameters.
+ * This handler is used to parse iCalendar data with custom extensions.
+ * It handles the VTIMEZONE component specially to avoid applying the default timezone
+ * to calendar properties outside of a VTIMEZONE context.
+ */
 public class ExtendedContentHandler extends DefaultContentHandler {
 
     private boolean inTimezone;

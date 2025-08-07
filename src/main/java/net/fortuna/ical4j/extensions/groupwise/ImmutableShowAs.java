@@ -5,6 +5,13 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * Immutable version of the ShowAs property.
+ * This class represents the availability status of a calendar item and is immutable.
+ * It provides a predefined constant for the busy status.
+ *
+ * @see <a href="http://www.groupwise.org/GroupWise/Extensions/ShowAs">GroupWise ShowAs Extension</a>
+ */
 public class ImmutableShowAs extends ShowAs implements ImmutableProperty {
 
     public static final ShowAs BUSY = new ShowAs(new ParameterList(), "BUSY");

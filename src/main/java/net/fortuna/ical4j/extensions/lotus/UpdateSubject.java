@@ -39,6 +39,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a Lotus Update Subject property.
+ * This property is used to indicate that the subject of an event has been updated.
+ * It extends the Property class and provides methods for setting and validating the update subject.
+ * @see <a href="http://www.lotus.com/ldd/doc/domino_notes/r5x.nsf/0/3f7c1b4d6ef3b4c985256a2d007f8e1b?OpenDocument">Lotus Update Subject Extension</a>
+ *
  * @author fortuna
  */
 public class UpdateSubject extends Property {

@@ -11,6 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * A supplier for extended parameter factories that includes additional parameters such as Display and Filename.
+ * This class extends the default parameter factory supplier to provide a complete list of parameter factories.
+ */
 public class ExtendedParameterFactorySupplier implements Supplier<List<ParameterFactory<?>>> {
 
     @Override

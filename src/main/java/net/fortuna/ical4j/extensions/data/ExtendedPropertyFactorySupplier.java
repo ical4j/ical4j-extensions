@@ -10,6 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * A supplier for extended property factories that includes additional properties such as CalStart, LicLocation,
+ * WrAlarmId, WrCalDesc, WrCalName, WrRelCalId, and WrTimezone.
+ * This class extends the default property factory supplier to provide a complete list of property factories.
+ */
 public class ExtendedPropertyFactorySupplier implements Supplier<List<PropertyFactory<?>>> {
 
     @Override

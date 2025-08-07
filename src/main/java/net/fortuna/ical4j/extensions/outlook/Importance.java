@@ -37,6 +37,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines an Outlook Importance property.
+ * This property is used to indicate the importance level of an event.
+ * It extends the Property class and provides methods for setting and validating the importance value.
+ * @see <a href="https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/cc839688(v=office.12)">Microsoft Outlook Importance Extension</a>
+ *
  * @author fortuna
  *
  */

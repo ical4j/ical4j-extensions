@@ -37,6 +37,10 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a GroupWise Autodate Key property.
+ * This property is used to store a key for the autodate feature in GroupWise.
+ * It extends the Property class and implements validation for the property.
+ *
  * @author fortuna
  */
 public class AutodateKey extends Property {

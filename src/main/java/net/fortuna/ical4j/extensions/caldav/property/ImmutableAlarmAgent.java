@@ -5,6 +5,11 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * Immutable version of the AlarmAgent property.
+ * This class represents the agent responsible for handling alarms in a calendar system.
+ * It provides predefined constants for server, client, both, and none agents.
+ */
 final class ImmutableAlarmAgent extends AlarmAgent implements ImmutableProperty {
     public static final AlarmAgent SERVER = new ImmutableAlarmAgent("SERVER");
     public static final AlarmAgent CLIENT = new ImmutableAlarmAgent("CLIENT");

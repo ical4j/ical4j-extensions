@@ -10,6 +10,10 @@ import static net.fortuna.ical4j.validate.ValidationRule.ValidationType.One;
 import static net.fortuna.ical4j.validate.ValidationRule.ValidationType.OneOrLess;
 
 /**
+ * A factory for creating a validator for iCalendar extensions that includes additional properties such as
+ * WrTimezone, WrRelCalId, CalStart, WrCalDesc, and WrCalName.
+ * This class extends the CalendarValidatorFactory to provide a complete validation for extended calendar properties.
+ *
  * Created by fortuna on 13/09/15.
  */
 public class ExtensionsCalendarValidatorFactory implements CalendarValidatorFactory {

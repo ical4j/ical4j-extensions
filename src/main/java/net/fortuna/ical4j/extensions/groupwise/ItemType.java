@@ -39,6 +39,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a GroupWise Item Type property.
+ * This property is used to specify the type of item in a GroupWise calendar.
+ * It extends the Property class and provides methods for setting and validating the item type.
+ * @see <a href="http://www.groupwise.org/GroupWise/Extensions/ItemType">GroupWise ItemType Extension</a>
+ *
  * @author fortuna
  */
 public class ItemType extends Property {

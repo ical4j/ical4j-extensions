@@ -5,6 +5,13 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * Immutable version of the DefaultAlarm property.
+ * This class represents a default alarm setting and is immutable.
+ * It provides predefined constants for true and false values.
+ *
+ * @see <a href="http://tools.ietf.org/html/draft-daboo-valarm-extensions-04">draft-daboo-valarm-extensions-04</a>
+ */
 final class ImmutableDefaultAlarm extends DefaultAlarm implements ImmutableProperty {
     public static final DefaultAlarm TRUE = new ImmutableDefaultAlarm("TRUE");
     public static final DefaultAlarm FALSE = new ImmutableDefaultAlarm("FALSE");

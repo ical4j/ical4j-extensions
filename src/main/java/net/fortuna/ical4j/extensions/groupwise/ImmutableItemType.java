@@ -5,6 +5,13 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * Immutable version of the ItemType property.
+ * This class represents an item type in a calendar system and is immutable.
+ * It provides a predefined constant for the appointment item type.
+ *
+ * @see <a href="http://www.groupwise.org/GroupWise/Extensions/ItemType">GroupWise ItemType Extension</a>
+ */
 public class ImmutableItemType extends ItemType implements ImmutableProperty {
 
     public static final ItemType APPOINTMENT = new ItemType(new ParameterList(), "APPOINTMENT");

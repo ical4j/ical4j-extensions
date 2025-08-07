@@ -5,6 +5,13 @@ import net.fortuna.ical4j.model.ParameterList;
 import net.fortuna.ical4j.model.Property;
 import net.fortuna.ical4j.model.property.ImmutableProperty;
 
+/**
+ * Immutable version of the CalendarServerAccess property.
+ * This class represents the access level of a calendar server and is immutable.
+ * It provides predefined constants for common access levels.
+ *
+ * @see <a href="http://svn.calendarserver.org/repository/calendarserver/CalendarServer/trunk/doc/Extensions/caldav-privateevents.txt">caldav-privateevents.txt</a>
+ */
 final class ImmutableCalendarServerAccess extends CalendarServerAccess implements ImmutableProperty {
     public static final CalendarServerAccess PUBLIC = new ImmutableCalendarServerAccess("PUBLIC");
     public static final CalendarServerAccess PRIVATE = new ImmutableCalendarServerAccess("PRIVATE");

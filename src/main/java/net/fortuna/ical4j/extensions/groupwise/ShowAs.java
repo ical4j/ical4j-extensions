@@ -39,6 +39,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a GroupWise Show As property.
+ * This property is used to indicate how an event should be displayed in a calendar.
+ * It extends the Property class and provides methods for setting and validating the show as value.
+ * @see <a href="http://www.groupwise.org/GroupWise/Extensions/ShowAs">GroupWise ShowAs Extension</a>
+ *
  * @author fortuna
  */
 public class ShowAs extends Property {

@@ -37,6 +37,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines a GroupWise Record ID property.
+ * This property is used to uniquely identify a record in GroupWise.
+ * It extends the Property class and provides methods for setting and validating the record ID.
+ * @see <a href="http://www.groupwise.org/GroupWise/Extensions/RecordId">GroupWise RecordId Extension</a>
+ *
  * @author fortuna
  */
 public class RecordId extends Property {

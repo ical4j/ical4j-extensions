@@ -37,6 +37,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines an Outlook InstType property.
+ * This property is used to indicate the type of instance in a recurring event.
+ * It extends the Property class and provides methods for setting and validating the instance type.
+ * @see <a href="https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/cc839688(v=office.12)">Microsoft Outlook InstType Extension</a>
+ *
  * @author fortuna
  *
  */

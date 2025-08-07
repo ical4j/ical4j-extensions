@@ -41,6 +41,11 @@ import net.fortuna.ical4j.validate.ValidationResult;
 import java.time.temporal.Temporal;
 
 /**
+ * Defines an Outlook Original Start property.
+ * This property is used to indicate the original start time of an event.
+ * It extends the DateProperty class and provides methods for setting and validating the original start time.
+ * @see <a href="https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/cc839688(v=office.12)">Microsoft Outlook Original Start Extension</a>
+ *
  * @author fortuna
  */
 public class OriginalStart<T extends Temporal> extends DateProperty<T> {

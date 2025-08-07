@@ -39,6 +39,11 @@ import net.fortuna.ical4j.validate.ValidationException;
 import net.fortuna.ical4j.validate.ValidationResult;
 
 /**
+ * Defines an Outlook All Day Event property.
+ * This property is used to indicate whether an event lasts all day.
+ * It extends the Property class and provides methods for setting and validating the all day event value.
+ * @see <a href="https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/cc839688(v=office.12)">Microsoft Outlook All Day Event Extension</a>
+ *
  * @author fortuna
  *
  */
