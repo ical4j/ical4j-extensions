@@ -18,7 +18,7 @@ import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.RELATED_COM
  * This class extends the AbstractStrategy to create a VJournal component
  * with the ReportType set to ATTENDANCE.
  */
-public class Attendance extends AbstractStrategy<VJournal> {
+public class Attendance extends AbstractStrategy<VJournal, Attendance> {
 
     private Participant participant;
 

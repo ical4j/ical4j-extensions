@@ -24,7 +24,7 @@ import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.UID;
 /**
  * Creates a {@link VEvent} representing a meeting of one or more attendees.
  */
-public class Meeting extends AbstractStrategy<VEvent> {
+public class Meeting extends AbstractStrategy<VEvent, Meeting> {
 
     private ZonedDateTime start;
 

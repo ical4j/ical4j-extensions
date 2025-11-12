@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 /**
  * A location represents a physical place.
  */
-public class Location extends AbstractStrategy<Entity> {
+public class Location extends AbstractStrategy<Entity, Location> {
 
     private final List<String> names = new ArrayList<>();
 

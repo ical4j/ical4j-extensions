@@ -1,5 +1,5 @@
 [versions]
-ical4j = "4.0.8"
+ical4j = "4.2.1"
 ical4j-vcard = "2.0.1"
 groovy = "3.0.22"
 log4j = "2.23.1"

@@ -19,7 +19,7 @@ import java.util.List;
  * This class extends the AbstractStrategy to create a VJournal component
  * with the ResourceType set to WEB_SITE.
  */
-public class WebSite extends AbstractStrategy<VJournal> {
+public class WebSite extends AbstractStrategy<VJournal, WebSite> {
 
     private URI bookmark;
 

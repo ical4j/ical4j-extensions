@@ -7,7 +7,7 @@ import net.fortuna.ical4j.model.component.VToDo;
 /**
  * Captures an approval step as part of a workflow.
  */
-public class Approval extends AbstractStrategy<VToDo> {
+public class Approval extends AbstractStrategy<VToDo, Approval> {
 
     @Override
     public VToDo get() {

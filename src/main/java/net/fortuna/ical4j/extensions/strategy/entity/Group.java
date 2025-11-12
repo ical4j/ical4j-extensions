@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * A group is a named entity used to group other entities.
  */
-public class Group extends AbstractStrategy<Entity> {
+public class Group extends AbstractStrategy<Entity, Group> {
 
     private final List<String> names = new ArrayList<>();
 

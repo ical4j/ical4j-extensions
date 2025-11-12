@@ -18,7 +18,7 @@ import static net.fortuna.ical4j.model.DescriptivePropertyModifiers.SUMMARY;
  * A Note is an independent journal item that may or may not refer to one or more other
  * referencable items. A Note may be location-specific in addition to temporal.
  */
-public class Note extends AbstractStrategy<VJournal> {
+public class Note extends AbstractStrategy<VJournal, Note> {
 
     private String title;
 

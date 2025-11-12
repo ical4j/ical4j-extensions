@@ -10,7 +10,7 @@ import net.fortuna.ical4j.vcard.Entity;
 /**
  * Used to identify potential issues relating to a project.
  */
-public class Risk extends AbstractStrategy<VJournal> {
+public class Risk extends AbstractStrategy<VJournal, Risk> {
 
     private String title;
 

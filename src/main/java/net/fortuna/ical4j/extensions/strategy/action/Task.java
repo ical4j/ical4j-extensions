@@ -7,7 +7,7 @@ import net.fortuna.ical4j.model.component.VToDo;
  * Represents a task, which is a single unit of work that can be assigned, tracked, and completed.
  * Tasks can be part of larger projects or standalone items.
  */
-public class Task extends AbstractStrategy<VToDo> {
+public class Task extends AbstractStrategy<VToDo, Task> {
 
     @Override
     public VToDo get() {

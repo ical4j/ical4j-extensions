@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * A device represents a network-enabled hardware device.
  */
-public class Device extends AbstractStrategy<Entity> {
+public class Device extends AbstractStrategy<Entity, Device> {
 
     private final List<String> names = new ArrayList<>();
 

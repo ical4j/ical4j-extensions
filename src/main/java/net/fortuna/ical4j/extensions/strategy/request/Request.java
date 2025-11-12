@@ -9,7 +9,7 @@ import net.fortuna.ical4j.model.component.VToDo;
  * This class extends the AbstractStrategy to create a VToDo component
  * with the RequestType set to REQUEST.
  */
-public class Request extends AbstractStrategy<VToDo> {
+public class Request extends AbstractStrategy<VToDo, Request> {
 
     private RequestType requestType;
 

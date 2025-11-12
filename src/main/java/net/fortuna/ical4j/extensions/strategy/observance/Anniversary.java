@@ -15,7 +15,7 @@ import static net.fortuna.ical4j.model.RecurrencePropertyModifiers.RRULE;
 /**
  * Creates a recurring {@link VEvent} with date precision, representing a birthday/anniversary, etc.
  */
-public class Anniversary extends AbstractStrategy<VEvent> {
+public class Anniversary extends AbstractStrategy<VEvent, Anniversary> {
 
     private Repeats<?> schedule;
 

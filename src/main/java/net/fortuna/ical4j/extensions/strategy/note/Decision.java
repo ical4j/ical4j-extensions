@@ -12,7 +12,7 @@ import net.fortuna.ical4j.model.property.StyledDescription;
  * but ultimately the goal is the same: to capture a decision along with reasons and status
  * (i.e. proposed, accepted, superseded).
  */
-public class Decision extends AbstractStrategy<VJournal> {
+public class Decision extends AbstractStrategy<VJournal, Decision> {
 
     private String title;
 

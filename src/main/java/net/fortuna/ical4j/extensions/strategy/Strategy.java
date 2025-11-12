@@ -15,9 +15,9 @@ import java.util.function.Supplier;
  *
  * @param <T> the applicable object type
  */
-public interface Strategy<T> extends Supplier<T> {
+public interface Strategy<T, E extends Strategy<T, E>> extends Supplier<T> {
 
-    default Strategy<T> withPrototype(Prototype<T> prototype) {
+    default E withPrototype(Prototype<T> prototype) {
         throw new UnsupportedOperationException("Prototypes not supported for this strategy");
     }
 }

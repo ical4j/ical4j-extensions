@@ -4,14 +4,14 @@ import net.fortuna.ical4j.model.Prototype;
 
 import java.util.function.Supplier;
 
-public abstract class AbstractStrategy<T> implements Strategy<T> {
+public abstract class AbstractStrategy<T, E extends AbstractStrategy<T, E>> implements Strategy<T, E> {
 
     private Prototype<T> prototype;
 
     @Override
-    public Strategy<T> withPrototype(Prototype<T> prototype) {
+    public E withPrototype(Prototype<T> prototype) {
         this.prototype = prototype;
-        return this;
+        return (E) this;
     }
 
     protected T newInstance(Supplier<T> defaultIns) {

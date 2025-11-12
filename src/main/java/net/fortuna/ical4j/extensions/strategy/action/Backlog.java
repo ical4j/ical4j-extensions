@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * A collection of work items, typically associated with a Sprint or higher level objective.
  */
-public class Backlog extends AbstractStrategy<VToDo> {
+public class Backlog extends AbstractStrategy<VToDo, Backlog> {
 
     private final List<VToDo> stories = new ArrayList<>();
 

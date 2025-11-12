@@ -20,7 +20,7 @@ import java.util.List;
  * This class extends the AbstractStrategy to create a VJournal component
  * with the ResourceType set to COLLECTION.
  */
-public class Collection extends AbstractStrategy<VJournal> {
+public class Collection extends AbstractStrategy<VJournal, Collection> {
 
     private URI bookmark;
 

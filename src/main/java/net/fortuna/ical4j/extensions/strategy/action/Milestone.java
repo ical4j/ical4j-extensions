@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * This class represents a project milestone, which may consist of one or more child tasks.
  */
-public class Milestone extends AbstractStrategy<VToDo> {
+public class Milestone extends AbstractStrategy<VToDo, Milestone> {
 
     private final List<VToDo> tasks = new ArrayList<>();
 

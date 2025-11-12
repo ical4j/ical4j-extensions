@@ -8,7 +8,7 @@ import net.fortuna.ical4j.model.component.VAvailability;
  * Represents a roster, which is a collection of availability information for one or more individuals.
  * Rosters can be used to manage and track the availability of team members or resources.
  */
-public class Roster extends AbstractStrategy<VAvailability> {
+public class Roster extends AbstractStrategy<VAvailability, Roster> {
 
     @Override
     public VAvailability get() {

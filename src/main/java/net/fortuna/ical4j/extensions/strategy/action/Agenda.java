@@ -16,7 +16,7 @@ import static net.fortuna.ical4j.model.RelationshipPropertyModifiers.*;
 /**
  * One or more objectives, typically linked to a Meeting to guide outcomes.
  */
-public class Agenda extends AbstractStrategy<VToDo> {
+public class Agenda extends AbstractStrategy<VToDo, Agenda> {
 
     private Temporal start;
 

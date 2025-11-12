@@ -21,7 +21,7 @@ import java.util.List;
  * <p>
  * Includes observances from <a href="https://www.un.org/en/observances/list-days-weeks"> UN International Days</a>.
  */
-public class Observance extends AbstractStrategy<VEvent> {
+public class Observance extends AbstractStrategy<VEvent, Observance> {
 
     private String title;
 

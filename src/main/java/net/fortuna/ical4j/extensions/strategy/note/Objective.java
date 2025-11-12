@@ -9,7 +9,7 @@ import net.fortuna.ical4j.model.component.VJournal;
  * This class extends the AbstractStrategy to create a VJournal component
  * with the NoteType set to OBJECTIVE.
  */
-public class Objective extends AbstractStrategy<VJournal> {
+public class Objective extends AbstractStrategy<VJournal, Objective> {
 
     @Override
     public VJournal get() {

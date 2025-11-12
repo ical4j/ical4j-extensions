@@ -9,7 +9,7 @@ import net.fortuna.ical4j.model.property.RelatedTo;
  * A workflow component representing a problem ticket requiring resolution. This may be used to
  * track incidents, change requests, impediments, etc.
  */
-public class Issue extends AbstractStrategy<VToDo> {
+public class Issue extends AbstractStrategy<VToDo, Issue> {
 
     private IssueType issueType;
 

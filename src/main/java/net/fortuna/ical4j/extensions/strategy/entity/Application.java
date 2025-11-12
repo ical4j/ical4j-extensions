@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * An application represents a running software process or system.
  */
-public class Application extends AbstractStrategy<Entity> {
+public class Application extends AbstractStrategy<Entity, Application> {
 
     private final List<String> names = new ArrayList<>();
 

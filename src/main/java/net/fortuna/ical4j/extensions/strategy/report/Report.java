@@ -14,7 +14,7 @@ import java.time.Instant;
  * This class extends the AbstractStrategy to create a VJournal component
  * with the ReportType set to REPORT.
  */
-public class Report extends AbstractStrategy<VJournal> {
+public class Report extends AbstractStrategy<VJournal, Report> {
 
     @Override
     public VJournal get() {

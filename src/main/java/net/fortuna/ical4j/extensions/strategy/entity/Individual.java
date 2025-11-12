@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * A strategy used to populate an {@link Entity} to represent an individual.
  */
-public class Individual extends AbstractStrategy<Entity> {
+public class Individual extends AbstractStrategy<Entity, Individual> {
 
     private String familyName;
 

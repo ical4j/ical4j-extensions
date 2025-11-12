@@ -14,7 +14,7 @@ import java.time.Instant;
  * This class extends the AbstractStrategy to create a VJournal component
  * with the ReportType set to TIMESHEET.
  */
-public class Timesheet extends AbstractStrategy<VJournal> {
+public class Timesheet extends AbstractStrategy<VJournal, Timesheet> {
 
     @Override
     public VJournal get() {

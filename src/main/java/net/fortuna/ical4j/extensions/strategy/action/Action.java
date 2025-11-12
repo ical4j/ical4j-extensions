@@ -19,7 +19,7 @@ import static net.fortuna.ical4j.model.DescriptivePropertyModifiers.SUMMARY;
  * <p>
  * See: <a href="https://schema.org/Action">Action</a>
  */
-public class Action extends AbstractStrategy<VToDo> {
+public class Action extends AbstractStrategy<VToDo, Action> {
 
     private Participant participant;
 

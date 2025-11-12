@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * An organization is used to represent a collective entity such as a corporation.
  */
-public class Organization extends AbstractStrategy<Entity> {
+public class Organization extends AbstractStrategy<Entity, Organization> {
 
     private final List<String> names = new ArrayList<>();
 
