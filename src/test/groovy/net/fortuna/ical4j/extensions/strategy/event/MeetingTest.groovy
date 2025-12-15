@@ -55,7 +55,7 @@ END:VEVENT\r\n/
             fn 'Team Lead'
             caladruri 'mailto:lead-by@example.com'
         }
-        meeting = new Meeting().chair(new Contact().entity(chair)).withPrototype(meeting).get()
+        meeting = new Meeting().chair(new Contact().entity(chair).get()).withPrototype(meeting).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r

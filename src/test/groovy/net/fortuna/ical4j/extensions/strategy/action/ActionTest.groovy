@@ -25,7 +25,7 @@ END:VTODO\r\n/
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
         }
-        action = new Action().participant(new Contact().entity(attendee))
+        action = new Action().participant(new Contact().entity(attendee).get())
                 .summary('Complete outstanding code reviews')
                 .due(LocalDateTime.of(2023, 11, 15, 9, 0))
                 .withPrototype(action).get()

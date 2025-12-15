@@ -7,7 +7,7 @@ class OfficeTest extends Specification {
 
     def 'test office creation'() {
         expect: 'string value matches expected'
-        new Office().name('ACME Headquarters') as String == '''BEGIN:VLOCATION\r
+        new Office().name('ACME Headquarters').get() as String == '''BEGIN:VLOCATION\r
 LOCATION-TYPE:office\r
 NAME:ACME Headquarters\r
 END:VLOCATION\r

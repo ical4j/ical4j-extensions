@@ -13,7 +13,7 @@ class ContactTest extends Specification {
             fn 'A Contact'
             caladruri 'mailto:contact@example.com'
         }
-        def contact = new Contact().entity(card)
+        def contact = new Contact().entity(card).get()
 
         then: 'result matches expected'
         contact as String == '''BEGIN:PARTICIPANT\r

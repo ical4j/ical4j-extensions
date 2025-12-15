@@ -29,7 +29,7 @@ END:VJOURNAL\r\n/
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
         }
-        attendance = new Attendance().participant(new Contact().entity(attendee))
+        attendance = new Attendance().participant(new Contact().entity(attendee).get())
                 .start(LocalDateTime.of(2023, 11, 15, 9, 0))
                 .end(LocalDateTime.of(2023, 11, 15, 9, 30))
                 .context(meeting)
