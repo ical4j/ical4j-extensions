@@ -1,6 +1,6 @@
-package net.fortuna.ical4j.extensions.model.participant
+package net.fortuna.ical4j.extensions.strategy.participant
 
-
+import net.fortuna.ical4j.extensions.strategy.participant.Contact
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Specification
 
@@ -13,7 +13,7 @@ class ContactTest extends Specification {
             fn 'A Contact'
             caladruri 'mailto:contact@example.com'
         }
-        def contact = new Contact(card)
+        def contact = new Contact().entity(card)
 
         then: 'result matches expected'
         contact as String == '''BEGIN:PARTICIPANT\r

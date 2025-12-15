@@ -6,12 +6,9 @@ module ical4j.extensions {
     requires static org.codehaus.groovy;
 
     exports net.fortuna.ical4j.extensions.data;
-    exports net.fortuna.ical4j.extensions.model.alarm;
     exports net.fortuna.ical4j.extensions.model.concept;
     exports net.fortuna.ical4j.extensions.model.link;
-    exports net.fortuna.ical4j.extensions.model.location;
     exports net.fortuna.ical4j.extensions.model.parameter;
-    exports net.fortuna.ical4j.extensions.model.participant;
     exports net.fortuna.ical4j.extensions.model.property;
     exports net.fortuna.ical4j.extensions.caldav.parameter;
     exports net.fortuna.ical4j.extensions.caldav.property;
@@ -30,4 +27,7 @@ module ical4j.extensions {
     exports net.fortuna.ical4j.extensions.strategy.issue;
     exports net.fortuna.ical4j.extensions.strategy.request;
     exports net.fortuna.ical4j.extensions.strategy.resource;
+    exports net.fortuna.ical4j.extensions.strategy.location;
+    exports net.fortuna.ical4j.extensions.strategy.participant;
+    exports net.fortuna.ical4j.extensions.strategy.alarm;
 }

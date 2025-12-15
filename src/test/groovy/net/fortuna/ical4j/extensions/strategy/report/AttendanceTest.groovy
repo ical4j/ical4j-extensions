@@ -1,6 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.report
 
-import net.fortuna.ical4j.extensions.model.participant.Contact
+import net.fortuna.ical4j.extensions.strategy.participant.Contact
 import net.fortuna.ical4j.model.component.VEvent
 import net.fortuna.ical4j.model.property.Summary
 import net.fortuna.ical4j.model.property.Uid
@@ -29,7 +29,7 @@ END:VJOURNAL\r\n/
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
         }
-        attendance = new Attendance().participant(new Contact(attendee))
+        attendance = new Attendance().participant(new Contact().entity(attendee))
                 .start(LocalDateTime.of(2023, 11, 15, 9, 0))
                 .end(LocalDateTime.of(2023, 11, 15, 9, 30))
                 .context(meeting)

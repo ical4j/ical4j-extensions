@@ -1,6 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.action
 
-import net.fortuna.ical4j.extensions.model.participant.Contact
+import net.fortuna.ical4j.extensions.strategy.participant.Contact
 import net.fortuna.ical4j.util.Calendars
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Specification
@@ -25,7 +25,7 @@ END:VTODO\r\n/
             fn('Attendee')
             caladruri('mailto:attendee@example.com')
         }
-        action = new Action().participant(new Contact(attendee))
+        action = new Action().participant(new Contact().entity(attendee))
                 .summary('Complete outstanding code reviews')
                 .due(LocalDateTime.of(2023, 11, 15, 9, 0))
                 .withPrototype(action).get()

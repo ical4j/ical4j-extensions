@@ -1,6 +1,6 @@
 package net.fortuna.ical4j.extensions.strategy.event
 
-import net.fortuna.ical4j.extensions.model.participant.Contact
+import net.fortuna.ical4j.extensions.strategy.participant.Contact
 import net.fortuna.ical4j.vcard.ContentBuilder
 import spock.lang.Shared
 import spock.lang.Specification
@@ -55,7 +55,7 @@ END:VEVENT\r\n/
             fn 'Team Lead'
             caladruri 'mailto:lead-by@example.com'
         }
-        meeting = new Meeting().chair(new Contact(chair)).withPrototype(meeting).get()
+        meeting = new Meeting().chair(new Contact().entity(chair)).withPrototype(meeting).get()
 
         then: 'the result matches expected'
         meeting as String ==~ /BEGIN:VEVENT\r
