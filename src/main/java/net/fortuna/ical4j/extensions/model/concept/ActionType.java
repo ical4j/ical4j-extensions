@@ -9,30 +9,6 @@ import java.net.URI;
  */
 public class ActionType extends ImmutableConcept {
 
-    public enum Id {
-
-        Action("semcal:concept:action"),
-        Agenda("semcal:concept:action:agenda"),
-        Approval("semcal:concept:action:approval"),
-        Clarification("semcal:concept:action:clarification"),
-        Fulfilment("semcal:concept:action:fulfilment"),
-        LinkRegistration("semcal:concept:action:link_registration"),
-        Payment("semcal:concept:action:payment"),
-        Project("semcal:concept:action:project"),
-        Review("semcal:concept:action:review"),
-        ServiceQualification("semcal:concept:action:service_qualification");
-
-
-        private final URI uri;
-
-        Id(String uri) {
-            this.uri = URI.create(uri);
-        }
-
-        public URI getUri() {
-            return uri;
-        }
-    }
     /**
      * General action type.
      */
@@ -70,6 +46,29 @@ public class ActionType extends ImmutableConcept {
     public static final ActionType REVIEW = new ActionType(Id.Review);
 
     public static final ActionType LINK_REGISTRATION = new ActionType(Id.LinkRegistration);
+
+    public enum Id {
+        Action("semcal:concept:action"),
+        Agenda("semcal:concept:action:agenda"),
+        Approval("semcal:concept:action:approval"),
+        Clarification("semcal:concept:action:clarification"),
+        Fulfilment("semcal:concept:action:fulfilment"),
+        LinkRegistration("semcal:concept:action:link_registration"),
+        Payment("semcal:concept:action:payment"),
+        Project("semcal:concept:action:project"),
+        Review("semcal:concept:action:review"),
+        ServiceQualification("semcal:concept:action:service_qualification");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
 
     public ActionType(Id id) {
         super(id.getUri());

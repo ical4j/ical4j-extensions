@@ -9,33 +9,6 @@ import java.net.URI;
  */
 public class NoteType extends ImmutableConcept {
 
-    public enum Id {
-
-        Article("semcal:concept:note:article"),
-        Assumption("semcal:concept:note:assumption"),
-        Comment("semcal:concept:note:comment"),
-        Decision("semcal:concept:note:decision"),
-        DefinedTerm("semcal:concept:note:defined_term"),
-        DigitalDocument("semcal:concept:note:digital_document"),
-        Invoice("semcal:concept:note:invoice"),
-        Note("semcal:concept:note"),
-        Objective("semcal:concept:note:objective"),
-        Release("semcal:concept:note:release"),
-        Risk("semcal:concept:note:risk"),
-        Timesheet("semcal:concept:note:timesheet");
-
-
-        private final URI uri;
-
-        Id(String uri) {
-            this.uri = URI.create(uri);
-        }
-
-        public URI getUri() {
-            return uri;
-        }
-    }
-
     public static final NoteType NOTE = new NoteType(Id.Note);
 
     /**
@@ -75,6 +48,31 @@ public class NoteType extends ImmutableConcept {
     public static final NoteType OBJECTIVE = new NoteType(Id.Objective);
 
     public static final NoteType RISK = new NoteType(Id.Risk);
+
+    public enum Id {
+        Article("semcal:concept:note:article"),
+        Assumption("semcal:concept:note:assumption"),
+        Comment("semcal:concept:note:comment"),
+        Decision("semcal:concept:note:decision"),
+        DefinedTerm("semcal:concept:note:defined_term"),
+        DigitalDocument("semcal:concept:note:digital_document"),
+        Invoice("semcal:concept:note:invoice"),
+        Note("semcal:concept:note"),
+        Objective("semcal:concept:note:objective"),
+        Release("semcal:concept:note:release"),
+        Risk("semcal:concept:note:risk"),
+        Timesheet("semcal:concept:note:timesheet");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
 
     public NoteType(Id id) {
         super(id.getUri());

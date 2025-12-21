@@ -11,25 +11,6 @@ import java.net.URI;
  */
 public class AvailabilityType extends ImmutableConcept {
 
-    public enum Id {
-
-        Availability("semcal:concept:availability"),
-        Invitation("semcal:concept:availability:invitation"),
-        Offer("semcal:concept:availability:offer"),
-        Reservable("semcal:concept:availability:reservable"),
-        Roster("semcal:concept:availability:roster");
-
-        private final URI uri;
-
-        Id(String uri) {
-            this.uri = URI.create(uri);
-        }
-
-        public URI getUri() {
-            return uri;
-        }
-    }
-
     public static final AvailabilityType AVAILABILITY = new AvailabilityType(Id.Availability);
 
     /**
@@ -53,6 +34,24 @@ public class AvailabilityType extends ImmutableConcept {
      * See: <a href="https://schema.org/Offer">schema.org: Offer</a>
      */
     public static final AvailabilityType OFFER = new AvailabilityType(Id.Offer);
+
+    public enum Id {
+        Availability("semcal:concept:availability"),
+        Invitation("semcal:concept:availability:invitation"),
+        Offer("semcal:concept:availability:offer"),
+        Reservable("semcal:concept:availability:reservable"),
+        Roster("semcal:concept:availability:roster");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
 
     public AvailabilityType(Id id) {
         super(id.getUri());

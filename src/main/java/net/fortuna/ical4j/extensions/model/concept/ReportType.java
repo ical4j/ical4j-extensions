@@ -9,31 +9,6 @@ import java.net.URI;
  */
 public class ReportType extends ImmutableConcept {
 
-    public enum Id {
-
-        Attendance("semcal:concept:report:attendance"),
-        Budget("semcal:concept:report:budget"),
-        Diagnostic("semcal:concept:report:diagnostic"),
-        Expense("semcal:concept:report:expense"),
-        Income("semcal:concept:report:income"),
-        Presence("semcal:concept:report:presence"),
-        Report("semcal:concept:report"),
-        Timesheet("semcal:concept:report:timesheet"),
-        TimeToResolve("semcal:concept:report:time_to_resolve"),
-        TimeToRespond("semcal:concept:report:time_to_respond");
-
-
-        private final URI uri;
-
-        Id(String uri) {
-            this.uri = URI.create(uri);
-        }
-
-        public URI getUri() {
-            return uri;
-        }
-    }
-
     public static final ReportType REPORT = new ReportType(Id.Report);
 
     public static final ReportType ATTENDANCE = new ReportType(Id.Attendance);
@@ -54,6 +29,29 @@ public class ReportType extends ImmutableConcept {
     public static final ReportType PRESENCE = new ReportType(Id.Presence);
 
     public static final ReportType TIMESHEET = new ReportType(Id.Timesheet);
+
+    public enum Id {
+        Attendance("semcal:concept:report:attendance"),
+        Budget("semcal:concept:report:budget"),
+        Diagnostic("semcal:concept:report:diagnostic"),
+        Expense("semcal:concept:report:expense"),
+        Income("semcal:concept:report:income"),
+        Presence("semcal:concept:report:presence"),
+        Report("semcal:concept:report"),
+        Timesheet("semcal:concept:report:timesheet"),
+        TimeToResolve("semcal:concept:report:time_to_resolve"),
+        TimeToRespond("semcal:concept:report:time_to_respond");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
 
     public ReportType(Id id) {
         super(id.getUri());

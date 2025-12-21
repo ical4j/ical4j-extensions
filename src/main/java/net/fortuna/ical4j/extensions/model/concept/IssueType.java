@@ -9,31 +9,6 @@ import java.net.URI;
  */
 public class IssueType extends ImmutableConcept {
 
-    public enum Id {
-
-        Change("semcal:concept:issue:change"),
-        Epic("semcal:concept:issue:epic"),
-        Improvement("semcal:concept:issue:improvement"),
-        Incident("semcal:concept:issue:incident"),
-        Issue("semcal:concept:issue"),
-        Problem("semcal:concept:issue:problem"),
-        Risk("semcal:concept:issue:risk"),
-        Story("semcal:concept:issue:story"),
-        Subtask("semcal:concept:issue:subtask"),
-        Task("semcal:concept:issue:task");
-
-
-        private final URI uri;
-
-        Id(String uri) {
-            this.uri = URI.create(uri);
-        }
-
-        public URI getUri() {
-            return uri;
-        }
-    }
-
     /**
      * Generic issue type.
      */
@@ -82,6 +57,29 @@ public class IssueType extends ImmutableConcept {
      * Identify and track problems that may not necessarily impact service offerings directly.
      */
     public static final IssueType PROBLEM = new IssueType(Id.Problem);
+
+    public enum Id {
+        Change("semcal:concept:issue:change"),
+        Epic("semcal:concept:issue:epic"),
+        Improvement("semcal:concept:issue:improvement"),
+        Incident("semcal:concept:issue:incident"),
+        Issue("semcal:concept:issue"),
+        Problem("semcal:concept:issue:problem"),
+        Risk("semcal:concept:issue:risk"),
+        Story("semcal:concept:issue:story"),
+        Subtask("semcal:concept:issue:subtask"),
+        Task("semcal:concept:issue:task");
+
+        private final URI uri;
+
+        Id(String uri) {
+            this.uri = URI.create(uri);
+        }
+
+        public URI getUri() {
+            return uri;
+        }
+    }
 
     public IssueType(Id id) {
         super(id.getUri());

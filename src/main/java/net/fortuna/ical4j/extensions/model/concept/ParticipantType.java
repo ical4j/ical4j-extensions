@@ -7,11 +7,13 @@ import java.net.URI;
  */
 public class ParticipantType extends ImmutableConcept {
 
-    public enum Id {
+    public static final ParticipantType REPORTER = new ParticipantType(Id.Reporter);
 
+    public static final ParticipantType ASSIGNEE = new ParticipantType(Id.Assignee);
+
+    public enum Id {
         Assignee("semcal:concept:contributor:assignee"),
         Reporter("semcal:concept:contributor:reporter");
-
 
         private final URI uri;
 
@@ -23,10 +25,6 @@ public class ParticipantType extends ImmutableConcept {
             return uri;
         }
     }
-
-    public static final ParticipantType REPORTER = new ParticipantType(Id.Reporter);
-
-    public static final ParticipantType ASSIGNEE = new ParticipantType(Id.Assignee);
 
     public ParticipantType(Id id) {
         super(id.getUri());
