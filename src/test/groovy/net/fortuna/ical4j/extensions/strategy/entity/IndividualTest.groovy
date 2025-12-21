@@ -8,19 +8,19 @@ class IndividualTest extends Specification {
 
     def 'test kind is set correctly'() {
         expect: 'kind == individual for new instances'
-        new Individual().get().kind.orElseThrow() == ImmutableKind.INDIVIDUAL
+        new Individual().get().kind == ImmutableKind.INDIVIDUAL
 
         and: 'kind is updated correctly when using a prototype'
         def prototype = new ContentBuilder().entity {
             kind ImmutableKind.ORG
         }
-        new Individual().withPrototype(prototype).get().kind.orElseThrow() == ImmutableKind.INDIVIDUAL
+        new Individual().withPrototype(prototype).get().kind == ImmutableKind.INDIVIDUAL
 
         and: 'kind is updated correctly for existing instances'
         def entity = new ContentBuilder().entity {
             kind ImmutableKind.ORG
         }
-        new Individual().withPrototype(entity).get().kind.orElseThrow() == ImmutableKind.INDIVIDUAL
+        new Individual().withPrototype(entity).get().kind == ImmutableKind.INDIVIDUAL
     }
 
     def 'test template with name creation'() {
@@ -30,7 +30,7 @@ class IndividualTest extends Specification {
                 .suffix(suffix).get()
 
         then: 'N property matches expected string'
-        individual.n.orElseThrow() as String == expectedNString
+        individual.name as String == expectedNString
 
         where:
         familyName | givenName | additionalNames | prefix   | suffix | expectedNString
