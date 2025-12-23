@@ -30,4 +30,5 @@ module ical4j.extensions {
     exports net.fortuna.ical4j.extensions.strategy.location;
     exports net.fortuna.ical4j.extensions.strategy.participant;
     exports net.fortuna.ical4j.extensions.strategy.alarm;
+    exports net.fortuna.ical4j.extensions.model.reason;
 }
