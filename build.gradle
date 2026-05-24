@@ -36,8 +36,11 @@ dependencies {
     // optional groovy DSL for calendar builder..
     groovyDslImplementation libs.groovy
 
-    testImplementation libs.log4j.core, libs.log4j.slf4j2, libs.groovy.test, libs.junit.jupiter,
+    testImplementation libs.log4j.core, libs.log4j.slf4j2, libs.junit.jupiter,
             platform(libs.spock.bom), libs.spock.core
+    testImplementation(libs.groovy.test) {
+        exclude group: 'junit', module: 'junit'
+    }
 
     testRuntimeOnly libs.junit.platform
 }

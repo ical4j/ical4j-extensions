@@ -45,4 +45,9 @@ class CalStartSpec extends Specification {
         value             | expectedValue
         '20110101T120000' | '20110101T120000'
     }
+
+    def 'factory creates property from string value'() {
+        expect:
+        new CalStart.Factory().createProperty(new ParameterList(), '20081030T193000Z') != null
+    }
 }
