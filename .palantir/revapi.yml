@@ -1092,8 +1092,43 @@ acceptedBreaks:
         \ E>>"
       justification: "strategy_generics_changes"
     - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.alarm.DisplayNotification"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.alarm.EmailNotification"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.alarm.ProximityNotification"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
       old: "class net.fortuna.ical4j.extensions.model.concept.AssetType"
       justification: "renamed_asset_to_resource"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.location.Office"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.location.PublicPlace"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.participant.AbstractRole"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
+    - code: "java.class.removed"
+      old: "class net.fortuna.ical4j.extensions.model.participant.Contact"
+      justification: "Intentional 2.x API rework on develop (54449c7): alarm/notification\
+        \ model replaced by Notification/ProximityAlert builders; breaks surfaced\
+        \ once CI was repaired to run revapi"
     - code: "java.class.superTypeTypeParametersChanged"
       old: "class net.fortuna.ical4j.extensions.strategy.AbstractStrategy<T extends\
         \ java.lang.Object>"
