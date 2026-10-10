@@ -64,6 +64,8 @@ public class IssueType extends ImmutableConcept {
         Improvement("semcal:concept:issue:improvement"),
         Incident("semcal:concept:issue:incident"),
         Issue("semcal:concept:issue"),
+        Defect("semcal:concept:defect"),
+        Enhancement("semcal:concept:enhancement"),
         Problem("semcal:concept:issue:problem"),
         Risk("semcal:concept:issue:risk"),
         Story("semcal:concept:issue:story"),

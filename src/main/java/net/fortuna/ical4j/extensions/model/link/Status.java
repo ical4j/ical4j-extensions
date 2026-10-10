@@ -2,6 +2,7 @@ package net.fortuna.ical4j.extensions.model.link;
 
 import net.fortuna.ical4j.model.LinkRelationType;
 import net.fortuna.ical4j.model.parameter.LinkRel;
+import net.fortuna.ical4j.model.property.Link;
 
 import java.net.URI;
 
@@ -10,7 +11,7 @@ import java.net.URI;
  * <p>
  * See also <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link Relations</a>
  */
-public class Status extends ImmutableLink {
+public class Status extends Link {
 
     public Status(URI uri) {
         super(uri);

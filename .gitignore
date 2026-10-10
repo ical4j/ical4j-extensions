@@ -7,3 +7,6 @@
 build
 ical4j-extensions.iml
 out
+.claude
+.github/prompts
+.github/skills
